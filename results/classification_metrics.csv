@@ -1,0 +1,4 @@
+Model,Accuracy,Macro_F1,ROC_AUC
+RandomForest,0.5375,0.4317,0.648
+XGBoost,0.5028,0.417,0.6293
+MLP,0.5417,0.3755,0.6488

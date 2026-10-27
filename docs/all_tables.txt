@@ -1,0 +1,646 @@
+==================================================
+FILE: docs/cai2024_full.txt
+==================================================
+--- Line 157: variance s2 was calculated in Table 1. The s2 is an unbiased estimate of ---
+405 particles (45×3×3=405). To characterize the dispersion of the 
+measured data of RA particle size and shape parameters, the sample 
+variance s2 was calculated in Table 1. The s2 is an unbiased estimate of 
+the overall variance, which is suitable for the case of only sample data. 
+According to the 405 samples provided in this study, the s2 calculated by 
+grouping was listed in Table 1. This result reflects the change of RA 
+particle size and shape parameter data points around the mean value. It 
+can be seen that with the increase of particle size, the discrete degree of 
+Fig. 1. RA particle samples and particle size measurement. (a) RB samples; (b) RC samples; (c) RM samples; (d) A precision electronic vernier caliper; (e) Quan­
+titative illustration of RA particle size. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 3 ===
+Construction and Building Materials 439 (2024) 137363
+3
+statistical results of particle size parameters of RA tends to be larger. 
+Except for Sf, the discrete degree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+
+
+--- Line 160: grouping was listed in Table 1. This result reflects the change of RA ---
+the overall variance, which is suitable for the case of only sample data. 
+According to the 405 samples provided in this study, the s2 calculated by 
+grouping was listed in Table 1. This result reflects the change of RA 
+particle size and shape parameter data points around the mean value. It 
+can be seen that with the increase of particle size, the discrete degree of 
+Fig. 1. RA particle samples and particle size measurement. (a) RB samples; (b) RC samples; (c) RM samples; (d) A precision electronic vernier caliper; (e) Quan­
+titative illustration of RA particle size. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 3 ===
+Construction and Building Materials 439 (2024) 137363
+3
+statistical results of particle size parameters of RA tends to be larger. 
+Except for Sf, the discrete degree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+Table 1 
+Statistical analysis of average shaped indicators of RA with different particle sizes.  
+Component categories 
+
+
+--- Line 192: Table 1 ---
+√
+(3) 
+Table 1 
+Statistical analysis of average shaped indicators of RA with different particle sizes.  
+Component categories 
+Particle size range(mm) 
+L(mm) 
+I(mm) 
+S(mm) 
+EI 
+FI 
+Sf 
+Φ 
+RB 
+4.75–9.5 
+14.07 
+(s2=0.064) 
+8.80 
+(s2=0.026) 
+5.42 
+(s2=0.016) 
+0.64 
+(s2=0.019) 
+0.64 
+(s2=0.033) 
+3.95 
+(s2=0.664) 
+0.63 
+(s2=0.013) 
+9.5–19 
+23.78 
+(s2=0.229) 
+16.76 
+(s2=0.084) 
+10.42 
+(s2=0.092) 
+0.73 
+
+
+--- Line 671: particle group. The specific experimental design is presented in Table 2, ---
+maximum particle size range of RA was selected because the larger 
+particles had a higher crushing probability in the actual engineering 
+particle group. The specific experimental design is presented in Table 2, 
+totaling 270 particles. For each set, 30 tests were conducted to meet the 
+error requirements [24]. Meanwhile, significant differences in the 
+sphericity of RA particle shapes were found in the statistics of Section 2. 
+Therefore, sphericity (Φ) was chosen as the index for dividing the 
+appearance shapes of single particles, and single-particle crushing tests 
+were conducted on particles in three categories: sphericity Φ=0.4–0.6 
+(Flat spherical), 0.6–0.8 (Subspherical), and 0.8–1.0 (Nearly spherical). 
+The specific single-particle crushing test process is as follows.  
+● First, before conducting the single-particle crushing test, carefully 
+place the particle sample at the center of the bottom plate of the 
+universal testing machine to ensure the sample is stable and not tilted 
+(optimal stability). Next, slowly adjust the loading plate of the 
+testing machine, allowing it to gradually descend until it just makes 
+contact with the top surface of the particle sample. Once the loading 
+plate is in full contact with the particle surface, set the loading speed 
+of the testing machine to a constant rate of 1 mm/min. This ensures 
+the acquisition of uniform and continuous force-displacement data. 
+Among them, the loading rate setting method follows the approach 
+used in References [9,22]. Additionally, using a constant loading rate 
+allows for a more focused examination of the influence of particle 
+shape on the crushing characteristics of single particles, which is the 
+primary focus of this study.  
+● Start the testing machine and begin applying compressive load, 
+continuously monitoring and recording the force-displacement 
+relationship of the particle throughout the compression process 
+(Fig. 4c). High-precision sensors and data acquisition systems are 
+used to ensure the accuracy and reliability of the data. Observe the 
+deformation and crushing process of the particle. When the force no 
+longer increases during loading, it indicates that the particle has 
+reached its crushing limit, at which point the loading is stopped. 
+Record the maximum load value and the corresponding displace­
+ment value as key indicators for evaluating the crushing strength of 
+the particle.  
+● After unloading, carefully remove the crushed particle sample and 
+
+
+--- Line 710: Table 2 ---
+Fig. 4. Experimental equipment, single-particle loading discrete element model and its typical force-displacement curve. (a) MTS universal testing machine; (b) 
+Discrete element simulation of single particle loading; (c) Typical load-displacement curve. 
+Table 2 
+Single-particle crushing test schemes with different shapes.  
+Component 
+categories 
+Particle 
+size range/ 
+mm 
+Test the 
+number of 
+particles 
+Particle 
+sphericity Φ 
+Axial loading 
+rate/ 
+(mm⋅min−1) 
+RB 
+19–37.5 
+30 
+0.4–0.6 
+0.6–0.8 
+0.8–1.0 
+1.0 
+30 
+30 
+RC 
+19–37.5 
+30 
+0.4–0.6 
+0.6–0.8 
+0.8–1.0 
+1.0 
+30 
+30 
+RM 
+19–37.5 
+
+
+--- Line 1883: test results is between 2.66 % and 18.53 %, as shown in Table 3. The ---
+sults, numerical results, and predictions made by Eq. (10) for the three 
+different sphericities Φ. The error between the simulation results and the 
+test results is between 2.66 % and 18.53 %, as shown in Table 3. The 
+randomness of the experiments, as well as variations in shape, size, and 
+mineral content among particles, lead to variations in the energy 
+released during the experiments [17]. Nonetheless, overall, the differ­
+ences in average crushing energy among single particles of different 
+sphericities Φ are not pronounced. This indicates that although the re­
+sults of individual experiments may vary due to various factors, 
+considering a larger number of samples, shows that these results tend to 
+be consistent, reflecting general stability in the relationship between 
+crushing energy and particle sphericity Φ. Therefore, the numerical 
+program can also be used to simulate and calculate the crushing energy 
+of particles with other sphericities. 
+5.3. Discrete element simulation of single-particle crushing with different 
+shapes and correction of prediction results 
+The study conducted simulations using the PFC3D discrete element 
+numerical program to calculate the crushing outcomes for single parti­
+cles of RB, RC, and RM with sphericities Φ=0.40, 0.60, 0.80, and 1.0. 
+The results are presented in Figs. 20 and 21. Fig. 20 compares the 
+average crushing strength of single particles of RB, RC, and RM obtained 
+from numerical results with those predicted by Eq. (8). It was found that, 
+under specific sphericities Φ, the numerical results for average crushing 
+strength are in good agreement with those obtained from Eq. (8). Under 
+conditions of equivalent particle size, the greater the particle sphericity 
+Φ, the greater the sustained crushing force, and correspondingly, the 
+greater the crushing strength σf. Thus, the particle sphericity Φ and Eq. 
+(8) can be used to predict the crushing strength of single particles with 
+any sphericity, but the specific results may still require further experi­
+mental validation. 
+Additionally, Fig. 21 shows the trend in the average crushing energy 
+of single particles of RB, RC, and RM. From Fig. 21(a), it can be seen that 
+as the particle sphericity Φ increases, the crushing energy also increases, 
+consistent with the conclusions of the aforementioned study. However, 
+there are some discrepancies between the numerical results and the 
+predictions made by Eq. (10). For particles with smaller sphericities 
+(Φ<0.8), the numerical results are consistent with the predictions, but 
+
+
+--- Line 2037: Table 3 ---
+Fig. 19. Comparison of numerical, experimental and predicted results of single- 
+particle average crushing energy. 
+Table 3 
+Comparison of error between numerical results of single-particle crushing energy Ef of RA and experimental results.  
+Categories 
+Φ=0.4–0.6 
+Φ=0.6–0.8 
+Φ=0.8–1.0 
+RB 
+RC 
+RM 
+RB 
+RC 
+RM 
+RB 
+RC 
+RM 
+Ef-S (mJ)  
+397.18  
+965.9  
+375.29  
+660.44  
+1340.47  
+792.04  
+1138.58  
+1669.36  
+1344.45 
+Ef-E (mJ)  
+349.05  
+912.42  
+316.62  
+713.82  
+1413.27  
+860.55  
+1064.76  
+1598.63  
+1381.18 
+
+
+--- Line 2140: in Table 4. ---
+(11) as shown in Fig. 21(b). Eq. (11) involves nonlinear curve fitting 
+parameters E0, α, and t, with specific values for RB, RC, and RM provided 
+in Table 4. 
+Ef = E0 + 2α⋅
+(
+1 −e−Φ/t)
+(11) 
+Hence, for the crushing energy of single particles with smaller 
+sphericities (Φ<0.8), Eq. (10) can be used for predictions. However, for 
+particles with larger sphericities (Φ≥0.8) (as indicated by the light 
+purple area in Fig. 21(b)), employing Eq. (11) for predicting their 
+crushing energy is more appropriate. It is worth noting that since the 
+nature of RA is heterogeneous due to different sources and compositions, 
+this heterogeneity may limit the universality of the prediction equation 
+based on a single material source to a certain extent. Of course, this 
+single source of RA materials inevitably exists in many studies [2,6,9, 
+35]. However, there is no doubt that this study provides some valuable 
+preliminary insights into the crushing strength and crushing energy 
+prediction equations of RA. Furtherly, this study regards these pre­
+liminary results as the cornerstone of further research, and will expand 
+the data set (material source) and conduct rigorous statistical analysis in 
+future research to further improve the broad applicability of the 
+research results. 
+6. Conclusion and outlook 
+6.1. Research conclusion 
+This paper first quantitatively characterizes the shape characteristics 
+of RA particles and then studies the crushing modes, fractal character­
+istics, particle crushing strength, and crushing energy of single particles 
+with different shapes (sphericity Φ) through single-particle crushing 
+experiments involving RB, RC, and RM. Finally, by comparing and 
+analyzing the experimental and predicted results through PFC3D discrete 
+element numerical simulation, it predicts the crushing strength and 
+crushing energy of particles with specific sphericity. The main conclu­
+sions are as follows. 
+(1) The shapes of RA particles are mainly disk, block, blade and bar. 
+The flatness of the RA particles used in this study ranges from 0.30 to 
+0.96, the elongation ratio ranges from 0.29 to 0.98, the Domokos coef­
+
+
+--- Line 2337: Table 4 ---
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of prediction Eq. (11) fitting parameters.  
+Component categories 
+E0 
+α 
+t 
+RB 
+-1.68×106 
+8.42×105  
+0.097 
+RC 
+-1.36×105 
+6.92×104  
+0.142 
+RM 
+-1.16×105 
+5.90×104  
+0.162  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 15 ===
+Construction and Building Materials 439 (2024) 137363
+15
+(2) The current research does not fully cover all possible particle size 
+distributions, and a wider range should be considered in the future to 
+improve the applicability of the research results. 
+(3) This study mainly studied the influence of particle shape on the 
+crushing characteristics, using a single loading rate and method, without 
+considering the complex actual working conditions. In the future, more 
+diversified loading conditions and environmental factors should be 
+studied to fully understand the mechanical behavior of RA. 
+(4) This study mainly focuses on the initial crushing characteristics. 
+In the future, the durability of recycled aggregate under long-term load 
+and environmental action should be included to ensure its long-term 
+
+
+==================================================
+FILE: docs/liang2025_full.txt
+==================================================
+--- Line 156: comparability. The physical properties of these materials are listed in Table 1. ---
+specimens were prepared to account for loading instability, from which thirty valid samples were finally used for data analysis. In 
+total 270 dry test specimens (30 per material per size fraction) as illustrated in Fig. 2. This range ensures test stability and data 
+comparability. The physical properties of these materials are listed in Table 1.
+2.2. Test instrument and scheme
+An electronic universal testing machine (Fig. 3) equipped in the laboratory was used to carry out the single-particle compression 
+test. A displacement-controlled loading was applied at 1 mm/min loading rate with 50 kN capacity load cell (ISO 7500–1 Class 0.5 
+certified), maintaining a force measurement uncertainty with ±0.8 % throughout the tests. Three critical experimental challenges 
+were identified: (1) Stress concentration anomalies due to morphological heterogeneity; (2) Premature fracture initiation caused by 
+non-uniform stress distribution;(3) Boundary condition artifacts from improper fixturing. To minimize these issues, the shortest axis of 
+each particle was first placed perpendicular to the loading platen to ensure stable positioning. Then, the loading beam was manually 
+adjustied via remote control until the upper platen was fully in contact with the particle surface. Based on previous studies, the loading 
+speed was set at 1 mm/min [5,30,56] to ensure uniform load application and high testing accuracy. For small particle size 
+(4.75–10 mm), a metal pad was positioned between the two loading plates and the particles were centred on the pad for loading. A 
+camera was used to record the entire breakage process and capture the morphological changes before and after fracture. Finally, the 
+test was terminated when the force-displacement curve exhibited a steep drop accompanied by an audible cracking sound, or when the 
+load no longer increased with displacement. At this point, visible major fractures were observed, and the bearing capacity had fallen to 
+less than approximately 10 % of its peak value, indicating that the particle had reached its breakage strength.
+2.3. Research framework and theoretical basis
+The maximum tensile stress can be used to calculate the breakage strength of a single particle. When the construction waste 
+particles are under vertical load, tensile stress will be occurred inside the particles, especially when the internal tensile stress exceeds 
+the limit of the particles themselves, resulting in the particles breaking in a certain direction. Building upon the Hertzian contact theory 
+framework, the characteristic breakage strength can be determined using the Hiramatsu-Oka equation [13], later refined by Wang 
+et al. [41]: 
+σf = 0.9Ff
+d2
+0
+(1) 
+Table 1 
+Physical properties of the materials.
+physical index
+Apparent densityρa（g/cm3）
+Bulk densityρb（g/cm3）
+Specific gravity 
+GS
+RM
+2.028
+1.113
+
+
+--- Line 181: Table 1 ---
+0
+(1) 
+Table 1 
+Physical properties of the materials.
+physical index
+Apparent densityρa（g/cm3）
+Bulk densityρb（g/cm3）
+Specific gravity 
+GS
+RM
+2.028
+1.113
+2.028
+RC
+2.217
+1.296
+2.217
+RB
+2.140
+1.063
+2.140
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+4 
+
+
+=== PAGE 5 ===
+in which Ffis the vertical force at the failure point; The equivalent particle size d0 can be determined by measuring the long axis (L), 
+central axis (I) and short axis (S) of the particle with a vernier caliper. There are five methods for measuring the equivalent particle size 
+of irregular particles: For elongated and flaky particles, the long axis is much larger than the short and central axes, and the long axis of 
+the particles has a small influence on particle breakage, d0 can be calculated as d0 =̅̅̅̅̅
+SI
+√
+[6]; When the short axis of the particles is 
+placed parallel on the loading plate, Hiramatsu and Oka [13] proposed that d0 = S; For massive particles, due to their similar di­
+mensions in the three axial directions, Wu et al. [51] proposed that d0 = (L+I+S)/3 or d0 =̅̅̅̅̅̅̅
+LSI
+
+
+--- Line 322: Table 2 shows that within the 4.75–25 mm particle size range, the average characteristic strength σf0 of RM, RB, RC were 2.97 MPa, ---
+flaws and the heterogeneity of their spatial distribution increase, thereby enhancing the variability of breakage strength.
+3.2.2. Effect of particle type on breakage strength
+Table 2 shows that within the 4.75–25 mm particle size range, the average characteristic strength σf0 of RM, RB, RC were 2.97 MPa, 
+5.38 MPa, and 6.28 MPa, respectively. The fractal dimension analysis confirms that RC exhibits the highest σf0, while RM showed the 
+lowest σf0, indicating higher susceptibility to breakage. In addition, it can be seen that the average m of RM, RB and RC were 2.73, 2.84 
+and 1.38, respectively, reflecting material-dependent variations in distribution of breakage strength. RC exhibited significantly greater 
+strength dispersion compared to RM and RB, with this variability becoming more pronounced with increasing particle size. This 
+behavior may originate from the heterogeneous type of RC, containing mortar-cement aggregates with rough surfaces and complex 
+pore structures [30]. Larger RC particles contain abundant, densely packed pores with non-uniform spatial configurations, creating 
+structural heterogeneity within individual particles. Under compressive loading, preferential failure occurs at weakened micro­
+structural regions, while less defective zones maintain load-bearing capacity, amplifying strength variability. On the contrary, pore 
+structures of RB particles develop increasing uniformity at larger sizes [30], enhancing structural stability and reducing strength 
+dispersion, Consequently, RB exhibited the highest average m value.
+3.3. Particle breakage mode
+Single-particle breakage patterns are governed by material type, morphological characteristics, and particle size. Cai et al. [5]
+categorized compressed recycled aggregates particles of different shapes into penetrating fracture, corner rupture, and overall frag­
+mentation. Tang et al. [40] identified four distinct failure mechanisms in limestone particulates through coupled mechanical analysis: 
+explosive fragmentation, axial splitting, progressive breakage, and localized edge failure. Generally, these breakage modes were 
+categorized based on criteria such as the post-breakage particle size and the cracking pattern. However, the breakage process of 
+construction waste typically involves multiple concurrent failure mechanisms. Construction waste particles exhibit phase-dependent 
+and load-bearing characteristics during fragmentation, with failure mode transitions corresponding to specific energy dissipation 
+thresholds, but little attention has been paid to the relationship between particle breakage behavior and the force-displacement 
+response, which has received limited attention in previous studies. In this study, combining parameters such as the fractal model of 
+the crushed particles, the peak load value, the force-displacement curve (corresponding to the crack propagation of the particles), and 
+the range of fragment numbers, the differentiated breakage mechanisms of RC, RB, and RM were analyzed, and the corresponding 
+breakage modes under the combined effects of particle size and material type.
+Based on the analysis of 270 single-particle compression tests, three parallel tests indicated good repeatability of all particle 
+breakage modes, with standard deviations below 10 % and short error bars, demonstrating the good stability of the experimental data. 
+Three dominant breakage modes for construction waste particulates were identified: intermediate splitting (Mode I), mixed breakage 
+(Mode II), and bulk breakage (Mode III). Table 3 summarizes the detailed morphological and mechanical characteristics for each 
+breakage mode： 
+• Intermediate splitting (Mode I): In the initial stage, the load increases with the increase of displacement linearly, and then decreases 
+sharply with particle breakage. The force-displacement curve is relatively smooth with a few jagged and convex points. Generally, 
+only one single peak point can be seen on the curve. At the corresponding peak point, the broken particles directly split into 2 
+pieces, accompanied by a small number of debris. the number of fragments is generally no more than two (≤2). After breaking, one 
+vertical crack is observed.
+• Mixed breakage (Mode II): The load increases with the displacement linearly at the initial stage and then decreases sharply when 
+
+
+--- Line 349: (Mode II), and bulk breakage (Mode III). Table 3 summarizes the detailed morphological and mechanical characteristics for each ---
+breakage modes, with standard deviations below 10 % and short error bars, demonstrating the good stability of the experimental data. 
+Three dominant breakage modes for construction waste particulates were identified: intermediate splitting (Mode I), mixed breakage 
+(Mode II), and bulk breakage (Mode III). Table 3 summarizes the detailed morphological and mechanical characteristics for each 
+breakage mode： 
+• Intermediate splitting (Mode I): In the initial stage, the load increases with the increase of displacement linearly, and then decreases 
+sharply with particle breakage. The force-displacement curve is relatively smooth with a few jagged and convex points. Generally, 
+only one single peak point can be seen on the curve. At the corresponding peak point, the broken particles directly split into 2 
+pieces, accompanied by a small number of debris. the number of fragments is generally no more than two (≤2). After breaking, one 
+vertical crack is observed.
+• Mixed breakage (Mode II): The load increases with the displacement linearly at the initial stage and then decreases sharply when 
+the first crack is generated on the particle and the force-displacement curve reaches the first peak point. Different from the first 
+mode, the curve rises again as the displacement continuously increases and reaches the second peak point. Finally, the curve 
+declines gradually after breaking. There are two load peak points on the curve, and at the corresponding peak points, the particle 
+Table 2 
+Test results.
+Material group
+Particle size 
+(mm)
+Characteristic strength 
+(σf0/MPa)
+Average characteristics strength 
+(σf0/MPa)
+Weibull modulus 
+(m)
+Average Weibull modulus (m)
+RM
+RM-1
+4.75–10
+3.03
+2.97
+2.70
+2.73
+RM-2
+10–20
+2.97
+2.73
+RM-3
+
+
+--- Line 360: Table 2 ---
+mode, the curve rises again as the displacement continuously increases and reaches the second peak point. Finally, the curve 
+declines gradually after breaking. There are two load peak points on the curve, and at the corresponding peak points, the particle 
+Table 2 
+Test results.
+Material group
+Particle size 
+(mm)
+Characteristic strength 
+(σf0/MPa)
+Average characteristics strength 
+(σf0/MPa)
+Weibull modulus 
+(m)
+Average Weibull modulus (m)
+RM
+RM-1
+4.75–10
+3.03
+2.97
+2.70
+2.73
+RM-2
+10–20
+2.97
+2.73
+RM-3
+20–25
+2.91
+2.76
+RB
+RB-1
+4.75–10
+6.35
+5.83
+2.58
+2.84
+RB-2
+
+
+--- Line 423: Table 3 ---
+
+=== PAGE 9 ===
+Table 3 
+The particle breakage mode of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+9 
+
+
+=== PAGE 10 ===
+splits into 2–3 fragments. With a few cracks, contact fractures were observed on the particle surface, resulting in a large number of 
+sharp-angled small fragments.
+• Bulk breakage (Mode III): The load increases with the displacement gradually with multiple peak points on the curve. In contrast 
+with the first two modes, no linearly increasing stage can be observed on the curve. Particle breakage generates multiple cracks and 
+produces three or more fragments of comparable size (≥3), Multiple cracks with at least one main crack and a few debris are 
+observed.
+Fig. 6 presents the proportions of the three breakage modes for different types of construction waste particles. According to Fig. 6
+(a), bulk breakage and mixed breakage are the predominant breakage modes for RM particles, while the proportion of intermediate 
+splitting is only 13 %. However, the predominant breakage modes of RM are strongly correlated with particle size. For small RM 
+particles (d0<20 mm), over 50 % of the particles undergo bulk breakage. As particle size increases, the proportion of mixed breakage 
+also rises, making it the predominant breakage mode for RM particles with d0≥20 mm. The breakage modes of RB are similar to those 
+of RM, and the predominant breakage mode is likewise correlated with particle size. The proportions of mixed and bulk breakage mode 
+are much higher than that of intermediate splitting. Bulk breakage mode is predominant in particles with d0< 20 mm, whereas mixed 
+breakage predominates in large particles with d0≥20 mm. On the other hand, the breakage mode of RC particles shows a distinctly 
+different distribution. For small RC particles with d0 range from 4.75 mm to 10 mm, the proportions of the three breakage modes are 
+nearly equal. As d0 increases, intermediate splitting becomes the predominant breakage mode. This phenomenon can be largely 
+attributed to the graded composite nature of RC aggregates. Coarse RC particles (d0≥10 mm) generally consist of a gravel core sur­
+rounded by mortar. During single-particle compression, failure initiates with surface mortar spallation, followed by vertical crack 
+propagation through the gravel core, ultimately resulting in a median split at the critical stress threshold. In contrast, smaller RC 
+particles (4.75–10 mm) consist primarily of mortar mixed with several small gravel fragments. The complex natural flaws at the in­
+terfaces between different types facilitate rapid crack propagation, producing double or multiple cracks and corresponding double- or 
+multi-peak force-displacement responses, as well as 3–5 major fragments. Since mixed and bulk breakage modes generate more small 
+fragments, the D values of RM and RB are larger than those of RC, as shown in Fig. 4.
+Combining the test results as presented in Fig. 6 and Table 2, it seems that the average characteristic strength σf0 is correlated with 
+the breakage mode. In the intermediate splitting mode, the particle maintains integrity before breakage, leading to a relatively high 
+Fig. 6. Statistics of particle breakage mode of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+
+
+--- Line 454: Combining the test results as presented in Fig. 6 and Table 2, it seems that the average characteristic strength σf0 is correlated with ---
+multi-peak force-displacement responses, as well as 3–5 major fragments. Since mixed and bulk breakage modes generate more small 
+fragments, the D values of RM and RB are larger than those of RC, as shown in Fig. 4.
+Combining the test results as presented in Fig. 6 and Table 2, it seems that the average characteristic strength σf0 is correlated with 
+the breakage mode. In the intermediate splitting mode, the particle maintains integrity before breakage, leading to a relatively high 
+Fig. 6. Statistics of particle breakage mode of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+10 
+
+
+=== PAGE 11 ===
+Fig. 7. Diagram of the breakage mechanisms of different types.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+11 
+
+
+=== PAGE 12 ===
+breakage strength. However, cracks were generated inside the particles before the failure point in the mixed breakage mode and the 
+bulk breakage mode, which will reduce the particle breakage strength. As the RC particles breakage is dominated by the intermediate 
+splitting mode, σf0 of RC particles is larger than that of RM and RB particles, and σf0 of RM particles is smallest among the three kinds of 
+construction waste particles because little particles breakage accord with the intermediate splitting mode. According to the analysis 
+above, the key mechanisms of particle breakage under the coupling effect of types and particle size of construction waste are sum­
+marized in Fig. 7.
+4. Discussion
+This study revealed that particle size and material type jointly govern the breakage behavior of construction waste. The coupling of 
+these two factors significantly influences the breakage strength, fractal characteristics, and failure modes of recycled materials. For RC 
+particles with high mortar content, smaller particles predominantly undergo bulk breakage, whereas larger ones mainly exhibit in­
+termediate splitting. This indicates that optimizing input energy and size gradation can reduce over-pulverization and improve yield 
+efficiency. In contrast, RM and RB particles display relatively stable strength-size relationships, suggesting that single-stage crushing 
+followed by sieving is sufficient to control particle size and avoid redundant energy consumption. These findings provide practical 
+guidance for regulating breakage energy, controlling target particle-size distributions, and improving the efficiency and uniformity of 
+recycled aggregate production.
+From a material design perspective, distinct breakage patterns and strength distributions among RC, RM, and RB particles reflect 
+the decisive role of microstructural features in governing macroscopic mechanical behavior. By tailoring mixture proportions and 
+gradation based on each type’s breakage characteristics, recycled concrete and subgrade materials can achieve an optimal balance 
+between strength and workability. In particular, enhancing interfacial bonding and controlling coarse aggregate content in RC-based 
+
+

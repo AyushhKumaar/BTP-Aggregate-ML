@@ -1,0 +1,14 @@
+Fig. 11. Through the analysis of their 
+particle sphericity, the relationship between particle sphericity and 
+crushing strength can be expressed in the form of an exponential Eq. (8), 
+where p and q are fitting parameters. 
+σf = pΦq
+(8) 
+It can be seen from Fig. 11 that the single particle crushing strength 
+of RC is greater than that of RB and RM for particles of comparable 
+sphericity, which is consistent with the conclusions obtained in Section 
+4.2. It is found from Fig. 11 that as the particle sphericity increases, the 
+crushing strength of RA also increases. When the sphericities of RB, RC, 
+and RM are 0.531, 0.551, and 0.542, their crushing strengths are 
+1.17 MPa, 2.74 MPa, and 1.12 MPa, respectively. However, when the 
+particle sphericity increases to 0.856, 0.837, and 0.847, the

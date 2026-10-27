@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# ML & Training artifacts
+catboost_info/
+*.tmp
+
+# IDEs & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,179 @@
+Construction and Building Materials 439 (2024) 137363
+11
+In summary, similar to particle crushing strength, the single-particle 
+crushing energy also follows an exponential function relationship with 
+particle sphericity, and it fits well (correlation coefficient (R2>0.90). 
+Therefore, the single-particle crushing strength and crushing energy of 
+RA of any sphericity can be predicted through particle Φ using Eqs. (8) 
+and (10). 
+5. Numerical results and discussion 
+By analyzing single-particle crushing experiments of RA with 
+different shapes (sphericity Φ), the average crushing strength and en­
+ergy can be predicted using Eqs. (8) and (10). The PFC3D discrete 
+element numerical simulation is employed to evaluate the crushing 
+strength and energy of single particles with sphericities Φ=0.4–0.6, 
+0.6–0.8, and 0.8–1.0, all within a similar particle size range 
+(19–37.5 mm). These simulations are then compared with experiments 
+to validate the parameters. Subsequently, these parameters are extended 
+to single particles of other shapes. Here, Φ=0.40, 0.60, 0.80 and 1.0 are 
+taken as examples (but not limited to this), and their crushing properties 
+are simulated and compared with the predictions of Eqs. (8) and (10). 
+5.1. Single-particle crushing process 
+In order to explain key processes such as single-particle crushing 
+development and fracture evolution in detail, RB particles with a 
+sphericity of Φ = 0.70 are selected as typical representatives in this 
+section. The evolution process of particle crushing is shown in Figs. 15 
+and 16, and the corresponding stress-strain curve is shown in Fig. 17. 
+This choice is primarily based on the following two reasons. First, the 
+sphericity of Φ = 0.70 lies in the middle of the sphericity range (0.4–1.0) 
+examined in this study, making it a better representative of the crushing 
+behavior across different sphericities. Second, given that the simulation 
+processes across all sphericities exhibit similar overall trends, selecting 
+an instance with intermediate sphericity helps avoid lengthiness and 
+repetition. 
+Figs. 15(a) and 16(a) show the particle just before the start of 
+loading, in contact with the loading plate (ending the pre-loading state), 
+with only a few fragments and noticeable force chains distributed at 
+both ends of the loading plate and base. This corresponds to point a in 
+the stress-strain curve in Fig. 17. As loading begins, initially, there is no 
+significant change in the appearance and force state of the particle, as 
+shown in Fig. 15(b) and point b in Fig. 17, though the number of frag­
+ments and force chains increases internally compared to the previous 
+stage (Fig. 16(b)). Subsequently, cracks start to appear after a period of 
+loading (Fig. 15(c)), and the first peak on the stress-strain curve is 
+observed at point c in Fig. 17. At this stage, some fragments penetrate 
+through, with force chains mainly concentrated around the fragments 
+(Fig. 16(c)). After the first peak, the particle undergoes breaking, leading 
+to the second (point d in Fig. 17) and third (point e in Fig. 17) peak 
+points. The corresponding particle appearance and the distribution of 
+internal fragments and force chains expand further (Fig. 16(d)(e) and 15 
+(d)(e)). The particle is essentially crushed upon reaching the system’s 
+maximum stress peak (point f in Fig. 17), with complete penetration of 
+fragments and an expanded range of force chains (Fig. 16(f)), eventually 
+breaking into 3–4 pieces, as shown in Fig. 15(g)-(j) and points g-j in 
+Fig. 17. After peak f, the distribution of fragments and force chains ex­
+pands from the penetrating central crack towards the right side (Fig. 16 
+(g)-(j)), indicating that after complete breaking, the largest fragment on 
+the right side bears the main load, leading to further internal cracking. 
+Comparing the stress-strain curves of the single particle crushing test 
+results (left side of Fig. 17) reveals that the numerical simulation results 
+of this study basically match the experimental test results, with only a 
+1.05 % difference in the stress peak values. Additionally, the post- 
+crushing crushing mode of the numerical simulation closely aligns 
+with those observed in the experimental load crushing tests (Section 4.1, 
+distribution of crushing), as shown on the right side of Fig. 17 (top view). 
+This further demonstrates the feasibility of the numerical simulation 
+method presented in this study. 
+RB-L RB-M RB-U
+200
+400
+600
+800
+1000
+1200
+1400
+RB-L
+RB-M
+RB-U
+Ef
+)
+J
+m
+(
+(a)
+RC-L RC-M RC-U
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+RC-L
+RC-M
+RC-U
+Ef
+)
+J
+m
+(
+(b)
+RM-L RM-M RM-U
+0
+300
+600
+900
+1200
+1500
+1800
+RM-L
+RM-M
+RM-U
+Ef
+)
+J
+m
+(
+(c)
+Fig. 13. The crushing energy of RA particles in different particle shape intervals, L, M and U represent Φ = 0.4–0.6, Φ = 0.6–0.8 and Φ = 0.8–1.0, respectively. (a) 
+RB; (b) RC; (c) RM. 
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+Φ
+ RB
+RB
+Ef
+)
+J
+m
+(
+Ef =2061.15Φ1.28
+R2=0.91
+Nearly spherical
+Ef =1511.07Φ2.16
+R2=0.97
+Ef =2041.24Φ2.66
+R2=0.96
+Flat spherical
+Subspherical
+ RC
+RC
+ RB
+RB
+Fig. 14. The relationship between single-particle shape and crushing energy.  
+P. Cai et al.                                                                                                                                                                                                                                      

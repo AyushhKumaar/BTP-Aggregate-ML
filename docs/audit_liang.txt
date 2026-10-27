@@ -1,0 +1,433 @@
+***************** docs/liang2025_full.txt *****************
+=== PATTERN: Hiramatsu ===
+eaking in a certain direction. Building upon the Hertzian contact theory 
+framework, the characteristic breakage strength can be determined using the Hiramatsu-Oka equation [13], later refined by Wang 
+et al. [41]: 
+σf = 0.9Ff
+d2
+0
+(1) 
+Table 1 
+Physical properties of the materials.
+physical index
+Apparent densityρa（g/cm3）
+Bulk densityρb（g/cm3）
+Specific gravity 
+GS
+RM
+2.028
+1.113
+2.028
+RC
+2.217
+1.296
+2.217
+RB
+2.140
+1.063
+2.140
+L. Liang et al.                                                                                                        
+--------------------------------------------------
+ence on particle breakage, d0 can be calculated as d0 =̅̅̅̅̅
+SI
+√
+[6]; When the short axis of the particles is 
+placed parallel on the loading plate, Hiramatsu and Oka [13] proposed that d0 = S; For massive particles, due to their similar di­
+mensions in the three axial directions, Wu et al. [51] proposed that d0 = (L+I+S)/3 or d0 =̅̅̅̅̅̅̅
+LSI
+√
+. On this basis, Bagheri et al. [3]
+revised the formula as d0 = 0.887̅̅̅̅̅̅̅
+LIS
+3√
+based on the rough and porous characteristics of the particle surface. Using this method, 
+results were compared with 
+--------------------------------------------------
+.” Proceedings of the 8th International Conference on Traffic 
+Transportation and Civil Architecture (ICTTCA 2025)., Atlantis Press: 174–186.
+[13] Y. Hiramatsu, Y. Oka, Determination of the tensile strength of rock by a compression test of an irregular test piece, Int. J. Rock. Mech. Min. Sci. Geomech. Abstr. 
+3 (2) (1966) 89–90.
+[14] B. Indraratna, C. Rujikiatkamjorn, W. Salim, Advanced rail geotechnology–ballasted track, CRC press, London, 2011.
+[15] B. Indraratna, Q.D. Sun, S. Nimbalkar, Observed and predicted behaviour of rail ballast under
+--------------------------------------------------
+=== PATTERN: Weibull ===
+ngle-particle compression tests was conducted. The characteristic breakage 
+strength and strength variability were quantitatively evaluated using the Weibull distribution 
+function. Fractal dimension analysis was performed by comparing gradation curves before and 
+after breakage. According to the experiments, the particle size and type have a coupled effect on 
+single particle breakage behaviors of construction waste. The Weibull modulus (m) and fractal 
+dimensions (D) show that with the increase of particle size, the breakage strength dispersi
+--------------------------------------------------
+age. According to the experiments, the particle size and type have a coupled effect on 
+single particle breakage behaviors of construction waste. The Weibull modulus (m) and fractal 
+dimensions (D) show that with the increase of particle size, the breakage strength dispersion of 
+RM and RB decreases, whereas that of RC increases. Particles with the lower breakage strength 
+exhibited a greater propensity for fragmentation, demonstrating pronounced fractal character­
+istics consistent with established construction waste fractal models. Based on t
+--------------------------------------------------
+andstone particles. Based on the particle-size distribution before and after 
+breakage, different materials exhibited distinct fractal dimensions and Weibull modulus, and the single-particle breakage strength 
+showed a clear size effect. Yin et al. [53] carried out a single-particle compression test of course calcareous sand particles, and the 
+results showed that the breakage strength decreased with the increase of particle size. Wu et al. [51] performed morphology-dependent 
+fragmentation analyses on 200 coral sand particles, establishing fou
+--------------------------------------------------
+5–13.2 mm) exhibited maximum breakage resistance, corresponding to the D value of 2.588. Systematic analysis 
+revealed an inverse correlation between Weibull modulus (m=2.0–2.2) and particle size, indicating enhanced strength heterogeneity 
+and pronounced size dependence under controlled loading conditions. Oskooei et al. [31] studied the effect of particle shape on the 
+breakage behavior of 4.75 mm to 19 mm recycled concrete aggregate based on a discrete element model, founding that Weibull 
+modulus decreased with the increase of strength vari
+--------------------------------------------------
+e effect of particle shape on the 
+breakage behavior of 4.75 mm to 19 mm recycled concrete aggregate based on a discrete element model, founding that Weibull 
+modulus decreased with the increase of strength variability. Zhang et al. [58] evaluated the breakage characteristics of three con­
+struction waste materials (gravel, brick and mortar) with a particle size of 25 mm. According to the results, the single particle breakage 
+strength of gravel was the strongest, while mortar was the weakest. Cai et al. [5] studied the particle shape and break
+--------------------------------------------------
+construction and demolition waste (CDW) aggregates. Gao 
+[12] reported that the breakage strength of recycled concrete and brick aggregates follows a Weibull distribution with a clear size 
+dependence. Yosri et al. [54] highlighted that particle breakage of CDW under varying compaction and moisture conditions strongly 
+influences their macroscopic strength and stiffness. Moreover, John et al. [16] confirmed that the synergistic interaction of CDW types 
+Fig. 2. Construction waste particles.
+L. Liang et al.                                       
+--------------------------------------------------
+sing a servo-controlled universal testing machine (UTM), with 
+breakage strength determined from peak load values in force-displacement profiles. The Weibull statistical framework was employed 
+to derive characteristic strength parameters, with reliability analysis conducted using survival probability curves to quantify strength 
+variability across experimental conditions. Gradation analysis before and after fragmentation was performed using standardized sieve 
+protocols, with fractal dimensions calculated via fractal theory to quantify comminu
+--------------------------------------------------
+ches, showing consistent trends in breakage strength, with less than 5 % 
+difference in characteristic strength and a slight (≈5–8 %) increase in the Weibull modulus, indicating reduced dispersion, and this 
+method can better describe the three-dimensional stress situation and effectively control the average error.
+The survival probability under different load of particle aggregate is obviously different due to the difference of individual particle 
+breakage strength. Based on this, Weibull proposed a statistical method for brittle materials na
+--------------------------------------------------
+=== PATTERN: Eq. ===
+ as the corresponding particle breakage stress when the survival probability is 37 % [25] (Ps=1/e); m is Weibull modulus and 
+it can be calculated by Eq. (3): 
+ln
+(
+ln 1
+Ps
+)
+= mln
+( σf
+σf0
+)
+(3) 
+The m can be used to characterize the dispersion or variability of particle breakage strength. A larger difference of m generally 
+indicates a smaller dispersion of the strength distribution, and vice versa.
+3. Experimental results and discussion
+3.1. Single-particle fractal dimension
+According to fractal theory, the essence of single particle breakag
+--------------------------------------------------
+le breakage is the change of particle size grading curve, and particle size 
+grading curve follows fractal theory [9,49]: 
+F(d) = ( d
+dM
+)3−D
+(4) 
+In Eq. (4): F(d) refers to the mass proportion of particles less than a certain size range; dM is the maximum size of the crushed 
+particles; D is the fractal dimension.
+The fractal dimension (D∈[2,3)) serves as a quantitative measure of fragmentation complexity, characterizing the power-law 
+relationship between particle size distribution and fragmentation energy dissipation. During the particle bre
+--------------------------------------------------
+e materials under identical size fractions. The double- 
+logarithmic gradation curves yielded slopes of 0.66 (RM), 0.74 (RB), and 0.88 (RC). Applying Eq. (4) to the single-particle 
+compression test data, the calculated D values for RM, RB, and RC were 2.34, 2.26, and 2.12, respectively. These results align well 
+with previous studies, which reported D values of approximately 2.34 for construction slag [42], 2.50–2.60 for mixed demolition waste 
+[50], and 2.31–2.40 for recycled aggregates [5]. The measured range of fractal dimensions (2.12–2.34
+--------------------------------------------------
+=== PATTERN: Table 1 ===
+action) as illustrated in Fig. 2. This range ensures test stability and data 
+comparability. The physical properties of these materials are listed in Table 1.
+2.2. Test instrument and scheme
+An electronic universal testing machine (Fig. 3) equipped in the laboratory was used to carry out the single-particle compression 
+test. A displacement-controlled loading was applied at 1 mm/min loading rate with 50 kN capacity load cell (ISO 7500–1 Class 0.5 
+certified), maintaining a force measurement uncertainty with ±0.8 % throughout the tests. Three cr
+--------------------------------------------------
+e characteristic breakage strength can be determined using the Hiramatsu-Oka equation [13], later refined by Wang 
+et al. [41]: 
+σf = 0.9Ff
+d2
+0
+(1) 
+Table 1 
+Physical properties of the materials.
+physical index
+Apparent densityρa（g/cm3）
+Bulk densityρb（g/cm3）
+Specific gravity 
+GS
+RM
+2.028
+1.113
+2.028
+RC
+2.217
+1.296
+2.217
+RB
+2.140
+1.063
+2.140
+L. Liang et al.                                                                                                                                                                                               
+--------------------------------------------------
+=== PATTERN: Table 2 ===
+y of their spatial distribution increase, thereby enhancing the variability of breakage strength.
+3.2.2. Effect of particle type on breakage strength
+Table 2 shows that within the 4.75–25 mm particle size range, the average characteristic strength σf0 of RM, RB, RC were 2.97 MPa, 
+5.38 MPa, and 6.28 MPa, respectively. The fractal dimension analysis confirms that RC exhibits the highest σf0, while RM showed the 
+lowest σf0, indicating higher susceptibility to breakage. In addition, it can be seen that the average m of RM, RB and RC were 2.73, 2.
+--------------------------------------------------
+nally, the curve 
+declines gradually after breaking. There are two load peak points on the curve, and at the corresponding peak points, the particle 
+Table 2 
+Test results.
+Material group
+Particle size 
+(mm)
+Characteristic strength 
+(σf0/MPa)
+Average characteristics strength 
+(σf0/MPa)
+Weibull modulus 
+(m)
+Average Weibull modulus (m)
+RM
+RM-1
+4.75–10
+3.03
+2.97
+2.70
+2.73
+RM-2
+10–20
+2.97
+2.73
+RM-3
+20–25
+2.91
+2.76
+RB
+RB-1
+4.75–10
+6.35
+5.83
+2.58
+2.84
+RB-2
+10–20
+6.21
+2.61
+RB-3
+20–25
+4.92
+3.32
+RC
+RC-1
+4.75–10
+6.51
+6.28
+1.58
+1.38
+RC-2
+10–20
+6.28
+1.30
+R
+--------------------------------------------------
+re small 
+fragments, the D values of RM and RB are larger than those of RC, as shown in Fig. 4.
+Combining the test results as presented in Fig. 6 and Table 2, it seems that the average characteristic strength σf0 is correlated with 
+the breakage mode. In the intermediate splitting mode, the particle maintains integrity before breakage, leading to a relatively high 
+Fig. 6. Statistics of particle breakage mode of construction waste.
+L. Liang et al.                                                                                                   
+--------------------------------------------------
+=== PATTERN: Table 3 ===
+ modes for construction waste particulates were identified: intermediate splitting (Mode I), mixed breakage 
+(Mode II), and bulk breakage (Mode III). Table 3 summarizes the detailed morphological and mechanical characteristics for each 
+breakage mode： 
+• Intermediate splitting (Mode I): In the initial stage, the load increases with the increase of displacement linearly, and then decreases 
+sharply with particle breakage. The force-displacement curve is relatively smooth with a few jagged and convex points. Generally, 
+only one single peak point
+--------------------------------------------------
+                                                                        
+Case Studies in Construction Materials 23 (2025) e05603 
+8 
+
+
+=== PAGE 9 ===
+Table 3 
+The particle breakage mode of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+9 
+
+
+=== PAGE 10 ===
+splits into 2–3 fragments. With a few cracks
+--------------------------------------------------
+=== PATTERN: Table 4 ===
+=== PATTERN: fractal ===
+East China Jiaotong University, Nanchang, Jiangxi 330013, 
+China
+A R T I C L E I N F O
+Keywords:
+Construction waste
+Single particle breakage strength
+Fractal model
+Breakage mode
+A B S T R A C T
+Construction waste is characterized by heterogeneous type, irregular morphology, and complex 
+internal architecture. The primary constituents include recycled mortar (RM), recycled brick 
+(RB), and recycled concrete (RC). To systematically investigate the comprehensive influence of 
+different particle types and particle sizes on the breakage behavior of 
+--------------------------------------------------
+was conducted. The characteristic breakage 
+strength and strength variability were quantitatively evaluated using the Weibull distribution 
+function. Fractal dimension analysis was performed by comparing gradation curves before and 
+after breakage. According to the experiments, the particle size and type have a coupled effect on 
+single particle breakage behaviors of construction waste. The Weibull modulus (m) and fractal 
+dimensions (D) show that with the increase of particle size, the breakage strength dispersion of 
+RM and RB decreases, wher
+--------------------------------------------------
+periments, the particle size and type have a coupled effect on 
+single particle breakage behaviors of construction waste. The Weibull modulus (m) and fractal 
+dimensions (D) show that with the increase of particle size, the breakage strength dispersion of 
+RM and RB decreases, whereas that of RC increases. Particles with the lower breakage strength 
+exhibited a greater propensity for fragmentation, demonstrating pronounced fractal character­
+istics consistent with established construction waste fractal models. Based on the force- 
+displacement 
+--------------------------------------------------
+ whereas that of RC increases. Particles with the lower breakage strength 
+exhibited a greater propensity for fragmentation, demonstrating pronounced fractal character­
+istics consistent with established construction waste fractal models. Based on the force- 
+displacement characteristics and fragmentation patterns, three distinct breakage modes were 
+identified: intermediate splitting, mixed breakage, and bulk breakage. The proportions of 
+different breakage modes varied with particle types and sizes. In general, as particle size in­
+creases, t
+--------------------------------------------------
+ 
+exhibited a greater propensity for fragmentation, demonstrating pronounced fractal character­
+istics consistent with established construction waste fractal models. Based on the force- 
+displacement characteristics and fragmentation patterns, three distinct breakage modes were 
+identified: intermediate splitting, mixed breakage, and bulk breakage. The proportions of 
+different breakage modes varied with particle types and sizes. In general, as particle size in­
+creases, the dominant breakage mode of RM and RB transitions from bulk breakage to 
+--------------------------------------------------
+avior of mudstone and sandstone particles. Based on the particle-size distribution before and after 
+breakage, different materials exhibited distinct fractal dimensions and Weibull modulus, and the single-particle breakage strength 
+showed a clear size effect. Yin et al. [53] carried out a single-particle compression test of course calcareous sand particles, and the 
+results showed that the breakage strength decreased with the increase of particle size. Wu et al. [51] performed morphology-dependent 
+fragmentation analyses on 200 coral sand part
+--------------------------------------------------
+asting techniques on recycled construction waste, derived 
+particle-size distribution curves through sieve analysis and the results revealed that the fractal dimensions (D) ranging from 2.50 to 
+2.60. Arulrajah et al. [2] quantified D values for four kinds of construction wastes: recycled concrete aggregate (RCA) at 2.61, recycled 
+Fig. 1. Typical particle breakage mechanisms of recycled and natural aggregates.
+L. Liang et al.                                                                                                                        
+--------------------------------------------------
+
+
+=== PAGE 3 ===
+asphalt pavement (RAP) at 2.52, crushed brick (CB) at 2.61, and waste excavation rock (WR) at 2.59, confirming the applicability of 
+fractal theory on construction waste breakage processes. Oskooei et al. [30] through controlled single-particle compression tests that 
+blocky particles (9.5–13.2 mm) exhibited maximum breakage resistance, corresponding to the D value of 2.588. Systematic analysis 
+revealed an inverse correlation between Weibull modulus (m=2.0–2.2) and particle size, indicating enhanced strength heterogeneity 
+and
+--------------------------------------------------
+=== PATTERN: crushing strength ===
+egates and cement with recycled content, Constr. Build. Mater. 234 (2020) 117336.
+[8] Y. Erzin, A. Patel, D.N. Singh, et al., Factors influencing the crushing strength of some Aegean sands, Bull. Eng. Geol. Environ. 71 (3) (2012) 529–536.
+[9] I. Einav, Breakage mechanics—part I: theory, J. Mech. Phys. Solids 55 (6) (2007) 1274–1297.
+[10] J.Y. Fan, S.F. Fan, Z.X. Yan, Y.Z. Yuan, H.Y. Zhu, Q. Zhang, Study on the engineering characteristics and application of construction waste expansive soil backfill 
+foundation, J. Xi’ Univ. Archit. Technol. 52 
+--------------------------------------------------
+f construction waste particles under vibration compaction. Hans J. Civ. Eng. 13 (9) (2024) 
+1649–1657.
+[12] Gao, Q., (2025) “Study on single-particle crushing strength–size effect of recycled aggregate.” Proceedings of the 8th International Conference on Traffic 
+Transportation and Civil Architecture (ICTTCA 2025)., Atlantis Press: 174–186.
+[13] Y. Hiramatsu, Y. Oka, Determination of the tensile strength of rock by a compression test of an irregular test piece, Int. J. Rock. Mech. Min. Sci. Geomech. Abstr. 
+3 (2) (1966) 89–90.
+[14] B. Indraratn
+--------------------------------------------------
+bonding performance, Constr. Build. Mater. 458 (2024) 139609.
+[38] J.W. Shen, B. Zhou, R. Fu, Q. Ku, W.B. Wang, Experimental study on single particle crushing strength and patterns of calcareous sand, Rock. Soil Mech. 43 (S1) 
+(2022) 312–320.
+[39] E.D. Sneed, R.L. Folk, Pebbles in the lower Colorado River, Texas a study in particle morphogenesis, J. Geol. 66 (2) (1958) 114–150.
+[40] Y. Tang, Z.F. Qiu, W.J. Deng, Research of crushing characteristics and strength characteristics considering single particle crushing mode, Water Resour. 
+Hydropower
+--------------------------------------------------
+s characteristics of calcareous 
+sand particles, Chin. J. Geotech. Eng. 43 (6) (2021) 1029–1038.
+[42] Y.D. Wang, y. Fractal theory of single particle crushing strength and compression deformation of coarse granular materials, Ph.D. dissertation., Shanghai Jiao 
+Tong Universit, China, Shanghai, 2017.
+[43] C.Q. Wei, Q.L. Deng, Study on moisture content of gravel soil based on large-scale direct shear test, Low. Temp. Archit. Technol. 40 (2) (2018) 126–128, 142.
+[44] Y.X. Wei, Study on the application of construction waste in high-way subgrade, Tr
+--------------------------------------------------
+of compactness, Powder Technol. 339 (2018) 922–929.
+[51] X.H. Wu, Y.Q. Cai, S.F. Xu, Y.C. Zhang, Q.X. Wang, Z. Wang, Effects of size and shape on the crushing strength of coral sand particles under diametral 
+compression test, Bull. Eng. Geol. Environ. 80 (2) (2021) 1829–1839.
+[52] D.Y. Yang, M. Liu, Z.M. Ma, Properties of the foam concrete containing waste brick powder derived from construction and demolition waste, J. Build. Eng. 32 
+(2020) 101509.
+[53] F.S. Yin, S. Li, X. Liu, Experimental study on single particle strength and compression pr
+--------------------------------------------------
+=== PATTERN: energy ===
+s a quantitative measure of fragmentation complexity, characterizing the power-law 
+relationship between particle size distribution and fragmentation energy dissipation. During the particle breakage process, the 
+trend of self-phase of broken shapes also increases, resulting in a higher fractal dimension.
+The fractal dimension of particles generally varies among different breakage tests. After the loading process of the single-particle 
+breakage test, the crushed fragments of RM, RB, and RC were collected, and their particle size distributions 
+--------------------------------------------------
+existing cracks and 
+pores both on the surface and within the interior, leading to relatively lower strength. Moreover, larger particles require more energy 
+to undergo breakage during loading. Once the applied load exceeds the particle’s breakage strength, the release of stored energy 
+Fig. 4. Fractal dimension of particle breakage of construction waste.
+L. Liang et al.                                                                                                                                                                                 
+--------------------------------------------------
+ticles require more energy 
+to undergo breakage during loading. Once the applied load exceeds the particle’s breakage strength, the release of stored energy 
+Fig. 4. Fractal dimension of particle breakage of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+6 
+
+
+=== PAGE 7 ===
+Fig. 5. Survival probabili
+--------------------------------------------------
+ste particles exhibit phase-dependent 
+and load-bearing characteristics during fragmentation, with failure mode transitions corresponding to specific energy dissipation 
+thresholds, but little attention has been paid to the relationship between particle breakage behavior and the force-displacement 
+response, which has received limited attention in previous studies. In this study, combining parameters such as the fractal model of 
+the crushed particles, the peak load value, the force-displacement curve (corresponding to the crack propagation of 
+--------------------------------------------------
+ller particles predominantly undergo bulk breakage, whereas larger ones mainly exhibit in­
+termediate splitting. This indicates that optimizing input energy and size gradation can reduce over-pulverization and improve yield 
+efficiency. In contrast, RM and RB particles display relatively stable strength-size relationships, suggesting that single-stage crushing 
+followed by sieving is sufficient to control particle size and avoid redundant energy consumption. These findings provide practical 
+guidance for regulating breakage energy, controlling 
+--------------------------------------------------
+le strength-size relationships, suggesting that single-stage crushing 
+followed by sieving is sufficient to control particle size and avoid redundant energy consumption. These findings provide practical 
+guidance for regulating breakage energy, controlling target particle-size distributions, and improving the efficiency and uniformity of 
+recycled aggregate production.
+From a material design perspective, distinct breakage patterns and strength distributions among RC, RM, and RB particles reflect 
+the decisive role of microstructural features in
+--------------------------------------------------
+ing is sufficient to control particle size and avoid redundant energy consumption. These findings provide practical 
+guidance for regulating breakage energy, controlling target particle-size distributions, and improving the efficiency and uniformity of 
+recycled aggregate production.
+From a material design perspective, distinct breakage patterns and strength distributions among RC, RM, and RB particles reflect 
+the decisive role of microstructural features in governing macroscopic mechanical behavior. By tailoring mixture proportions and 
+grada
+--------------------------------------------------
+sed and XRD/XRF quantitative characterization, multi-particle 
+contact tests, and numerical simulations to establish the relationships among breakage energy, fragment-size distribution, and fractal 
+dimension, incorporate 3D image reconstruction and quantitative morphology parameters (e.g., sphericity, aspect ratio) to further 
+evaluate the evolution of particle shape before and after breakage thereby improving the understanding and predictive modeling of 
+recycled aggregate breakage mechanisms.
+5. Conclusion
+This study systematically investiga
+--------------------------------------------------

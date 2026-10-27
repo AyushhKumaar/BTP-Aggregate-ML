@@ -1,0 +1,146 @@
+Construction and Building Materials 439 (2024) 137363
+10
+enhance the reliability of the test results, this study used the box plot in 
+the statistical method to statistically analyze the 9 sets (270 particles) of 
+crushing strength results of the test RA particles, as shown in Fig. 10. It 
+can be seen from Fig. 10 that the particle crushing strength data of the 
+test are evenly distributed, and the data are all within the upper and 
+lower limits of the box plot, with no abnormal values. In addition, the 
+mean absolute percentage error (MAPE) of each group of test particle 
+crushing strength data is calculated respectively, which is within 
+5.10 %-9.35 %. Referring to the relevant research [17], it is within a 
+reasonable range and can be accepted. In the follow-up study, the 
+average single-particle peak crushing strength is used to represent the 
+single-particle crushing strength σf. The distribution relationship be­
+tween the single-particle crushing strengths of RB, RC, and RM and 
+particle sphericity is shown in Fig. 11. Through the analysis of their 
+particle sphericity, the relationship between particle sphericity and 
+crushing strength can be expressed in the form of an exponential Eq. (8), 
+where p and q are fitting parameters. 
+σf = pΦq
+(8) 
+It can be seen from Fig. 11 that the single particle crushing strength 
+of RC is greater than that of RB and RM for particles of comparable 
+sphericity, which is consistent with the conclusions obtained in Section 
+4.2. It is found from Fig. 11 that as the particle sphericity increases, the 
+crushing strength of RA also increases. When the sphericities of RB, RC, 
+and RM are 0.531, 0.551, and 0.542, their crushing strengths are 
+1.17 MPa, 2.74 MPa, and 1.12 MPa, respectively. However, when the 
+particle sphericity increases to 0.856, 0.837, and 0.847, the crushing 
+strengths of RB, RC, and RM increase to 2.88 MPa, 6.47 MPa, and 
+3.20 MPa, respectively, representing increases of 146.15 %, 136.13 %, 
+and 185.71 %. When particles have a comparable size, greater sphericity 
+means the force is more evenly distributed across the particle, and a 
+greater force is required to crush the particle [23]. Furthermore, it can 
+be seen from Fig. 11 that using Eq. (8) to fit the relationship between 
+single-particle sphericity and crushing strength results in a curve that 
+fits well with the experimental results. The correlation coefficients R2 of 
+the relationship curves between single-particle sphericity and crushing 
+strength for RB, RC, and RM are 0.90, 0.99, and 0.98, respectively, 
+indicating a significant effect of particle shape. 
+4.4. Single-particle crushing energy 
+The crushing energy of a single particle is generally not directly 
+measurable through indoor experiments. However, it can be calculated 
+based on the single particle crushing force-displacement curve and the 
+definition of work [36], as shown in Fig. 12. The crushing energy of a 
+single particle can be expressed as the integral function of the crushing 
+force concerning displacement, as shown in Eq. (9). 
+Ef =
+∫Δ
+0
+FfdΔ
+(9)  
+where Ef is the single-particle crushing energy, and Δ is the 
+displacement. 
+Similar to the single-particle crushing strength, to further evaluate 
+the reliability of the single-particle crushing energy data calculated from 
+the test results, the box plot was used to statistically analyze the 9 sets 
+(270 particles) of crushing energy results of the single particle of the 
+recycled aggregate, as shown in Fig. 13. It can be seen from Fig. 13 that 
+the overall distribution of particle crushing energy data is relatively 
+uniform, and there is no abnormal value. The MAPE of each group of 
+particle crushing energy data is calculated, which is within 1.08 %- 
+10.1 %, and MAPE is within a reasonable range [17]. Besides, the par­
+ticle crushing energy is not the same even if the particles with the same 
+material properties. Therefore, the average single-particle crushing en­
+ergy under the same particle shape (sphericity Φ) is used to replace the 
+single-particle crushing energy Ef. The distribution relationship between 
+particle crushing energy and sphericity is shown in Fig. 14, which can be 
+expressed in the form of an exponential function as shown in Eq. (10), 
+where m and n are fitting parameters. 
+Ef = mΦn
+(10) 
+It is evident from Fig. 14 that under the same particle sphericity Φ 
+conditions, the single-particle crushing energy of RC is higher than that 
+of RB and RM. When d=19–37.5 mm, the single-particle crushing en­
+ergy of RC is 97.98 % and 64.22 % higher than that of RB and RM, 
+respectively. This is mainly because the main components forming the 
+RA are different. Generally, the strength of concrete blocks is higher 
+than that of bricks and mortar, so even RC, RB, and RM particles of the 
+same size and sphericity Φ contain more energy in RC particles, and 
+thus, more energy is released during crushing. Additionally, it can also 
+be found from Fig. 14 that under the same particle size, the closer the 
+particle shape is to a sphere, the greater the crushing energy of a single 
+RA particle. When Φ ranges from 0.4 to 0.6, the single-particle crushing 
+energies of RB, RC, and RM are 349.05 mJ, 912.42 mJ, and 316.62 mJ, 
+respectively. However, when Φ ranges from 0.8 to 1.0, the single- 
+particle crushing energies of RB, RC, and RM are 1288.89 mJ, 
+1598.63 mJ, and 1381.18 mJ, respectively, showing increases of 
+269.26 %, 75.21 %, and 336.23 %. 
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+1
+2
+3
+4
+5
+6
+7
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+ RB
+RB
+Φ
+σf =9.35Φ2.13
+R2=0.99
+σf =3.84Φ1.68
+R2=0.90
+ RC
+RC
+σf
+)
+a
+P
+M
+(
+σf =4.69Φ2.21
+R2=0.98
+Flat spherical
+Subspherical
+Nearly spherical
+ RM
+RM
+Fig. 11. The relationship between single-particle shape and crushing strength.  
+Fig. 12. Typical load-displacement relationship curve and work calculation 
+diagram of single particle crushing. 
+P. Cai et al.                                                                                                                                                                                                                                      

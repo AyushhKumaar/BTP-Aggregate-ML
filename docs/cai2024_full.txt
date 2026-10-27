@@ -1,0 +1,2520 @@
+=== PAGE 1 ===
+Construction and Building Materials 439 (2024) 137363
+Available online 10 July 2024
+0950-0618/© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+Quantifying the influence of single particle shape on crushing 
+characteristics of recycled aggregates: Experimental and numerical insights 
+Peichen Cai , Xuesong Mao *, Qian Wu *, Yueyue Wang 
+College of Highway, Chang’an University, Xi’an 710064, PR China   
+A R T I C L E I N F O  
+Keywords: 
+Particle shapes 
+Crushing modes 
+Fractal characteristics 
+Single-particle crushing strength 
+Crushing energy 
+Discrete element simulations 
+A B S T R A C T  
+Exploring the interplay between shapes and crushing characteristics of recycled aggregates (RA) is pivotal for 
+understanding their macro-mechanical behavior in bulk materials. This investigation quantitatively characterizes 
+the shapes of recycled bricks (RB), recycled concrete (RC), and recycled mortar (RM) particles, and assesses their 
+single-particle crushing characteristic. Key focus areas include the analysis of crushing modes, fractal attributes, 
+strength, and energy, supplemented by a comparative study using discrete element method (DEM) simulations to 
+predict outcomes for particles of specific sphericity. Findings reveal that the shapes of RA particles are mainly 
+disk, block, blade and bar, with particle size showing negligible influence on these forms. Crushing behaviors are 
+categorized into penetrating fracture, corner rupture, and overall fragmentation, closely linked to particle 
+sphericity. Notably, an increase in sphericity leads to a reduction in fractal characteristics of RA, refining the 
+gradation distribution from broad to narrow spectrums. An exponential relationship is identified between the 
+crushing strength of RA and particle sphericity, a pattern also mirrored in the correlation between crushing 
+energy and sphericity, thereby underscoring the significant influence of particle shape. These relationships 
+facilitate predictions regarding the crushing strength and energy based on sphericity. While numerical simula­
+tions broadly align with experimental data, discrepancies in the crushing energy of highly spheric particles 
+necessitate adjustments, resulting in a modified predictive equation for crushing energy. This work enriches the 
+understanding of RA crushing behavior, offering invaluable insights for predicting the single-particle strength 
+and deformation characteristics across different sphericities, thus advancing material engineering and recycling 
+practices.   
+1. Introduction 
+With the rapid development of highway construction in China, the 
+focus has shifted from building new roads to expanding and upgrading 
+existing ones, consequently generating a significant amount of con­
+struction and demolition waste [1,2]. Among them, the most represen­
+tative are bricks, concrete blocks and mortar, accounting for more than 
+95 % of the total construction and demolition waste [3]. Reusing recy­
+cled bricks (RB), recycled concrete (RB), and recycled mortar (RM) 
+processed from construction and demolition waste in infrastructure 
+projects is an effective alternative to traditional natural aggregates. This 
+approach reduces the construction carbon footprint and achieves addi­
+tional economic benefits [4,5]. However, compared to natural gravel 
+aggregates, recycled aggregates (RA) exhibit notable differences in 
+particle strength and a propensity for crushing [6]. Particle crushing 
+directly affects gradation, which in turn influences the overall strength, 
+deformation, and permeability characteristics of the materials [7,8]. RA 
+particles vary widely in size and shape, making their crushing process 
+complex and influenced by numerous factors, among which particle 
+shape is a significant determinant [9]. Given that a single particle rep­
+resents the smallest fundamental unit of RA, its crushing characteristics 
+are crucial for the aggregate’s overall macro-mechanical performance. 
+Thus, elucidating the crushing and strength characteristics of RA with 
+varying particle shapes is particularly essential for their practical 
+application in the construction of highway. 
+Current research on single-particle crushing characteristics primarily 
+focuses on brittle geomaterial particles, analyzing their crushing modes, 
+post-crushing particle size distribution, crushing strength, and influ­
+encing factors. Under external load, particles exhibit different crushing 
+modes. Tu et al. [10] categorized crushing modes into surface grinding, 
+local fracture, complete fracture, and complete breakage based on the 
+size variation of resulting fragments. Wang et al. [11] conducted 
+* Corresponding authors. 
+E-mail addresses: xuesongmao@chd.edu.cn (X. Mao), wuqian@chd.edu.cn (Q. Wu).  
+Contents lists available at ScienceDirect 
+Construction and Building Materials 
+journal homepage: www.elsevier.com/locate/conbuildmat 
+https://doi.org/10.1016/j.conbuildmat.2024.137363 
+Received 7 April 2024; Received in revised form 29 June 2024; Accepted 4 July 2024   
+
+
+=== PAGE 2 ===
+Construction and Building Materials 439 (2024) 137363
+2
+single-particle crushing tests on Leighton Buzzard sand and completely 
+weathered granite particles, capturing their crushing processes and 
+classifying 
+the 
+crushing 
+modes 
+into 
+splitting, 
+explosive, 
+explosion-splitting, and chipping. Furthermore, numerous scholars have 
+successfully applied fractal theory to analyze the particle size distribu­
+tion following crushing [12,13,14], providing an effective means to 
+describe the gradation curve distribution of post-crushed geomaterial 
+particles. Crucially, a quantitative mathematical model has been 
+established to link particle crushing strength with the gradation of 
+particle sizes, thereby describing the process of gradation change caused 
+by particle crushing. Zhou et al. [15] conducted numerical simulations 
+of single-particle crushing tests on five groups of rockfill particles with 
+different sizes, revealing a clear size effect on crushing strength. To 
+study the strength of coarse particles with larger diameters, Frossard 
+et al. [16] proposed a method based on size effect to estimate the size of 
+large rockfill particles reasonably. Meng et al. [17] simulated the 
+single-particle crushing process using the discrete element method, 
+extending the approach to larger particle sizes to provide a reference for 
+obtaining the strength of coarse-grained soil with large diameters. Zhao 
+et al. [18] performed in-situ compression tests on sand and granite 
+particles to study their crushing mechanisms, finding that particle 
+morphology and initial microstructure are the primary factors deter­
+mining crushing modes. Numerous studies [19,20,21,22] have system­
+atically investigated the factors influencing particle crushing, 
+demonstrating that it is affected by multiple factors, including loading 
+conditions, intrinsic particle strength, particle size, and shapes. Among 
+these, particle shapes play a significant role in determining the crushing 
+modes and strength. 
+Thus, while existing studies have produced considerable findings on 
+the crushing characteristics of brittle geomaterial particles, the diversity 
+of geomaterial particle shapes in practical use presents challenges. On 
+one hand, current research has not delved deeply into the relationship 
+between particle shape and crushing characteristics, and on the other 
+hand, it is difficult to study their macro-mechanical and deformation 
+characteristics through indoor experiments. Moreover, the focus of the 
+above studies has been mainly on the crushing characteristics of tradi­
+tional natural brittle materials, leaving a research gap for new types of 
+materials such as those derived from construction and demolition waste, 
+which hampers the resource reuse of these materials. To address this, the 
+present study first quantitatively characterizes the particle shape of RA 
+(RB, RC, and RM), and then conducts single-particle crushing tests on RA 
+with different particle shapes (sphericity), investigating their crushing 
+modes, fractal characteristics, crushing strength, and changes in crush­
+ing energy. Using the discrete element numerical method, the crushing 
+process of single particles with different sphericities is simulated and 
+compared with experimental data and prediction results to verify the 
+reliability of the numerical program. Finally, the program is extended to 
+specific particle sphericities to analyze their crushing strength and en­
+ergy, providing a theoretical basis for predicting the strength and 
+deformation of RA with different sphericity. 
+2. Quantitative characterization of RA single particle shapes 
+2.1. RA samples and single particle shape indicators 
+The materials selected for the experiment consist of recycled aggre­
+gates derived from the crushing of building demolition debris, sourced 
+from an urban village in Wenling City, Zhejiang Province, China. These 
+are primarily composed of RB, RC, and RM, accounting for over 95 % of 
+the material, as shown in Fig. 1. The characterization of irregular par­
+ticle shapes generally encompasses three levels [22,23]: contour shape, 
+concave-convexity, and surface texture. For large and irregular particles 
+such as RA, their shape characteristics can be described using two levels: 
+contour shape and concave-convexity. In this experiment, a precision 
+electronic vernier caliper (accuracy of 0.1 mm) was used to accurately 
+measure the length of each RA particle in three mutually perpendicular 
+directions: x, y, and z. The maximum value is denoted as L, the inter­
+mediate value as I, and the minimum value as S, as shown in Fig. 1(e). 
+The four common indicators were chosen to describe the shaped 
+differences of RA particles: elongation index (EI), flatness index (FI), 
+Domokos coefficient (Sf), and sphericity (Φ), calculated as per Eqs. (1), 
+(2), (3), and (4) respectively. To generalize the results, 45 particles of 
+three different recycled aggregates across various particle sizes 
+(4.75–9.5 mm, 9.5–19 mm, and 19–37.5 mm) were measured, totaling 
+405 particles (45×3×3=405). To characterize the dispersion of the 
+measured data of RA particle size and shape parameters, the sample 
+variance s2 was calculated in Table 1. The s2 is an unbiased estimate of 
+the overall variance, which is suitable for the case of only sample data. 
+According to the 405 samples provided in this study, the s2 calculated by 
+grouping was listed in Table 1. This result reflects the change of RA 
+particle size and shape parameter data points around the mean value. It 
+can be seen that with the increase of particle size, the discrete degree of 
+Fig. 1. RA particle samples and particle size measurement. (a) RB samples; (b) RC samples; (c) RM samples; (d) A precision electronic vernier caliper; (e) Quan­
+titative illustration of RA particle size. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 3 ===
+Construction and Building Materials 439 (2024) 137363
+3
+statistical results of particle size parameters of RA tends to be larger. 
+Except for Sf, the discrete degree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+Table 1 
+Statistical analysis of average shaped indicators of RA with different particle sizes.  
+Component categories 
+Particle size range(mm) 
+L(mm) 
+I(mm) 
+S(mm) 
+EI 
+FI 
+Sf 
+Φ 
+RB 
+4.75–9.5 
+14.07 
+(s2=0.064) 
+8.80 
+(s2=0.026) 
+5.42 
+(s2=0.016) 
+0.64 
+(s2=0.019) 
+0.64 
+(s2=0.033) 
+3.95 
+(s2=0.664) 
+0.63 
+(s2=0.013) 
+9.5–19 
+23.78 
+(s2=0.229) 
+16.76 
+(s2=0.084) 
+10.42 
+(s2=0.092) 
+0.73 
+(s2=0.024) 
+0.63 
+(s2=0.038) 
+3.74 
+(s2=0.340) 
+0.68 
+(s2=0.010) 
+19–37.5 
+35.80 
+(s2=0.546) 
+26.33 
+(s2=0.359) 
+16.09 
+(s2=0.335) 
+0.75 
+(s2=0.020) 
+0.63 
+(s2=0.052) 
+3.79 
+(s2=0.505) 
+0.69 
+(s2=0.016) 
+RC 
+4.75–9.5 
+13.0 
+(s2=0.057) 
+8.62 
+(s2=0.019) 
+5.64 
+(s2=0.011) 
+0.68 
+(s2=0.021) 
+0.67 
+(s2=0.026) 
+3.69 
+(s2=0.403) 
+0.66 
+(s2=0.010) 
+9.5–19 
+25.24 
+(s2=0.176) 
+17.78 
+(s2=0.067) 
+11.98 
+(s2=0.059) 
+0.72 
+(s2=0.017) 
+0.69 
+(s2=0.035) 
+3.56 
+(s2=0.247) 
+0.70 
+(s2=0.008) 
+19–37.5 
+36.07 
+(s2=0.538) 
+25.09 
+(s2=0.241) 
+16.76 
+(s2=0.269) 
+0.71 
+(s2=0.025) 
+0.68 
+(s2=0.034) 
+3.65 
+(s2=0.295) 
+0.69 
+(s2=0.013) 
+RM 
+4.75–9.5 
+12.38 
+(s2=0.040) 
+8.56 
+(s2=0.028) 
+5.51 
+(s2=0.012) 
+0.70 
+(s2=0.021) 
+0.66 
+(s2=0.015) 
+3.61 
+(s2=0.170) 
+0.68 
+(s2=0.009) 
+9.5–19 
+23.33 
+(s2=0.102) 
+16.67 
+(s2=0.102) 
+10.20 
+(s2=0.103) 
+0.73 
+(s2=0.024) 
+0.63 
+(s2=0.043) 
+3.77 
+(s2=0.362) 
+0.67 
+(s2=0.010) 
+19–37.5 
+34.13 
+(s2=0.346) 
+26.18 
+(s2=0.356) 
+15.58 
+(s2=0.280) 
+0.78 
+(s2=0.021) 
+0.62 
+(s2=0.044) 
+3.73 
+(s2=0.440) 
+0.70 
+(s2=0.011) 
+Note: s2 represents the sample variance. 
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Block
+Bar
+Blade
+ 4.75-9.5 mm
+ 9.5-19 mm
+ 19-37.5 mm
+I
+F
+EI
+Disk
+(a)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Block
+Bar
+Blade
+ 4.75-9.5 mm
+ 9.5-19 mm
+ 19-37.5 mm
+I
+F
+EI
+Disk
+(b)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Block
+Bar
+Blade
+ 4.75-9.5 mm
+ 9.5-19 mm
+ 19-37.5 mm
+I
+F
+EI
+Disk
+(c)
+Fig. 2. Classification of particle shape of RA within different particle size ranges. (a) RB; (b) RC; (c) RM.  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 4 ===
+Construction and Building Materials 439 (2024) 137363
+4
+Φ =̅̅̅̅̅
+IS
+L2
+3
+√
+(4)  
+where L represents the longest axis of the particle in millimeters (mm); I 
+denotes the intermediate axis of the particle in millimeters (mm); S 
+signifies the shortest axis of the particle in millimeters (mm). 
+2.2. Quantitative characterization of single-particle shapes 
+Based on the basic shape parameters of particles obtained through 
+precise measurements, a bivariate method was employed to classify the 
+shapes of RA particles from RB, RC, and RM. The statistical results are 
+illustrated in Fig. 2. As can be seen from Fig. 2, the shapes of RA particles 
+mainly include disk, block, blade and bar. Among these, the particle 
+shape distribution of RB is the most widespread. The distribution of RC 
+particle shape is relatively concentrated around the point (EI=2/3, 
+FI=2/3). In addition, the particle size of RA has no effect on the particle 
+shape. For example, the particle shape distributions of RB, RC and RM 
+with different particle sizes are mixed, and there is no significant 
+difference. 
+Fig. 3 presents the frequency distribution of the particle shape 
+parameter Φ and Domokos coefficient Sf for RA. It is evident from Fig. 3 
+that the description of particle sphericity Φ follows a Gaussian distri­
+bution, while the description of Domokos coefficient Sf follows an 
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.00
+0.11
+0.22
+0.33
+0.44
+0.56
+0.67
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ RB   Gauss fitting curve
+RC   Gauss fitting curve
+RM  Gauss fitting curve
+(a)
+f = f0+A·e-(Φ-Φ
+0)2/2·w2
+R2 = 0.98
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.00
+0.11
+0.22
+0.33
+0.44
+0.56
+0.67
+R2 = 0.96
+f = f0+A·e-(Φ-Φ
+0)2/2·w2
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ RB
+Gauss fitting curve
+ RC Gauss fitting curve
+ RM Gauss fitting curve
+(b)
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.00
+0.11
+0.22
+0.33
+0.44
+R2 = 0.85
+f = f0+A·e-(Φ-Φ
+0)2/2·w2
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ RB   Gauss fitting curve
+ RC   Gauss fitting curve
+ RM  Gauss fitting curve
+(c)
+3.0
+3.5
+4.0
+4.5
+5.0
+5.5
+6.0
+6.5
+0.00
+0.11
+0.22
+0.33
+0.44
+0.56
+0.67
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sf
+ RB   Allometricl fitting curve
+ RC   Allometricl fitting curve
+ RM  Allometricl fitting curve
+(d)
+f = a·Sf
+b
+R2 = 0.97
+3.0
+3.5
+4.0
+4.5
+5.0
+5.5
+6.0
+6.5
+0.00
+0.11
+0.22
+0.33
+0.44
+0.56
+0.67
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sf
+ RB  Allometricl fitting curve
+ RC  Allometricl fitting curve
+ RM Allometricl fitting curve
+(e)
+f = a·Sf
+b
+R2 = 0.96
+3.0
+3.5
+4.0
+4.5
+5.0
+5.5
+6.0
+6.5
+0.00
+0.11
+0.22
+0.33
+0.44
+0.56
+0.67
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sf
+ RB  Allometricl fitting curve
+ RC  Allometricl fitting curve
+ RM Allometricl fitting curve
+(f)
+f = a·Sf
+b
+R2 = 0.98
+Fig. 3. Frequency distribution map of particle shape parameters. (a)(d) d=4.75–9.5 mm; (b)(e) d=9.5–19 mm; (c)(f) d=19–37.5 mm.  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 5 ===
+Construction and Building Materials 439 (2024) 137363
+5
+exponential distribution. From Fig. 3(a)(b)(c), it is observed that the 
+distribution of RA particle sphericity Φ ranges between 0.4 and 1.0, with 
+the highest frequency in the Φ=0.5–0.7 region. Moreover, as the particle 
+size increases, the frequency distribution range of the particle sphericity 
+becomes more uniform, which results in a correlation coefficient of the 
+Gaussian distribution of only 0.85 for the particle size d=19–37.5 mm. 
+From Fig. 3(d)(e)(f), it is known that the Domokos coefficient Sf values 
+range between 3.0 and 6.6, but are mainly concentrated between 3.0 
+and 4.5, accounting for more than 90 % of the distribution. This in­
+dicates that the anisotropy of the main axis of the RA particles used in 
+this study is small, meaning that the majority of particle shapes are 
+nearly spherical. 
+In summary, the flatness of the RA particles used in this study ranges 
+between 0.30 and 0.96, the elongation ratio between 0.29 and 0.98, the 
+Domokos coefficient values between 3.03 and 6.58, and the sphericity 
+between 0.42 and 0.93. Simultaneously, the impact of particle size on 
+particle shape is minimal. Therefore, in the subsequent single-particle 
+crushing tests, particles from the same size range will be selected for 
+testing. 
+3. Single-particle crushing experiments and discrete element 
+modeling 
+3.1. Single-particle crushing experiment 
+Single-particle crushing tests were conducted on three types of RA. 
+The testing apparatus was the MTS universal testing machine in the 
+Geotechnical Laboratory of Chang’an University (Fig. 4(a)), with a 
+maximum load capacity of 100 kN. The testing machine has a maximum 
+load capacity of 100 kN and operates in displacement control mode. 
+This study carried out single-particle crushing tests under different 
+particle shapes for RB, RC, and RM, with the loading method shown in 
+Fig. 4(b). To eliminate the influence of particle size on particle crushing, 
+particles with a particle size range of 19–37.5 mm were selected. The 
+maximum particle size range of RA was selected because the larger 
+particles had a higher crushing probability in the actual engineering 
+particle group. The specific experimental design is presented in Table 2, 
+totaling 270 particles. For each set, 30 tests were conducted to meet the 
+error requirements [24]. Meanwhile, significant differences in the 
+sphericity of RA particle shapes were found in the statistics of Section 2. 
+Therefore, sphericity (Φ) was chosen as the index for dividing the 
+appearance shapes of single particles, and single-particle crushing tests 
+were conducted on particles in three categories: sphericity Φ=0.4–0.6 
+(Flat spherical), 0.6–0.8 (Subspherical), and 0.8–1.0 (Nearly spherical). 
+The specific single-particle crushing test process is as follows.  
+● First, before conducting the single-particle crushing test, carefully 
+place the particle sample at the center of the bottom plate of the 
+universal testing machine to ensure the sample is stable and not tilted 
+(optimal stability). Next, slowly adjust the loading plate of the 
+testing machine, allowing it to gradually descend until it just makes 
+contact with the top surface of the particle sample. Once the loading 
+plate is in full contact with the particle surface, set the loading speed 
+of the testing machine to a constant rate of 1 mm/min. This ensures 
+the acquisition of uniform and continuous force-displacement data. 
+Among them, the loading rate setting method follows the approach 
+used in References [9,22]. Additionally, using a constant loading rate 
+allows for a more focused examination of the influence of particle 
+shape on the crushing characteristics of single particles, which is the 
+primary focus of this study.  
+● Start the testing machine and begin applying compressive load, 
+continuously monitoring and recording the force-displacement 
+relationship of the particle throughout the compression process 
+(Fig. 4c). High-precision sensors and data acquisition systems are 
+used to ensure the accuracy and reliability of the data. Observe the 
+deformation and crushing process of the particle. When the force no 
+longer increases during loading, it indicates that the particle has 
+reached its crushing limit, at which point the loading is stopped. 
+Record the maximum load value and the corresponding displace­
+ment value as key indicators for evaluating the crushing strength of 
+the particle.  
+● After unloading, carefully remove the crushed particle sample and 
+inspect and document its morphology for further analysis of the 
+crushing mechanism. Export the force-displacement data and 
+Fig. 4. Experimental equipment, single-particle loading discrete element model and its typical force-displacement curve. (a) MTS universal testing machine; (b) 
+Discrete element simulation of single particle loading; (c) Typical load-displacement curve. 
+Table 2 
+Single-particle crushing test schemes with different shapes.  
+Component 
+categories 
+Particle 
+size range/ 
+mm 
+Test the 
+number of 
+particles 
+Particle 
+sphericity Φ 
+Axial loading 
+rate/ 
+(mm⋅min−1) 
+RB 
+19–37.5 
+30 
+0.4–0.6 
+0.6–0.8 
+0.8–1.0 
+1.0 
+30 
+30 
+RC 
+19–37.5 
+30 
+0.4–0.6 
+0.6–0.8 
+0.8–1.0 
+1.0 
+30 
+30 
+RM 
+19–37.5 
+30 
+0.4–0.6 
+0.6–0.8 
+0.8–1.0 
+1.0 
+30 
+30  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 6 ===
+Construction and Building Materials 439 (2024) 137363
+6
+perform the necessary data processing and analysis to plot the final 
+force-displacement curve. By comparing the force-displacement 
+curves of different particles, investigate their crushing strength, 
+crushing models, and energy absorption characteristics. Addition­
+ally, combine these findings with observations of the post-crushing 
+morphology to further discuss the mechanical properties and 
+crushing behavior of the RA particle materials. 
+3.2. Discrete element modeling of single-particle crushing 
+Using the PFC3D discrete element numerical software, particles of 
+different sizes were bonded into a Clump cluster to simulate a single 
+particle of RA. To ensure the accuracy of the single particle crushing 
+process simulation, the number of sub-particles forming a single RA 
+particle was kept above 1500. For simplicity, an ellipsoid was used to 
+equivalently simulate the single particle model, consistent with the 
+particle shape classification standard in Section 3.1, using sphericity (Φ) 
+as the index to divide the appearance shape of the single particle discrete 
+element model. The single particle and loading process are illustrated in  
+Fig. 5. 
+Additionally, the sub-particles composing a single particle were 
+bonded using the Bonded Particle Model (BPM) [25], and after particle 
+crushing, they degenerated into a linear contact model. In this study, the 
+mesoscopic parameters of the numerical model were repeatedly cali­
+brated by single-particle crushing test. By adjusting the initial parame­
+ters to match the macroscopic characteristics of the RA particles with the 
+macroscopic characteristics measured in the laboratory, this method has 
+strong applicability [26,27]. The initial test parameters in this study 
+mainly refer to Section 3.1 single-particle crushing tests and Literature 
+[9,28,29]. Finally, the key mesoscopic parameters of the numerical 
+simulation of RB, RC and RM were determined by repeated calculation. 
+Specifically, the elastic modulus of RB, RC, and RM are 8.6, 15.2, and 
+9.1 GPa, respectively, and the density is 2558, 2860, and 2614 kg/m3, 
+respectively, with a Poisson’s ratio of 0.20 for all. In addition, the sur­
+face friction coefficient of RA particles used in practical engineering may 
+be different, but this study mainly focuses on the influence of particle 
+shape on the crushing characteristics, so the friction coefficient can be 
+used within a reasonable range. Reference [9,28] shows that the friction 
+coefficient of 0.5 is a reasonable value. Furthermore, referring to the 
+Literature [17], the bonding strength between sub-particles was set to 
+follow a normal distribution. The determination of the mesoscopic pa­
+rameters for RB, RC, and RM was strictly based on the results of the 
+indoor single-particle crushing tests, with iterative calculations until the 
+mechanical response demonstrated by the numerical simulation was 
+essentially consistent with the trend reflected by the indoor tests. Take 
+an RB particle with d=25.36 mm and sphericity Φ=0.70 as an example, 
+as shown in Fig. 6. When a single particle crushes under the action of the 
+loading plate, it is the bond between the sub-particles inside the single 
+particle that fractures [30]. From Fig. 6, it can be seen that the numerical 
+calculation results of single-particle crushing are essentially in agree­
+ment with the experimental test results, with only a 0.74 % difference in 
+the peak force Ff of particle crushing. This indicates that the use of the 
+discrete element numerical method to simulate the single-particle 
+crushing process of RA is feasible. 
+4. Experimental results and discussion 
+4.1. Single-particle crushing modes 
+The single-particle crushing modes of geotechnical bodies can be 
+varied [31], and this paper categorized the results of compressed and 
+crushed RA particles of different shapes (sphericity Φ) based on criteria 
+such as particle size after crushing and cracking method. It was found 
+that the crushing modes of RB, RC, and RM particles can be divided into 
+three typical types: penetrating fracture, corner rupture, and overall 
+fragmentation, as shown in Fig. 7. Penetrating fracture: The particle 
+Fig. 5. A typical discrete element model for single particle crushing. (a)(b)(c) Single particle models with different sphericity, and the sphericity Φ=0.50, 0.70, 0.90, 
+respectively; (d) Schematic diagram of single particle loading. 
+0.0
+0.3
+0.6
+0.9
+1.2
+1.5
+2.4
+2.6
+2.8
+3.0
+3.2
+3.4
+3.6
+3.8
+4.0
+4.2
+ Simulation result
+Displacement (mm)
+)
+N
+k
+(
+d
+a
+o
+L
+Experiment result
+Ff-S = 1.37 kN
+Ff-E = 1.36 kN
+Ff
+Fig. 6. Comparison between discrete element numerical calculation results and 
+experimental results. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 7 ===
+Construction and Building Materials 439 (2024) 137363
+7
+breaks from the middle after being compressed, generally breaking into 
+two pieces, with a few fragments and relatively neat fracture surfaces, as 
+shown in Fig. 7(a)(d)(g). The proportions of penetrating fracture modes 
+for RB, RC, and RM single particles are 17.78 %, 25.56 %, and 23.33 %, 
+respectively. Corner rupture: Most of them break at the corners of the 
+particles. When the fracture occurs, cracks usually form at the corner 
+positions, resulting in the main body breaking into two or three pieces 
+(one super-large piece and some smaller pieces) with some debris. The 
+fracture surfaces is irregular, which is different from the crushing mode 
+of penetrating fracture. This crushing mode indicates that the particles 
+are subjected to large stress concentrations at the corners, resulting in 
+local crushing, as shown in Fig. 7(b)(e)(h). The proportions of corner 
+rupture modes for RB, RC, and RM single particles are 22.22 %, 21.11 %, 
+and 20.00 %, respectively. Overall fragmentation: The particles halted the 
+test due to significant damage to the main body, eventually breaking 
+into multiple pieces of similar sizes, accompanied by a substantial 
+amount of debris. The fracture surfaces exhibited extreme irregularity, 
+indicating comprehensive structural damage. The overall fragmentation 
+mode suggests that the particles experienced relatively uniform stress 
+throughout the main body, leading to comprehensive fragmentation, as 
+shown in Fig. 7(c)(f)(i). The proportions of overall fragmentation modes 
+for RB, RC, and RM single particles are 60.00 %, 53.33 %, and 56.67 %, 
+respectively. This indicates that the main mode of single particle 
+crushing for RB, RC, and RM is overall fragmentation. Among them, RB 
+has the highest number of secondary particles after crushing, followed 
+by RM, and RC has the least. This could further predict the amount of 
+particle crushing for RB, RC, and RM in actual engineering applications 
+based on the proportion of different component RA crushing modes. 
+Furthermore, the shape of the particles also affects the mode of 
+particle crushing to a certain extent. As shown in Fig. 8, a frequency 
+distribution histogram was established for different macroscopic parti­
+cle shapes (sphericity Φ) and crushing modes. It is evident that the 
+proportion of crushing modes differs among different types of RA par­
+ticles, but there is a correlation between the single-particle crushing 
+mode of RB, RC, and RM and the particle sphericity Φ. Specifically, the 
+proportions of penetrating fracture and corner rupture modes decrease 
+to some extent with the increase of sphericity Φ, while the proportion of 
+overall fragmentation mode increases with the increase of sphericity Φ. 
+The internal reason is that as the particle sphericity Φ increases, the 
+particles become fuller and the stress distribution outside the particles is 
+more uniform [23], which will reduce the occurrence of penetrating 
+fractures and corner rupture. Meanwhile, according to the above 
+Fig. 7. Typical single-particle crushing modes. (a)(d)(g) Penetrating fracture of RB, RC and RM; (b)(e)(h) Corner rupture of RB, RC and RM; (c)(f)(i) Overall 
+fragmentation of RB, RC and RM. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 8 ===
+Construction and Building Materials 439 (2024) 137363
+8
+analysis, it can be seen that these two crushing modes are usually caused 
+by uneven external stress (stress concentration), which is also consistent 
+with the previous findings [23]. Overall, the sphericity Φ of particles 
+affects the shape, structure, and external stress distribution of the par­
+ticles, thereby affecting the modes of particle crushing. Further, the 
+crushing mode scenarios for RB, RC, and RM particles of different shapes 
+(sphericity Φ) can provide an important basis for subsequent discrete 
+element simulations of particle crushing involving various shapes. 
+4.2. Single-particle crushing size fractal characteristics 
+The process of single-particle crushing essentially leads to changes in 
+the gradation curve of particle sizes. According to fractal theory, the 
+gradation curve of particle sizes follows a fractal distribution [32], and 
+the gradation curve of the particles can be expressed by Eq. (5). 
+M(d) =
+( d
+dmax
+)3−D
+(5)  
+where M(d) represents the mass proportion of particles smaller than a 
+certain particle size; dmax is the largest particle size in the sample; d is the 
+current particle size; and D is the fractal dimension. 
+After the crushing of single RA particles, detrital grains with different 
+particle sphericities Φ of RB, RC, and RM were collected. These detrital 
+grains were then sieved to determine the particle size distribution post- 
+crushing, as shown in Fig. 9. From Figs. 9(a), 9(b), and 9(c), it can be 
+observed that due to crushing, the gradation curves of RA particles 
+generally shift upwards, and the degree of crushing for RB and RM is 
+greater than that for RC. This indicates that the overall strength of RC is 
+higher than that of RB and RM. Furthermore, under a double logarithmic 
+coordinate system, the fractal dimensions for RB and RM at different 
+initial particle sphericities Φ are greater than that for RC, and the fractal 
+dimension for all three types of RA decreases as particle sphericity in­
+creases, indicating a reduction in the degree of crushing. Additionally, as 
+particle sphericity increases, the fractal characteristics of RA weaken, 
+and the distribution of gradation narrows from broad, mainly because 
+RA with larger sphericity are less completely crushed after reaching 
+peak strength in the experiments compared to those with smaller 
+sphericity, resulting in fewer small particles after crushing and thus 
+weaker fractal characteristics. 
+Subsequently, particles of the same material with three different 
+particle sphericities Φ were mixed together and sieved, and the resulting 
+final gradation curve is shown in Fig. 9(d). In Fig. 9(d), the particle 
+gradation curves of RB, RC and RM in the double logarithmic coordinate 
+system show that the slopes for the multi-sphericity RB, RC, and RM are 
+0.53, 0.69, and 0.51, respectively. According to Eq. (5), the final fractal 
+dimensions for the multi-sphericity Φ recycled aggregates RB, RC, and 
+RM are 2.47, 2.31, and 2.49, respectively. Additionally, in subsequent 
+experiments on the crushing of RA with multi-sphericity or in discrete 
+element numerical simulations of particle crushing, the gradation of 
+single particle crushing in RA can be determined based on Eq. (5) and 
+the experimentally obtained fractal dimension D. 
+0.5
+0.7
+0.9
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ Penetrating fracture
+ Corner rupture
+ Overall fragmentation
+(a)
+0.5
+0.7
+0.9
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ Penetrating fracture
+ Corner rupture
+ Overall fragmentation
+(b)
+0.5
+0.7
+0.9
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+y
+c
+n
+e
+u
+q
+e
+r
+F
+Sphericity
+ Penetrating fracture
+ Corner rupture
+ Overall fragmentation
+(c)
+Fig. 8. Frequency distribution histogram of different particle sphericity (Φ) and crushing modes. (a) RB; (b) RC; (c) RM.  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 9 ===
+Construction and Building Materials 439 (2024) 137363
+9
+4.3. Single-particle crushing strength 
+According to the single-particle strength theory [33], the crushing 
+strength of a single RA particle can be determined using Eq. (6), and the 
+equivalent particle size d can be calculated using Eq. (7). 
+σf = 0.9 Ff
+d2
+(6)  
+d =̅̅̅̅̅̅̅
+LIS
+3√
+(7)  
+where σf is the single-particle crushing strength; Ff is the magnitude of 
+the peak particle crushing force obtained in the experiment. 
+For the crushing of coarse-grained geomaterial particles, the shape of 
+the particle (sphericity Φ) has a significant impact on its crushing 
+strength. However, many studies on the crushing of coarse geomaterial 
+particles have not considered the impact of particle shape [17,34,35]. To 
+0.1
+1
+10
+40
+0
+20
+40
+60
+80
+100
+0.1
+1
+10
+40
+0.1
+1
+10
+100
+D=2.44
+D=2.56
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+D=2.34
+RB Φ=0.4-0.6
+RB Φ=0.6-0.8
+RB Φ=0.8-1.0
+ Initial grading
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+(a)
+0.1
+1
+10
+40
+0
+20
+40
+60
+80
+100
+0.1
+1
+10
+40
+0.1
+1
+10
+100
+D=2.33
+D=2.36
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+D=2.26
+RC Φ=0.4-0.6
+RC Φ=0.6-0.8
+RC Φ=0.8-1.0
+ Initial grading
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+(b)
+0.1
+1
+10
+40
+0
+20
+40
+60
+80
+100
+0.1
+1
+10
+40
+0.1
+1
+10
+100
+D=2.51
+D=2.54
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+D=2.36
+RM Φ=0.4-0.6
+RM Φ=0.6-0.8
+RM Φ=0.8-1.0
+ Initial grading
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+(c)
+0.1
+1
+10
+40
+0
+20
+40
+60
+80
+100
+0.1
+1
+10
+40
+0.1
+1
+10
+100
+D=2.47
+D=2.49
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+D=2.31
+RB
+RC
+RM
+e
+u
+d
+is
+e
+r
+e
+v
+eis
+d
+et
+al
+u
+m
+u
+c
+c
+A
+)
+%
+(
+t
+n
+et
+n
+o
+c
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+Crushed particle size (mm)
+(d)
+Fig. 9. Single-particle crushing gradation curve and fractal relationship. (a) RB of different particle shapes; (b) RC of different particle shapes; (c) RM of different 
+particle shapes; (d) Particle size distribution and ultimate fractal dimension for the single particle crushing tests. 
+RB-L RB-M RB-U
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+RB-L
+RB-M
+RB-U
+σf
+)
+a
+P
+M
+(
+(a)
+RC-L RC-M RC-U
+2
+3
+4
+5
+6
+7
+8
+RC-L
+RC-M
+RC-U
+σf
+)
+a
+P
+M
+(
+(b)
+RM-L RM-M RM-U
+0.8
+1.6
+2.4
+3.2
+4.0
+RM-L
+RM-M
+RM-U
+σf
+)
+a
+P
+M
+(
+(c)
+Fig. 10. The crushing strength of RA particles in different particle shape intervals, L, M and U represent Φ = 0.4–0.6, Φ = 0.6–0.8 and Φ = 0.8–1.0, respectively. (a) 
+RB; (b) RC; (c) RM. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 10 ===
+Construction and Building Materials 439 (2024) 137363
+10
+enhance the reliability of the test results, this study used the box plot in 
+the statistical method to statistically analyze the 9 sets (270 particles) of 
+crushing strength results of the test RA particles, as shown in Fig. 10. It 
+can be seen from Fig. 10 that the particle crushing strength data of the 
+test are evenly distributed, and the data are all within the upper and 
+lower limits of the box plot, with no abnormal values. In addition, the 
+mean absolute percentage error (MAPE) of each group of test particle 
+crushing strength data is calculated respectively, which is within 
+5.10 %-9.35 %. Referring to the relevant research [17], it is within a 
+reasonable range and can be accepted. In the follow-up study, the 
+average single-particle peak crushing strength is used to represent the 
+single-particle crushing strength σf. The distribution relationship be­
+tween the single-particle crushing strengths of RB, RC, and RM and 
+particle sphericity is shown in Fig. 11. Through the analysis of their 
+particle sphericity, the relationship between particle sphericity and 
+crushing strength can be expressed in the form of an exponential Eq. (8), 
+where p and q are fitting parameters. 
+σf = pΦq
+(8) 
+It can be seen from Fig. 11 that the single particle crushing strength 
+of RC is greater than that of RB and RM for particles of comparable 
+sphericity, which is consistent with the conclusions obtained in Section 
+4.2. It is found from Fig. 11 that as the particle sphericity increases, the 
+crushing strength of RA also increases. When the sphericities of RB, RC, 
+and RM are 0.531, 0.551, and 0.542, their crushing strengths are 
+1.17 MPa, 2.74 MPa, and 1.12 MPa, respectively. However, when the 
+particle sphericity increases to 0.856, 0.837, and 0.847, the crushing 
+strengths of RB, RC, and RM increase to 2.88 MPa, 6.47 MPa, and 
+3.20 MPa, respectively, representing increases of 146.15 %, 136.13 %, 
+and 185.71 %. When particles have a comparable size, greater sphericity 
+means the force is more evenly distributed across the particle, and a 
+greater force is required to crush the particle [23]. Furthermore, it can 
+be seen from Fig. 11 that using Eq. (8) to fit the relationship between 
+single-particle sphericity and crushing strength results in a curve that 
+fits well with the experimental results. The correlation coefficients R2 of 
+the relationship curves between single-particle sphericity and crushing 
+strength for RB, RC, and RM are 0.90, 0.99, and 0.98, respectively, 
+indicating a significant effect of particle shape. 
+4.4. Single-particle crushing energy 
+The crushing energy of a single particle is generally not directly 
+measurable through indoor experiments. However, it can be calculated 
+based on the single particle crushing force-displacement curve and the 
+definition of work [36], as shown in Fig. 12. The crushing energy of a 
+single particle can be expressed as the integral function of the crushing 
+force concerning displacement, as shown in Eq. (9). 
+Ef =
+∫Δ
+0
+FfdΔ
+(9)  
+where Ef is the single-particle crushing energy, and Δ is the 
+displacement. 
+Similar to the single-particle crushing strength, to further evaluate 
+the reliability of the single-particle crushing energy data calculated from 
+the test results, the box plot was used to statistically analyze the 9 sets 
+(270 particles) of crushing energy results of the single particle of the 
+recycled aggregate, as shown in Fig. 13. It can be seen from Fig. 13 that 
+the overall distribution of particle crushing energy data is relatively 
+uniform, and there is no abnormal value. The MAPE of each group of 
+particle crushing energy data is calculated, which is within 1.08 %- 
+10.1 %, and MAPE is within a reasonable range [17]. Besides, the par­
+ticle crushing energy is not the same even if the particles with the same 
+material properties. Therefore, the average single-particle crushing en­
+ergy under the same particle shape (sphericity Φ) is used to replace the 
+single-particle crushing energy Ef. The distribution relationship between 
+particle crushing energy and sphericity is shown in Fig. 14, which can be 
+expressed in the form of an exponential function as shown in Eq. (10), 
+where m and n are fitting parameters. 
+Ef = mΦn
+(10) 
+It is evident from Fig. 14 that under the same particle sphericity Φ 
+conditions, the single-particle crushing energy of RC is higher than that 
+of RB and RM. When d=19–37.5 mm, the single-particle crushing en­
+ergy of RC is 97.98 % and 64.22 % higher than that of RB and RM, 
+respectively. This is mainly because the main components forming the 
+RA are different. Generally, the strength of concrete blocks is higher 
+than that of bricks and mortar, so even RC, RB, and RM particles of the 
+same size and sphericity Φ contain more energy in RC particles, and 
+thus, more energy is released during crushing. Additionally, it can also 
+be found from Fig. 14 that under the same particle size, the closer the 
+particle shape is to a sphere, the greater the crushing energy of a single 
+RA particle. When Φ ranges from 0.4 to 0.6, the single-particle crushing 
+energies of RB, RC, and RM are 349.05 mJ, 912.42 mJ, and 316.62 mJ, 
+respectively. However, when Φ ranges from 0.8 to 1.0, the single- 
+particle crushing energies of RB, RC, and RM are 1288.89 mJ, 
+1598.63 mJ, and 1381.18 mJ, respectively, showing increases of 
+269.26 %, 75.21 %, and 336.23 %. 
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+1
+2
+3
+4
+5
+6
+7
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+ RB
+RB
+Φ
+σf =9.35Φ2.13
+R2=0.99
+σf =3.84Φ1.68
+R2=0.90
+ RC
+RC
+σf
+)
+a
+P
+M
+(
+σf =4.69Φ2.21
+R2=0.98
+Flat spherical
+Subspherical
+Nearly spherical
+ RM
+RM
+Fig. 11. The relationship between single-particle shape and crushing strength.  
+Fig. 12. Typical load-displacement relationship curve and work calculation 
+diagram of single particle crushing. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 11 ===
+Construction and Building Materials 439 (2024) 137363
+11
+In summary, similar to particle crushing strength, the single-particle 
+crushing energy also follows an exponential function relationship with 
+particle sphericity, and it fits well (correlation coefficient (R2>0.90). 
+Therefore, the single-particle crushing strength and crushing energy of 
+RA of any sphericity can be predicted through particle Φ using Eqs. (8) 
+and (10). 
+5. Numerical results and discussion 
+By analyzing single-particle crushing experiments of RA with 
+different shapes (sphericity Φ), the average crushing strength and en­
+ergy can be predicted using Eqs. (8) and (10). The PFC3D discrete 
+element numerical simulation is employed to evaluate the crushing 
+strength and energy of single particles with sphericities Φ=0.4–0.6, 
+0.6–0.8, and 0.8–1.0, all within a similar particle size range 
+(19–37.5 mm). These simulations are then compared with experiments 
+to validate the parameters. Subsequently, these parameters are extended 
+to single particles of other shapes. Here, Φ=0.40, 0.60, 0.80 and 1.0 are 
+taken as examples (but not limited to this), and their crushing properties 
+are simulated and compared with the predictions of Eqs. (8) and (10). 
+5.1. Single-particle crushing process 
+In order to explain key processes such as single-particle crushing 
+development and fracture evolution in detail, RB particles with a 
+sphericity of Φ = 0.70 are selected as typical representatives in this 
+section. The evolution process of particle crushing is shown in Figs. 15 
+and 16, and the corresponding stress-strain curve is shown in Fig. 17. 
+This choice is primarily based on the following two reasons. First, the 
+sphericity of Φ = 0.70 lies in the middle of the sphericity range (0.4–1.0) 
+examined in this study, making it a better representative of the crushing 
+behavior across different sphericities. Second, given that the simulation 
+processes across all sphericities exhibit similar overall trends, selecting 
+an instance with intermediate sphericity helps avoid lengthiness and 
+repetition. 
+Figs. 15(a) and 16(a) show the particle just before the start of 
+loading, in contact with the loading plate (ending the pre-loading state), 
+with only a few fragments and noticeable force chains distributed at 
+both ends of the loading plate and base. This corresponds to point a in 
+the stress-strain curve in Fig. 17. As loading begins, initially, there is no 
+significant change in the appearance and force state of the particle, as 
+shown in Fig. 15(b) and point b in Fig. 17, though the number of frag­
+ments and force chains increases internally compared to the previous 
+stage (Fig. 16(b)). Subsequently, cracks start to appear after a period of 
+loading (Fig. 15(c)), and the first peak on the stress-strain curve is 
+observed at point c in Fig. 17. At this stage, some fragments penetrate 
+through, with force chains mainly concentrated around the fragments 
+(Fig. 16(c)). After the first peak, the particle undergoes breaking, leading 
+to the second (point d in Fig. 17) and third (point e in Fig. 17) peak 
+points. The corresponding particle appearance and the distribution of 
+internal fragments and force chains expand further (Fig. 16(d)(e) and 15 
+(d)(e)). The particle is essentially crushed upon reaching the system’s 
+maximum stress peak (point f in Fig. 17), with complete penetration of 
+fragments and an expanded range of force chains (Fig. 16(f)), eventually 
+breaking into 3–4 pieces, as shown in Fig. 15(g)-(j) and points g-j in 
+Fig. 17. After peak f, the distribution of fragments and force chains ex­
+pands from the penetrating central crack towards the right side (Fig. 16 
+(g)-(j)), indicating that after complete breaking, the largest fragment on 
+the right side bears the main load, leading to further internal cracking. 
+Comparing the stress-strain curves of the single particle crushing test 
+results (left side of Fig. 17) reveals that the numerical simulation results 
+of this study basically match the experimental test results, with only a 
+1.05 % difference in the stress peak values. Additionally, the post- 
+crushing crushing mode of the numerical simulation closely aligns 
+with those observed in the experimental load crushing tests (Section 4.1, 
+distribution of crushing), as shown on the right side of Fig. 17 (top view). 
+This further demonstrates the feasibility of the numerical simulation 
+method presented in this study. 
+RB-L RB-M RB-U
+200
+400
+600
+800
+1000
+1200
+1400
+RB-L
+RB-M
+RB-U
+Ef
+)
+J
+m
+(
+(a)
+RC-L RC-M RC-U
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+RC-L
+RC-M
+RC-U
+Ef
+)
+J
+m
+(
+(b)
+RM-L RM-M RM-U
+0
+300
+600
+900
+1200
+1500
+1800
+RM-L
+RM-M
+RM-U
+Ef
+)
+J
+m
+(
+(c)
+Fig. 13. The crushing energy of RA particles in different particle shape intervals, L, M and U represent Φ = 0.4–0.6, Φ = 0.6–0.8 and Φ = 0.8–1.0, respectively. (a) 
+RB; (b) RC; (c) RM. 
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+Φ
+ RB
+RB
+Ef
+)
+J
+m
+(
+Ef =2061.15Φ1.28
+R2=0.91
+Nearly spherical
+Ef =1511.07Φ2.16
+R2=0.97
+Ef =2041.24Φ2.66
+R2=0.96
+Flat spherical
+Subspherical
+ RC
+RC
+ RB
+RB
+Fig. 14. The relationship between single-particle shape and crushing energy.  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 12 ===
+Construction and Building Materials 439 (2024) 137363
+12
+5.2. Numerical, experimental and predicted results comparison analysis 
+Utilizing PFC3D, the average crushing strength and average crushing 
+energy of single RA particles under the same conditions as the experi­
+mental test subjects (sphericities Φ=0.4–0.6, 0.6–0.8, and 0.8–1.0) were 
+obtained. These results were compared with the outcomes of the ex­
+periments and the predictions made by Eqs. (8) and (10), as shown in  
+Figs. 18 and 19. 
+Fig. 18 compares the results of the average crushing strength of 
+single particles of RB, RC, and RM. From Fig. 18, it can be inferred that 
+for single particles of different sphericities Φ, the experimental results, 
+numerical results, and predictions from Eq. (8) are quite close to each 
+other. Therefore, for the crushing strength of a single particle, the pa­
+rameters determined are reasonable, and the numerical program can be 
+used to simulate and calculate the crushing strength of particles with 
+other sphericities. As shown in Fig. 19, which compares the average 
+Fig. 15. Single-particle crushing process based on discrete element model.  
+Fig. 16. Single-particle crushing force chain and fracture evolution process.  
+Fig. 17. Stress-strain curve of single-particle crushing based on discrete element model.  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 13 ===
+Construction and Building Materials 439 (2024) 137363
+13
+crushing energy results of single particles of RB, RC, and RM, there are 
+some differences among the average crushing energy experimental re­
+sults, numerical results, and predictions made by Eq. (10) for the three 
+different sphericities Φ. The error between the simulation results and the 
+test results is between 2.66 % and 18.53 %, as shown in Table 3. The 
+randomness of the experiments, as well as variations in shape, size, and 
+mineral content among particles, lead to variations in the energy 
+released during the experiments [17]. Nonetheless, overall, the differ­
+ences in average crushing energy among single particles of different 
+sphericities Φ are not pronounced. This indicates that although the re­
+sults of individual experiments may vary due to various factors, 
+considering a larger number of samples, shows that these results tend to 
+be consistent, reflecting general stability in the relationship between 
+crushing energy and particle sphericity Φ. Therefore, the numerical 
+program can also be used to simulate and calculate the crushing energy 
+of particles with other sphericities. 
+5.3. Discrete element simulation of single-particle crushing with different 
+shapes and correction of prediction results 
+The study conducted simulations using the PFC3D discrete element 
+numerical program to calculate the crushing outcomes for single parti­
+cles of RB, RC, and RM with sphericities Φ=0.40, 0.60, 0.80, and 1.0. 
+The results are presented in Figs. 20 and 21. Fig. 20 compares the 
+average crushing strength of single particles of RB, RC, and RM obtained 
+from numerical results with those predicted by Eq. (8). It was found that, 
+under specific sphericities Φ, the numerical results for average crushing 
+strength are in good agreement with those obtained from Eq. (8). Under 
+conditions of equivalent particle size, the greater the particle sphericity 
+Φ, the greater the sustained crushing force, and correspondingly, the 
+greater the crushing strength σf. Thus, the particle sphericity Φ and Eq. 
+(8) can be used to predict the crushing strength of single particles with 
+any sphericity, but the specific results may still require further experi­
+mental validation. 
+Additionally, Fig. 21 shows the trend in the average crushing energy 
+of single particles of RB, RC, and RM. From Fig. 21(a), it can be seen that 
+as the particle sphericity Φ increases, the crushing energy also increases, 
+consistent with the conclusions of the aforementioned study. However, 
+there are some discrepancies between the numerical results and the 
+predictions made by Eq. (10). For particles with smaller sphericities 
+(Φ<0.8), the numerical results are consistent with the predictions, but 
+for larger sphericities (Φ≥0.8), Eq. (10) no longer fits well. The fitting 
+correlation coefficient R2 is generally low, and the fitting correlation 
+coefficients R2 of RB, RC and RM numerical results are 0.61, 0.54 and 
+0.77, respectively. Specifically, the predictions tend to overestimate 
+compared to the simulation results (as indicated by the light purple area 
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+1
+2
+3
+4
+5
+6
+7
+8
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+ RB experimental result
+RB predicted result
+Φ
+ RC experimental result
+RC predicted result
+σf
+)
+a
+P
+M
+(
+ RM experimental result
+RM predicted result
+RB numerical result   
+RC numerical result  
+RM numerical result
+Fig. 18. Comparison of numerical, experimental and predicted results of single- 
+particle average crushing strength. 
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+2100
+2400
+2700
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+2100
+2400
+2700
+0.4
+0.6
+0.8
+1.0
+0
+300
+600
+900
+1200
+1500
+1800
+2100
+2400
+2700
+RB experimental result
+RB predicted result
+Φ
+RC experimental result
+RC predicted result
+Ef
+)
+J
+m
+(
+ RM experimental result
+RM predicted result
+RB numerical result
+RC numerical result
+RM numerical result
+Fig. 19. Comparison of numerical, experimental and predicted results of single- 
+particle average crushing energy. 
+Table 3 
+Comparison of error between numerical results of single-particle crushing energy Ef of RA and experimental results.  
+Categories 
+Φ=0.4–0.6 
+Φ=0.6–0.8 
+Φ=0.8–1.0 
+RB 
+RC 
+RM 
+RB 
+RC 
+RM 
+RB 
+RC 
+RM 
+Ef-S (mJ)  
+397.18  
+965.9  
+375.29  
+660.44  
+1340.47  
+792.04  
+1138.58  
+1669.36  
+1344.45 
+Ef-E (mJ)  
+349.05  
+912.42  
+316.62  
+713.82  
+1413.27  
+860.55  
+1064.76  
+1598.63  
+1381.18 
+Error (%)  
+13.79  
+5.86  
+18.53  
+7.48  
+5.15  
+7.96  
+6.93  
+4.42  
+2.66  
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+10
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+10
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+10
+RB prediction result
+Φ
+RC prediction result
+σf
+)
+a
+P
+M
+(
+RM prediction result
+RB numerical result   
+RC numerical result  
+RM numerical result
+Fig. 20. Comparison of average crushing strength between numerical results 
+and predicted results. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 14 ===
+Construction and Building Materials 439 (2024) 137363
+14
+in Fig. 21(a)), especially the predicted average crushing energy for RM 
+with a sphericity Φ=1.0 by Eq. (10), which is almost equivalent to RC, 
+not matching general perceptions, whereas the numerical results seem 
+more reasonable. Therefore, based on numerical results, a correction of 
+Eq. (10) is suggested, showing a certain pattern described by a new Eq. 
+(11) as shown in Fig. 21(b). Eq. (11) involves nonlinear curve fitting 
+parameters E0, α, and t, with specific values for RB, RC, and RM provided 
+in Table 4. 
+Ef = E0 + 2α⋅
+(
+1 −e−Φ/t)
+(11) 
+Hence, for the crushing energy of single particles with smaller 
+sphericities (Φ<0.8), Eq. (10) can be used for predictions. However, for 
+particles with larger sphericities (Φ≥0.8) (as indicated by the light 
+purple area in Fig. 21(b)), employing Eq. (11) for predicting their 
+crushing energy is more appropriate. It is worth noting that since the 
+nature of RA is heterogeneous due to different sources and compositions, 
+this heterogeneity may limit the universality of the prediction equation 
+based on a single material source to a certain extent. Of course, this 
+single source of RA materials inevitably exists in many studies [2,6,9, 
+35]. However, there is no doubt that this study provides some valuable 
+preliminary insights into the crushing strength and crushing energy 
+prediction equations of RA. Furtherly, this study regards these pre­
+liminary results as the cornerstone of further research, and will expand 
+the data set (material source) and conduct rigorous statistical analysis in 
+future research to further improve the broad applicability of the 
+research results. 
+6. Conclusion and outlook 
+6.1. Research conclusion 
+This paper first quantitatively characterizes the shape characteristics 
+of RA particles and then studies the crushing modes, fractal character­
+istics, particle crushing strength, and crushing energy of single particles 
+with different shapes (sphericity Φ) through single-particle crushing 
+experiments involving RB, RC, and RM. Finally, by comparing and 
+analyzing the experimental and predicted results through PFC3D discrete 
+element numerical simulation, it predicts the crushing strength and 
+crushing energy of particles with specific sphericity. The main conclu­
+sions are as follows. 
+(1) The shapes of RA particles are mainly disk, block, blade and bar. 
+The flatness of the RA particles used in this study ranges from 0.30 to 
+0.96, the elongation ratio ranges from 0.29 to 0.98, the Domokos coef­
+ficient Sf ranges from 3.03 to 6.58, and the sphericity ranges from 0.42 to 
+0.93. The particle size of the RA has essentially no effect on their shape. 
+(2) The crushing modes of RB, RC, and RM particles can be divided 
+into penetrating fractures, corner rupture, and overall fragmentation, 
+with a correlation between the single-particle crushing mode and par­
+ticle sphericity. The proportion of penetrating fractures and corner 
+rupture tends to decrease with increasing sphericity, while the propor­
+tion of overall fragmentation tends to increase. 
+(3) Under different particle sphericities, the fractal dimensions of RB 
+and RM are higher than those of RC, and the fractal dimensions of the 
+three types of RA decrease with increasing particle sphericity, indicating 
+a reduced degree of crushing. As the sphericity increases, the fractal 
+characteristics of the RA weaken, and the gradation distribution nar­
+rows. The final fractal dimensions of multi-sphericity RB, RC, and RM 
+are 2.47, 2.31, and 2.49, respectively. 
+(4) The particle crushing strength of RC under the same sphericity is 
+higher than that of RB and RM. With the increase of particle sphericity, 
+the crushing strength of RA shows an increasing trend, following an 
+exponential growth model. Similarly, the relationship between particle 
+crushing energy and particle sphericity also follows an exponential 
+function, showing a clear effect of particle shape. The crushing strength 
+and crushing energy of a single RA particle can be predicted by its 
+sphericity. 
+(5) The results of the discrete element numerical simulation show 
+that the single-particle crushing strength of RA can be calculated 
+through sphericity and Eq. (8). For single-particle crushing energy with 
+larger sphericities (Φ≥0.8), Eq. (11) is superior to Eq. (10), thus its 
+crushing energy can be calculated through sphericity and Eq. (11), and 
+further validation through experiments is needed. 
+6.2. Research limitations and outlook 
+Additionally, while this study has yielded significant findings, there 
+are still limitations that need to be addressed and several avenues for 
+future research. 
+(1) Three materials are selected in this study, and there are some 
+limitations in the types of materials. Future research should be extended 
+to other types of construction waste to verify the universality of the 
+conclusions. 
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+RB prediction result
+Φ
+(a)
+R2=0.54
+R2=0.77
+R2=0.61
+RC prediction result
+Ef
+)
+J
+m
+(
+RM prediction result
+RB numerical result
+RC numerical result
+RM numerical result
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+0.4
+0.6
+0.8
+1.0
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+2000
+RB prediction result
+Φ
+R2=0.99
+R2=0.99
+R2=0.99
+(b)
+RC prediction result
+Ef
+)
+J
+m
+(
+RM prediction result
+RB numerical result
+RC numerical result
+RM numerical result
+Fig. 21. Comparison of average crushing energy between numerical results and 
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of prediction Eq. (11) fitting parameters.  
+Component categories 
+E0 
+α 
+t 
+RB 
+-1.68×106 
+8.42×105  
+0.097 
+RC 
+-1.36×105 
+6.92×104  
+0.142 
+RM 
+-1.16×105 
+5.90×104  
+0.162  
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 15 ===
+Construction and Building Materials 439 (2024) 137363
+15
+(2) The current research does not fully cover all possible particle size 
+distributions, and a wider range should be considered in the future to 
+improve the applicability of the research results. 
+(3) This study mainly studied the influence of particle shape on the 
+crushing characteristics, using a single loading rate and method, without 
+considering the complex actual working conditions. In the future, more 
+diversified loading conditions and environmental factors should be 
+studied to fully understand the mechanical behavior of RA. 
+(4) This study mainly focuses on the initial crushing characteristics. 
+In the future, the durability of recycled aggregate under long-term load 
+and environmental action should be included to ensure its long-term 
+stability in engineering. 
+In summary, addressing these limitations and expanding the research 
+directions is expected to deepen the understanding of the crushing 
+characteristics and mechanical properties of RA, thereby enhancing its 
+potential for application in engineering practice. 
+CRediT authorship contribution statement 
+Peichen Cai: Writing – review & editing, Writing – original draft, 
+Validation, Software, Methodology, Data curation. Xuesong Mao: 
+Writing – review & editing, Supervision, Resources, Funding acquisition, 
+Data curation, Conceptualization. Qian Wu: Writing – review & editing, 
+Funding acquisition, Data curation. Yueyue Wang: Writing – original 
+draft, Validation, Data curation. 
+Declaration of Competing Interest 
+We confirm that there are no known conflicts of interest associated 
+with this publication and there has been no significant financial support 
+for this work that could have influenced its outcome. 
+Data Availability 
+Data will be made available on request. 
+Acknowledgments 
+The authors gratefully acknowledge the support provided by the 
+National Natural Science Foundation of China Youth Fund Project 
+(52308435); and the Ministry of Housing and Urban-Rural Development 
+(2020-K-078). 
+References 
+[1] M. Ma, V.W.Y. Tam, K.N. Le, W. Li, Challenges in current construction and 
+demolition waste recycling: a China study, Waste Manag. 118 (2020) 610–625, 
+https://doi.org/10.1016/j.wasman.2020.09.030. 
+[2] L. Ding, J.H. Zhang, C. Zhou, S.P. Han, Q.H. Du, Particle breakage investigation of 
+construction waste recycled aggregates in the subgrade application scenario, 
+Powder Technol. 404 (2022) 117448, https://doi.org/10.1016/j. 
+powtec.2022.117448. 
+[3] Y.J. Xiao, K.F. Kong, Y. Jiang, W.J. Hua, H.W. Zhu, D.G. Cai, Y.F. Liu, Investigating 
+resilient modulus characteristics and developing unified prediction model of 
+unbound aggregate base materials recycled from construction and demolition 
+waste, Chin. J. Rock. Mech. Eng. 41 (11) (2022) 2337–2352, https://doi.org/ 
+10.13722/j.cnki.jrme.2021.1313. 
+[4] Y. You, C.B. Cheong, Methods for treating construction waste as resources from a 
+sustainable development perspective, Environ. Eng. Manag. J. 21 (2) (2021) 
+181–189, https://doi.org/10.30638/eemj.2022.017. 
+[5] C.S. Vieira, P.M. Pereira, Use of recycled construction and demolition materials in 
+geotechnical applications: A review, Resour., Conserv. Recycl. 103 (2015) 
+192–204, https://doi.org/10.1016/j.resconrec.2015.07.023. 
+[6] M. Bassani, L. Tefa, Compaction and freeze-thaw degradation assessment of 
+recycled aggregates from unseparated construction and demolition waste, Constr. 
+Build. Mater. 160 (2018) 180–195, https://doi.org/10.1016/j. 
+conbuildmat.2017.11.052. 
+[7] B. Indraratna, Q.D. Sun, S. Nimbalkar, Observed and predicted the behaviour of 
+rail ballast under monotonic loading capturing particle breakage, Can. Geotech. J. 
+52 (1) (2015) 73–86, https://doi.org/10.1139/cgj-2013-0361. 
+[8] Y. Nakata, Y. Kato, M. Hyodo, A.F.L. Hyde, H. Murata, One-dimensional 
+compression behaviour of uniformly graded sand related to single particle crushing 
+strength, Soils Found. 41 (2) (2001) 39–51, https://doi.org/10.3208/sandf.41.2_ 
+39. 
+[9] P.R. Oskooei, A. Mohammadinia, A. Arulrajah, S. Horpibulsuk, S. Emam, Crushing 
+behavior of recycled waste materials: Experimental analysis and DEM simulation, 
+Constr. Build. Mater. 299 (2021) 124226, https://doi.org/10.1016/j. 
+conbuildmat.2021.124226. 
+[10] Y.L. Tu, X.R. Liu, Q.Y. Ren, H.J. Chan, J.B. Wang, J.Y. Yu, Effects of rock contents 
+and particle breakage on strength characteristics of soil-rock aggregate, Rock. Soil 
+Mech. 41 (12) (2020) 3919–3928, https://doi.org/10.16285/j.rsm.2019.1824. 
+[11] W. Wang, M.R. Coop, An investigation of breakage behaviour of single sand 
+particles using a high-speed microscope camera, Geotechnique 66 (12) (2016) 
+1–15, https://doi.org/10.1680/jgeot.15.P.247. 
+[12] L. Lin, S. Li, L.Y. Huo, X. Liu, Study on the relationship between fractal dimension 
+and particle fragmentation for marine coral sand under impact load, Ocean Eng. 
+286 (1) (2023) 115442, https://doi.org/10.1016/j.oceaneng.2023.115442. 
+[13] T. Zhang, C. Zhang, F.N. Song, J.Q. Zou, Y. Gao, W.H. Yang, Breakage behavior of 
+silica sands during high-pressure triaxial loading using X-ray microtomography, 
+Acta Geotech. 18 (10) (2023) 5195–5211, https://doi.org/10.1007/s11440-023- 
+01866-9. 
+[14] Z.L. Zhou, S. Zhang, Z.Y. Gao, X. Cai, H. Li, Multifractal characterization of gangue 
+particle size distribution structure during ball milling process, Powder Technol. 
+412 (2022) 117970, https://doi.org/10.1016/j.powtec.2022.117970. 
+[15] H.J. Zhou, G. Ma, W. Yuang, W. Zhou, X.L. Chang, Size effect on the crushing 
+strengths of rock particles, Rock. Soil Mech. 38 (8) (2017) 2425–2433, https://doi. 
+org/10.16285/j.rsm.2017.08.032. 
+[16] E. Frossard, W. Hu, C. Dano, P.Y. Hicher, Rockfill shear strength evaluation: A 
+rational method based on size effects, G´eotechnique 62 (2012) 415–427, https:// 
+doi.org/10.1680/geot.10.P.079. 
+[17] M.Q. Meng, L. Wang, X. Jiang, C.G. Wang, H.L. Liu, Y. Xiao, Single-particle 
+crushing test and numerical simulation of coarse grained soil based on size effect, 
+Rock. Soil Mech. 41 (9) (2020) 2953–2962, https://doi.org/10.16285/j. 
+rsm.2019.2000. 
+[18] B. Zhao, J. Wang, M.R. Coop, G. Viggiani, M. Jiang, An investigation of single sand 
+particle fracture using X-ray micro-tomography, G´eotechnique 65 (2015) 625–641, 
+https://doi.org/10.1680/geot.4.P.157. 
+[19] B. Indraratna, W. Salim, C. Rujikiatkamjorn, Advanced rail geotechnology-ballasted 
+track. London, CRC Press, 2011, https://doi.org/10.1201/b10861. 
+[20] A.F.L. Nakata, M. Hyde, H. Hyodo, Murata, A probabilistic approach to sand 
+particle crushing in the triaxial test, Geotechnique 49 (5) (1999) 567–583, https:// 
+doi.org/10.1680/geot.1999.49.5.567. 
+[21] S. Lobo-Guerrero, L.E. Vallejo, Analysis of crushing of granular material under 
+isotropic and biaxial stress conditions, Soils Found. 45 (4) (2005) 79–87, https:// 
+doi.org/10.3208/sandf.45.4_79. 
+[22] A.B. Jin, M.Y. Li, H. Sun, K.L. Tang, M.C. Liu, L.C. Wei, Compression crushing 
+characteristics of single ore particle with different shapes, J. Cent. South Univ. (Sci. 
+Technol. ) 54 (9) (2023) 3585–3596, https://doi.org/10.11817/j.issn.1672- 
+7207.2023.09.019. 
+[23] Y.H. Wang, G. Ma, J.Z. Mei, Y.X. Zou, D.R. Zhang, W. Zhou, X.X. Cao, Machine 
+learning reveals the influences of grain morphology on grain crushing strength, 
+Acta Geotech. 16 (11) (2021) 3617–3630, https://doi.org/10.1007/s11440-021- 
+01270-1. 
+[24] G.R. McDowell, Statistics of soil particle strength, G´eotechnique 51 (2001) 
+897–900, https://doi.org/10.1680/geot.2001.51.10.897. 
+[25] X. Chen, D. Peng, J.P. Morrissey, J.Y. Ooi, A comparative assessment and 
+unification of bond models in DEM simulations, Granul. Matter 24 (29) (2022) 
+1–20, https://doi.org/10.1007/s10035-021-01187-2. 
+[26] N. Cho, C.D. Martin, D.C. Sego, A clumped particle model for rock, Int. J. Rock. 
+Mech. Min. Sci. 44 (2007) 997–1010, https://doi.org/10.1016/j. 
+ijrmms.2007.02.002. 
+[27] M. Camusso, M. Barla, Microparameters calibration for loose and cemented soil 
+when using particle methods, Int. J. Geomech. 9 (2009) 217–229, https://doi.org/ 
+10.1061/(ASCE)1532-3641(2009)9:5(217). 
+[28] T. Afshar, M.M. Disfani, A.A. Arulrajah, G.A. Narsilio, S. Emam, Impact of particle 
+shape on breakage of recycled construction and demolition aggregates, Powder 
+Technol. 308 (2017) 1–12, https://doi.org/10.1016/j.powtec.2016.11.043. 
+[29] H. Gercek, Poisson’s ratio values for rocks, Int. J. Rock. Mech. Min. Sci. 44 (1) 
+(2007) 1–13, https://doi.org/10.1016/j.ijrmms.2006.04.011. 
+[30] K. Xu, W. Zhou, G. Ma, X.L. Chang, L.F. Yang, Review of particle breakage 
+simulation based on DEM, Chin. J. Geotech. Eng. 40 (5) (2018) 880–889, https:// 
+doi.org/10.11779/CJGE201805013. 
+[31] Y. Nakata, Y. Kato, M. Hyodo, A.F.L. Hyde, H. Murata, One-dimensional 
+compression behaviour of uniformly graded sand related to single particle crushing 
+strength, Soils Found. 41 (2001) 39–51, https://doi.org/10.3208/sandf.41.2. 
+[32] G.R. Mcdowell, M.D. Bolton, On the micromechanics of crushable aggregates, 
+Geotechnique 48 (5) (1998) 667–679, https://doi.org/10.1680/ 
+geot.1998.48.5.667. 
+[33] G.R. McDowell, A. Amon, The application of Weibull statistics to the fracture of soil 
+particles, Soils Found. 40 (2000) 133–141, https://doi.org/10.3208/sandf.40.5_ 
+133. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+
+=== PAGE 16 ===
+Construction and Building Materials 439 (2024) 137363
+16
+[34] S.F. Yin, S. Li, X. Liu, Experimental study on single particle strength and 
+compression properties of calcareous coarse sand, +1152, Rock. Soil Mech. 44 (4) 
+(2023) 1120–1129, https://doi.org/10.16285/j.rsm.2022.0766. 
+[35] K.F. Kong, F. Chen, Y.J. Xiao, Y.B. Li, Y. Jiang, M. Wang, E. Tutumluer, Y.L. Chen, 
+Z.Y. Li, Investigating particle breakage and compressibility characteristics of 
+unbound aggregate materials recycled from building demolition wastes, J. Cent. 
+South Univ. 30 (2023) 3499–3516, https://doi.org/10.1007/s11771-023-5463-9. 
+[36] Y. Wang, C. Shao, Y. Xu, Fractal crushing of solid particles, KSCE J. Civ. Eng. 21 
+(2017) 987–993, https://doi.org/10.1007/s12205-016-0508-3. 
+P. Cai et al.                                                                                                                                                                                                                                      
+
+

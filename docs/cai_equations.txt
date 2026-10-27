@@ -1,0 +1,549 @@
+*** Equation (1) ***
+ur common indicators were chosen to describe the shaped 
+differences of RA particles: elongation index (EI), flatness index (FI), 
+Domokos coefficient (Sf), and sphericity (Φ), calculated as per Eqs. (1), 
+(2), (3), and (4) respectively. To generalize the results, 45 particles of 
+three different re
+========================================
+*** Equation (1) ***
+results of particle size parameters of RA tends to be larger. 
+Except for Sf, the discrete degree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+Ta
+========================================
+*** Equation (2) ***
+mon indicators were chosen to describe the shaped 
+differences of RA particles: elongation index (EI), flatness index (FI), 
+Domokos coefficient (Sf), and sphericity (Φ), calculated as per Eqs. (1), 
+(2), (3), and (4) respectively. To generalize the results, 45 particles of 
+three different recycled
+========================================
+*** Equation (2) ***
+icle size parameters of RA tends to be larger. 
+Except for Sf, the discrete degree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+Table 1 
+Statisti
+========================================
+*** Equation (2) ***
+                                                                                                                            
+
+
+=== PAGE 15 ===
+Construction and Building Materials 439 (2024) 137363
+15
+(2) The current research does not fully cover all possible particle size 
+distributions, and a wider
+========================================
+*** Equation (3) ***
+ndicators were chosen to describe the shaped 
+differences of RA particles: elongation index (EI), flatness index (FI), 
+Domokos coefficient (Sf), and sphericity (Φ), calculated as per Eqs. (1), 
+(2), (3), and (4) respectively. To generalize the results, 45 particles of 
+three different recycled aggr
+========================================
+*** Equation (3) ***
+gree of EI, FI and Φ of shape parameters is 
+low, and the statistical data is relatively stable. 
+ЕІ = I
+L
+(1)  
+FI = S
+L
+(2)  
+Sf =
+(
+1
+S + 1
+I + 1
+L
+)̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+S2 + I2 + L2
+√̅̅̅
+3
+√
+(3) 
+Table 1 
+Statistical analysis of average shaped indicators of RA with different particle sizes.
+========================================
+*** Equation (4) ***
+ were chosen to describe the shaped 
+differences of RA particles: elongation index (EI), flatness index (FI), 
+Domokos coefficient (Sf), and sphericity (Φ), calculated as per Eqs. (1), 
+(2), (3), and (4) respectively. To generalize the results, 45 particles of 
+three different recycled aggregates ac
+========================================
+*** Equation (4) ***
+                                                                                                           
+
+
+=== PAGE 4 ===
+Construction and Building Materials 439 (2024) 137363
+4
+Φ =̅̅̅̅̅
+IS
+L2
+3
+√
+(4)  
+where L represents the longest axis of the particle in millimeters (mm); I 
+denotes the interm
+========================================
+*** Equation (5) ***
+ion curve of particle sizes. According to fractal theory, the 
+gradation curve of particle sizes follows a fractal distribution [32], and 
+the gradation curve of the particles can be expressed by Eq. (5). 
+M(d) =
+( d
+dmax
+)3−D
+(5)  
+where M(d) represents the mass proportion of particles smaller than
+========================================
+*** Equation (5) ***
+. According to fractal theory, the 
+gradation curve of particle sizes follows a fractal distribution [32], and 
+the gradation curve of the particles can be expressed by Eq. (5). 
+M(d) =
+( d
+dmax
+)3−D
+(5)  
+where M(d) represents the mass proportion of particles smaller than a 
+certain particle size; 
+========================================
+*** Equation (5) ***
+ 
+gradation curves of RB, RC and RM in the double logarithmic coordinate 
+system show that the slopes for the multi-sphericity RB, RC, and RM are 
+0.53, 0.69, and 0.51, respectively. According to Eq. (5), the final fractal 
+dimensions for the multi-sphericity Φ recycled aggregates RB, RC, and 
+RM ar
+========================================
+*** Equation (5) ***
+riments on the crushing of RA with multi-sphericity or in discrete 
+element numerical simulations of particle crushing, the gradation of 
+single particle crushing in RA can be determined based on Eq. (5) and 
+the experimentally obtained fractal dimension D. 
+0.5
+0.7
+0.9
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+========================================
+*** Equation (6) ***
+Materials 439 (2024) 137363
+9
+4.3. Single-particle crushing strength 
+According to the single-particle strength theory [33], the crushing 
+strength of a single RA particle can be determined using Eq. (6), and the 
+equivalent particle size d can be calculated using Eq. (7). 
+σf = 0.9 Ff
+d2
+(6)  
+d =̅
+========================================
+*** Equation (6) ***
+gle-particle strength theory [33], the crushing 
+strength of a single RA particle can be determined using Eq. (6), and the 
+equivalent particle size d can be calculated using Eq. (7). 
+σf = 0.9 Ff
+d2
+(6)  
+d =̅̅̅̅̅̅̅
+LIS
+3√
+(7)  
+where σf is the single-particle crushing strength; Ff is the magnitude
+========================================
+*** Equation (7) ***
+
+According to the single-particle strength theory [33], the crushing 
+strength of a single RA particle can be determined using Eq. (6), and the 
+equivalent particle size d can be calculated using Eq. (7). 
+σf = 0.9 Ff
+d2
+(6)  
+d =̅̅̅̅̅̅̅
+LIS
+3√
+(7)  
+where σf is the single-particle crushing strength
+========================================
+*** Equation (7) ***
+eory [33], the crushing 
+strength of a single RA particle can be determined using Eq. (6), and the 
+equivalent particle size d can be calculated using Eq. (7). 
+σf = 0.9 Ff
+d2
+(6)  
+d =̅̅̅̅̅̅̅
+LIS
+3√
+(7)  
+where σf is the single-particle crushing strength; Ff is the magnitude of 
+the peak particle c
+========================================
+*** Equation (8) ***
+ericity is shown in Fig. 11. Through the analysis of their 
+particle sphericity, the relationship between particle sphericity and 
+crushing strength can be expressed in the form of an exponential Eq. (8), 
+where p and q are fitting parameters. 
+σf = pΦq
+(8) 
+It can be seen from Fig. 11 that the sing
+========================================
+*** Equation (8) ***
+heir 
+particle sphericity, the relationship between particle sphericity and 
+crushing strength can be expressed in the form of an exponential Eq. (8), 
+where p and q are fitting parameters. 
+σf = pΦq
+(8) 
+It can be seen from Fig. 11 that the single particle crushing strength 
+of RC is greater than t
+========================================
+*** Equation (8) ***
+eater sphericity 
+means the force is more evenly distributed across the particle, and a 
+greater force is required to crush the particle [23]. Furthermore, it can 
+be seen from Fig. 11 that using Eq. (8) to fit the relationship between 
+single-particle sphericity and crushing strength results in a c
+========================================
+*** Equation (8) ***
+ity, and it fits well (correlation coefficient (R2>0.90). 
+Therefore, the single-particle crushing strength and crushing energy of 
+RA of any sphericity can be predicted through particle Φ using Eqs. (8) 
+and (10). 
+5. Numerical results and discussion 
+By analyzing single-particle crushing experimen
+========================================
+*** Equation (8) ***
+Numerical results and discussion 
+By analyzing single-particle crushing experiments of RA with 
+different shapes (sphericity Φ), the average crushing strength and en­
+ergy can be predicted using Eqs. (8) and (10). The PFC3D discrete 
+element numerical simulation is employed to evaluate the crushing 
+========================================
+*** Equation (8) ***
+le particles of other shapes. Here, Φ=0.40, 0.60, 0.80 and 1.0 are 
+taken as examples (but not limited to this), and their crushing properties 
+are simulated and compared with the predictions of Eqs. (8) and (10). 
+5.1. Single-particle crushing process 
+In order to explain key processes such as sing
+========================================
+*** Equation (8) ***
+ as the experi­
+mental test subjects (sphericities Φ=0.4–0.6, 0.6–0.8, and 0.8–1.0) were 
+obtained. These results were compared with the outcomes of the ex­
+periments and the predictions made by Eqs. (8) and (10), as shown in  
+Figs. 18 and 19. 
+Fig. 18 compares the results of the average crushing s
+========================================
+*** Equation (8) ***
+of 
+single particles of RB, RC, and RM. From Fig. 18, it can be inferred that 
+for single particles of different sphericities Φ, the experimental results, 
+numerical results, and predictions from Eq. (8) are quite close to each 
+other. Therefore, for the crushing strength of a single particle, the p
+========================================
+*** Equation (8) ***
+ 1.0. 
+The results are presented in Figs. 20 and 21. Fig. 20 compares the 
+average crushing strength of single particles of RB, RC, and RM obtained 
+from numerical results with those predicted by Eq. (8). It was found that, 
+under specific sphericities Φ, the numerical results for average crushing 
+
+========================================
+*** Equation (8) ***
+cal results with those predicted by Eq. (8). It was found that, 
+under specific sphericities Φ, the numerical results for average crushing 
+strength are in good agreement with those obtained from Eq. (8). Under 
+conditions of equivalent particle size, the greater the particle sphericity 
+Φ, the grea
+========================================
+*** Equation (8) ***
+t particle size, the greater the particle sphericity 
+Φ, the greater the sustained crushing force, and correspondingly, the 
+greater the crushing strength σf. Thus, the particle sphericity Φ and Eq. 
+(8) can be used to predict the crushing strength of single particles with 
+any sphericity, but the s
+========================================
+*** Equation (8) ***
+can be predicted by its 
+sphericity. 
+(5) The results of the discrete element numerical simulation show 
+that the single-particle crushing strength of RA can be calculated 
+through sphericity and Eq. (8). For single-particle crushing energy with 
+larger sphericities (Φ≥0.8), Eq. (11) is superior to 
+========================================
+*** Equation (9) ***
+ the 
+definition of work [36], as shown in Fig. 12. The crushing energy of a 
+single particle can be expressed as the integral function of the crushing 
+force concerning displacement, as shown in Eq. (9). 
+Ef =
+∫Δ
+0
+FfdΔ
+(9)  
+where Ef is the single-particle crushing energy, and Δ is the 
+displaceme
+========================================
+*** Equation (9) ***
+ork [36], as shown in Fig. 12. The crushing energy of a 
+single particle can be expressed as the integral function of the crushing 
+force concerning displacement, as shown in Eq. (9). 
+Ef =
+∫Δ
+0
+FfdΔ
+(9)  
+where Ef is the single-particle crushing energy, and Δ is the 
+displacement. 
+Similar to the s
+========================================
+*** Equation (10) ***
+ crushing energy Ef. The distribution relationship between 
+particle crushing energy and sphericity is shown in Fig. 14, which can be 
+expressed in the form of an exponential function as shown in Eq. (10), 
+where m and n are fitting parameters. 
+Ef = mΦn
+(10) 
+It is evident from Fig. 14 that under t
+========================================
+*** Equation (10) ***
+een 
+particle crushing energy and sphericity is shown in Fig. 14, which can be 
+expressed in the form of an exponential function as shown in Eq. (10), 
+where m and n are fitting parameters. 
+Ef = mΦn
+(10) 
+It is evident from Fig. 14 that under the same particle sphericity Φ 
+conditions, the single-p
+========================================
+*** Equation (10) ***
+it fits well (correlation coefficient (R2>0.90). 
+Therefore, the single-particle crushing strength and crushing energy of 
+RA of any sphericity can be predicted through particle Φ using Eqs. (8) 
+and (10). 
+5. Numerical results and discussion 
+By analyzing single-particle crushing experiments of RA 
+========================================
+*** Equation (10) ***
+l results and discussion 
+By analyzing single-particle crushing experiments of RA with 
+different shapes (sphericity Φ), the average crushing strength and en­
+ergy can be predicted using Eqs. (8) and (10). The PFC3D discrete 
+element numerical simulation is employed to evaluate the crushing 
+strengt
+========================================
+*** Equation (10) ***
+cles of other shapes. Here, Φ=0.40, 0.60, 0.80 and 1.0 are 
+taken as examples (but not limited to this), and their crushing properties 
+are simulated and compared with the predictions of Eqs. (8) and (10). 
+5.1. Single-particle crushing process 
+In order to explain key processes such as single-parti
+========================================
+*** Equation (10) ***
+experi­
+mental test subjects (sphericities Φ=0.4–0.6, 0.6–0.8, and 0.8–1.0) were 
+obtained. These results were compared with the outcomes of the ex­
+periments and the predictions made by Eqs. (8) and (10), as shown in  
+Figs. 18 and 19. 
+Fig. 18 compares the results of the average crushing strength 
+========================================
+*** Equation (10) ***
+
+13
+crushing energy results of single particles of RB, RC, and RM, there are 
+some differences among the average crushing energy experimental re­
+sults, numerical results, and predictions made by Eq. (10) for the three 
+different sphericities Φ. The error between the simulation results and the 
+test
+========================================
+*** Equation (10) ***
+the crushing energy also increases, 
+consistent with the conclusions of the aforementioned study. However, 
+there are some discrepancies between the numerical results and the 
+predictions made by Eq. (10). For particles with smaller sphericities 
+(Φ<0.8), the numerical results are consistent with th
+========================================
+*** Equation (10) ***
+l results and the 
+predictions made by Eq. (10). For particles with smaller sphericities 
+(Φ<0.8), the numerical results are consistent with the predictions, but 
+for larger sphericities (Φ≥0.8), Eq. (10) no longer fits well. The fitting 
+correlation coefficient R2 is generally low, and the fitting 
+========================================
+*** Equation (10) ***
+                    
+
+
+=== PAGE 14 ===
+Construction and Building Materials 439 (2024) 137363
+14
+in Fig. 21(a)), especially the predicted average crushing energy for RM 
+with a sphericity Φ=1.0 by Eq. (10), which is almost equivalent to RC, 
+not matching general perceptions, whereas the numerical res
+========================================
+*** Equation (10) ***
+=1.0 by Eq. (10), which is almost equivalent to RC, 
+not matching general perceptions, whereas the numerical results seem 
+more reasonable. Therefore, based on numerical results, a correction of 
+Eq. (10) is suggested, showing a certain pattern described by a new Eq. 
+(11) as shown in Fig. 21(b). Eq
+========================================
+*** Equation (10) ***
+E0, α, and t, with specific values for RB, RC, and RM provided 
+in Table 4. 
+Ef = E0 + 2α⋅
+(
+1 −e−Φ/t)
+(11) 
+Hence, for the crushing energy of single particles with smaller 
+sphericities (Φ<0.8), Eq. (10) can be used for predictions. However, for 
+particles with larger sphericities (Φ≥0.8) (as indic
+========================================
+*** Equation (10) ***
+
+that the single-particle crushing strength of RA can be calculated 
+through sphericity and Eq. (8). For single-particle crushing energy with 
+larger sphericities (Φ≥0.8), Eq. (11) is superior to Eq. (10), thus its 
+crushing energy can be calculated through sphericity and Eq. (11), and 
+further vali
+========================================
+*** Equation (10) ***
+erical result
+RC numerical result
+RM numerical result
+Fig. 21. Comparison of average crushing energy between numerical results and 
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of predicti
+========================================
+*** Equation (10) ***
+
+Fig. 21. Comparison of average crushing energy between numerical results and 
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of prediction Eq. (11) fitting parameters.  
+Component categorie
+========================================
+*** Equation (11) ***
+eral perceptions, whereas the numerical results seem 
+more reasonable. Therefore, based on numerical results, a correction of 
+Eq. (10) is suggested, showing a certain pattern described by a new Eq. 
+(11) as shown in Fig. 21(b). Eq. (11) involves nonlinear curve fitting 
+parameters E0, α, and t, wit
+========================================
+*** Equation (11) ***
+erical results seem 
+more reasonable. Therefore, based on numerical results, a correction of 
+Eq. (10) is suggested, showing a certain pattern described by a new Eq. 
+(11) as shown in Fig. 21(b). Eq. (11) involves nonlinear curve fitting 
+parameters E0, α, and t, with specific values for RB, RC, and
+========================================
+*** Equation (11) ***
+by a new Eq. 
+(11) as shown in Fig. 21(b). Eq. (11) involves nonlinear curve fitting 
+parameters E0, α, and t, with specific values for RB, RC, and RM provided 
+in Table 4. 
+Ef = E0 + 2α⋅
+(
+1 −e−Φ/t)
+(11) 
+Hence, for the crushing energy of single particles with smaller 
+sphericities (Φ<0.8), Eq. (10
+========================================
+*** Equation (11) ***
+ith smaller 
+sphericities (Φ<0.8), Eq. (10) can be used for predictions. However, for 
+particles with larger sphericities (Φ≥0.8) (as indicated by the light 
+purple area in Fig. 21(b)), employing Eq. (11) for predicting their 
+crushing energy is more appropriate. It is worth noting that since the 
+n
+========================================
+*** Equation (11) ***
+merical simulation show 
+that the single-particle crushing strength of RA can be calculated 
+through sphericity and Eq. (8). For single-particle crushing energy with 
+larger sphericities (Φ≥0.8), Eq. (11) is superior to Eq. (10), thus its 
+crushing energy can be calculated through sphericity and Eq.
+========================================
+*** Equation (11) ***
+sphericity and Eq. (8). For single-particle crushing energy with 
+larger sphericities (Φ≥0.8), Eq. (11) is superior to Eq. (10), thus its 
+crushing energy can be calculated through sphericity and Eq. (11), and 
+further validation through experiments is needed. 
+6.2. Research limitations and outlook 
+========================================
+*** Equation (11) ***
+ Comparison of average crushing energy between numerical results and 
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of prediction Eq. (11) fitting parameters.  
+Component categories 
+E0 
+α 
+========================================
+*** Equation (11) ***
+n numerical results and 
+predicted results. (a) Comparison between numerical results and Eq. (10); (b) 
+Comparison of numerical results with Eqs. (10) and (11). 
+Table 4 
+Correction of prediction Eq. (11) fitting parameters.  
+Component categories 
+E0 
+α 
+t 
+RB 
+-1.68×106 
+8.42×105  
+0.097 
+RC 
+-1.3
+========================================

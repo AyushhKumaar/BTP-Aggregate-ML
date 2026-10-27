@@ -1,0 +1,20 @@
+ng axis (L), 
+central axis (I) and short axis (S) of the particle with a vernier caliper. There are five methods for measuring the equivalent particle size 
+of irregular particles: For elongated and flaky particles, the long axis is much larger than the short and central axes, and the long axis of 
+the particles has a small influence on particle breakage, d0 can be calculated as d0 =̅̅̅̅̅
+SI
+√
+[6]; When the short axis of the particles is 
+placed parallel on the loading plate, Hiramatsu and Oka [13] proposed that d0 = S; For massive particles, due to their similar di­
+mensions in the three axial directions, Wu et al. [51] proposed that d0 = (L+I+S)/3 or d0 =̅̅̅̅̅̅̅
+LSI
+√
+. On this basis, Bagheri et al. [3]
+revised the formula as d0 = 0.887̅̅̅̅̅̅̅
+LIS
+3√
+based on the rough and porous characteristics of the particle surface. Using this method, 
+results were compared with those obtained from other approaches, showing consistent trends in breakage strength, with less than 5 % 
+difference in characteristic strength and a slight (≈5–8 %) increase in the Weibull modulus, indicating reduced dispersion, and this 
+method can better describe the three-dimensional stress situation and effectively control the average error.
+The survival probability under different load of particle aggregate is

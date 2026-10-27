@@ -1,0 +1,92 @@
+*** TABLE 2 FOUND ***
+2.2. Effect of particle type on breakage strength
+Table 2 shows that within the 4.75–25 mm particle size range, the average characteristic strength σf0 of RM, RB, RC were 2.97 MPa, 
+5.38 MPa, and 6.28 MPa, respectively. The fractal dimension analysis confirms that RC exhibits the highest σf0, while RM showed the 
+lowest σf0, indicating higher susceptibility to breakage. In addition, it can be seen that the average m of RM, RB and RC were 2.73, 2.84 
+and 1.38, respectively, reflecting material-dependent variations in distribution of breakage strength. RC exhibited significantly greater 
+strength dispersion compared to RM and RB, with this variability becoming more pronounced with increasing particle size. This 
+behavior may originate from the heterogeneous type of RC, containing mortar-cement aggregates with rough surfaces and complex 
+por
+==================================================
+*** TABLE 2 FOUND ***
+d at the corresponding peak points, the particle 
+Table 2 
+Test results.
+Material group
+Particle size 
+(mm)
+Characteristic strength 
+(σf0/MPa)
+Average characteristics strength 
+(σf0/MPa)
+Weibull modulus 
+(m)
+Average Weibull modulus (m)
+RM
+RM-1
+4.75–10
+3.03
+2.97
+2.70
+2.73
+RM-2
+10–20
+2.97
+2.73
+RM-3
+20–25
+2.91
+2.76
+RB
+RB-1
+4.75–10
+6.35
+5.83
+2.58
+2.84
+RB-2
+10–20
+6.21
+2.61
+RB-3
+20–25
+4.92
+3.32
+RC
+RC-1
+4.75–10
+6.51
+6.28
+1.58
+1.38
+RC-2
+10–20
+6.28
+1.30
+RC-3
+20–25
+6.07
+1.25
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+8 
+
+
+=== PAGE 9 ===
+Table 3 
+The particle breakage mode of construction waste.
+L. Liang et al.          
+==================================================
+*** TABLE 2 FOUND ***
+ining the test results as presented in Fig. 6 and Table 2, it seems that the average characteristic strength σf0 is correlated with 
+the breakage mode. In the intermediate splitting mode, the particle maintains integrity before breakage, leading to a relatively high 
+Fig. 6. Statistics of particle breakage mode of construction waste.
+L. Liang et al.                                                                                                                                                                                                           
+Case Studies in Construction Materials 23 (2025) e05603 
+10 
+
+
+=== PAGE 11 ===
+Fig. 7. Diagram of the breakage mechanisms of different types.
+L. Liang et al.                                                                                                                                          
+==================================================
