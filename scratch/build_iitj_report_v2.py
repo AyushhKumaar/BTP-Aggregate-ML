@@ -175,7 +175,17 @@ def add_figure(filename, caption_text, width_in=5.8):
         r_cap.font.size = Pt(10)
         r_cap.font.italic = True
 
-def add_table_data(headers, rows, col_widths=None):
+def add_table_data(headers, rows, col_widths=None, caption=None):
+    if caption:
+        pc = doc.add_paragraph()
+        pc.paragraph_format.space_before = Pt(6)
+        pc.paragraph_format.space_after = Pt(3)
+        pc.paragraph_format.keep_with_next = True
+        pc.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        rc = pc.add_run(caption)
+        rc.font.name = 'Times New Roman'
+        rc.font.size = Pt(10)
+        rc.font.bold = True
     table = doc.add_table(rows=len(rows)+1, cols=len(headers))
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.autofit = False
@@ -357,14 +367,15 @@ add_body_p(
     "In this study, the single-particle crushing mechanics and post-breakage particle size distribution of recycled aggregates are investigated using "
     "a physics-informed machine learning (PIML) framework. Three demolition materials are evaluated: Recycled Concrete (RC), Recycled Brick (RB), "
     "and Recycled Mortar (RM). Empirical Weibull brittle fracture size-scaling parameters (Liang et al., 2025) are coupled with 3D sphericity-dependent "
-    "strength and non-linear energy power laws (Cai et al., 2024), generating a comprehensive benchmark dataset of N = 3,600 individual particles spanning "
-    "diameters from 4.75 mm to 37.5 mm. Six regression models (Ridge Polynomial, Random Forest, XGBoost, LightGBM, CatBoost, and Physics-Informed MLP) "
+    "strength and piecewise energy laws (Cai et al., 2024), generating a comprehensive benchmark dataset of N = 3,600 individual particles spanning "
+    "diameters from 4.75 mm to 37.5 mm. Six regression models (Ridge Polynomial, Random Forest, XGBoost, LightGBM, CatBoost, and MLP Neural Network) "
     "are trained and benchmarked across crushing strength, peak rupture force, crushing energy, and post-breakage fractal dimension. CatBoost achieved "
-    "outstanding predictive fidelity (R² = 0.9926 for crushing force, R² = 0.9859 for crushing strength, and R² = 0.9631 for fractal dimension). "
-    "Explainable AI (SHAP) attributions revealed that equivalent diameter (d₀) governs absolute load-bearing capacity, while 3D sphericity (Φ) and "
-    "adhered mortar volume dictate stress concentration and energy absorption. The numerical results are thoroughly validated against published "
-    "experimental datasets. Furthermore, an interactive virtual testing suite is deployed in Streamlit to provide practicing engineers with "
-    "instantaneous, non-destructive particle characterization and sustainable pavement base course design under IRC:37-2018 guidelines."
+    "the highest overall accuracy (mean R² = 0.9619: R² = 0.9871 for peak force F_f, R² = 0.9636 for crushing strength sigma_f, R² = 0.9498 for crushing "
+    "energy E_f, and R² = 0.9469 for fractal dimension D). Explainable AI (XGBoost TreeSHAP) attributions revealed that material apparent density and 3D "
+    "sphericity (Φ) dominate crushing strength sigma_f, while shortest axis S and equivalent diameter d_eq govern absolute peak force and energy dissipation. "
+    "The mechanistic scaling model is validated against published laboratory datasets (MAPE = 1.15% for RC, 2.02% for RM, and 5.07% for RB). Furthermore, an "
+    "interactive four-tab Streamlit suite is deployed for non-destructive single-particle characterization and preliminary aggregate screening under Li et al. "
+    "(2021) fractal gradation criteria alongside IRC:37-2018 and IS 383 guidelines."
 )
 
 doc.add_page_break()
@@ -375,65 +386,66 @@ doc.add_page_break()
 add_heading_1("TABLE OF CONTENTS")
 
 toc_items = [
-    ("1. INTRODUCTION", "1"),
-    ("    1.1 Infrastructure Demand and Construction Waste Crisis", "1"),
-    ("    1.2 Geotechnical Limitations of Recycled Aggregates", "1"),
-    ("    1.3 Machine Learning and Computational Granular Mechanics", "2"),
-    ("2. LITERATURE SURVEY", "2"),
-    ("    2.1 Single-Particle Rock Mechanics vs. Bulk Standard Tests (IS 2386 / ASTM C131)", "2"),
-    ("    2.2 Microstructure and Interfacial Transition Zone (ITZ) in C&D Aggregates", "3"),
-    ("    2.3 3D Morphological Characterization & Zingg Classification", "3"),
-    ("    2.4 Weibull Weakest-Link Size Scaling & Fractal Fragmentation", "3"),
-    ("    2.5 Machine Learning & Explainable AI in Granular Geomechanics", "4"),
-    ("3. PROBLEM DEFINITION & OBJECTIVES", "4"),
-    ("    3.1 Problem Definition", "4"),
-    ("    3.2 Research Objectives", "4"),
-    ("    3.3 Scope and Technical Boundaries", "4"),
-    ("4. METHODOLOGY", "5"),
-    ("    4.1 Physics-Coupled Benchmark Dataset Generation", "5"),
-    ("        4.1.1 Material Properties and Morphological Characterization", "5"),
-    ("        4.1.2 Governing Fracture Formulations (Hiramatsu-Oka & Bagheri)", "6"),
-    ("        4.1.3 Weibull Size-Scaling and Shape Power Laws", "6"),
-    ("        4.1.4 Scale-Invariant Fractal Gradation", "7"),
-    ("    4.2 Machine Learning Architecture and Training Pipeline", "8"),
-    ("        4.2.1 16-Dimensional Feature Space and Stratified Data Partitioning", "8"),
-    ("        4.2.2 Machine Learning Regressors & Hyperparameter Optimization", "8"),
-    ("        4.2.3 Model Evaluation Metrics", "8"),
-    ("5. NUMERICAL & MACHINE LEARNING FINDINGS", "9"),
-    ("    5.1 Model Performance Benchmarks across Target Variables", "9"),
-    ("    5.2 Actual vs. Predicted Parity Analysis", "10"),
-    ("    5.3 Explainable AI (SHAP) Feature Attribution", "11"),
-    ("    5.4 Residual Error Distribution & Heteroscedasticity Analysis", "12"),
-    ("    5.5 2D Partial Dependence Analysis", "12"),
-    ("    5.6 Weibull Size-Scaling and Sphericity Effects on Failure Modes", "13"),
-    ("6. INTERACTIVE VIRTUAL TESTING SUITE & DESIGN APPLICATION", "13"),
-    ("    6.1 System Architecture and Technical Stack", "13"),
-    ("    6.2 Virtual Universal Testing Machine & Sieve Gradation (Tab 1)", "13"),
-    ("    6.3 Multiscale Size-Scaling Simulator (Tab 2)", "14"),
-    ("    6.4 Auxiliary Computer Vision Particle Sizing (Tab 3)", "15"),
-    ("    6.5 Baseline Recycled Concrete Case Study", "15"),
-    ("    6.6 Practical Pavement Base Course Design under IRC:37-2018", "15"),
-    ("    6.7 Validation against Published Experimental Benchmark Datasets", "16"),
-    ("7. SUMMARY AND FUTURE PLAN OF WORK", "16"),
-    ("    7.1 Summary of Research Achievements", "16"),
-    ("    7.2 Future Plan of Work", "16"),
-    ("8. REFERENCES", "17"),
+    ("1. INTRODUCTION", "7"),
+    ("    1.1 Infrastructure Demand and Construction Waste Crisis", "7"),
+    ("    1.2 Geotechnical Limitations of Recycled Aggregates", "7"),
+    ("    1.3 Machine Learning and Computational Granular Mechanics", "7"),
+    ("2. LITERATURE SURVEY", "7"),
+    ("    2.1 Single-Particle Rock Mechanics vs. Bulk Standard Tests (IS 2386 / ASTM C131)", "7"),
+    ("    2.2 Microstructure and Interfacial Transition Zone (ITZ) in C&D Aggregates", "8"),
+    ("    2.3 3D Morphological Characterization & Zingg Classification", "8"),
+    ("    2.4 Weibull Weakest-Link Size Scaling & Fractal Fragmentation", "8"),
+    ("    2.5 Machine Learning & Explainable AI in Granular Geomechanics", "8"),
+    ("3. PROBLEM DEFINITION & OBJECTIVES", "9"),
+    ("    3.1 Problem Definition", "9"),
+    ("    3.2 Research Objectives", "9"),
+    ("    3.3 Scope and Technical Boundaries", "9"),
+    ("4. METHODOLOGY", "10"),
+    ("    4.1 Physics-Coupled Benchmark Dataset Generation", "10"),
+    ("        4.1.1 Material Properties and Morphological Characterization", "10"),
+    ("        4.1.2 Governing Fracture Formulations (Hiramatsu-Oka & Bagheri)", "10"),
+    ("        4.1.3 Weibull Size-Scaling and Shape Power Laws", "11"),
+    ("        4.1.4 Scale-Invariant Fractal Gradation", "12"),
+    ("    4.2 Machine Learning Architecture and Training Pipeline", "12"),
+    ("        4.2.1 16-Dimensional Feature Space and Stratified Data Partitioning", "12"),
+    ("        4.2.2 Machine Learning Regressors & Hyperparameter Configuration", "12"),
+    ("        4.2.3 Model Evaluation Metrics", "13"),
+    ("5. NUMERICAL & MACHINE LEARNING FINDINGS", "13"),
+    ("    5.1 Model Performance Benchmarks across Target Variables", "13"),
+    ("    5.2 Actual vs. Predicted Parity Analysis", "13"),
+    ("    5.3 Explainable AI (SHAP) Feature Attribution", "14"),
+    ("    5.4 Residual Error Distribution & Heteroscedasticity Analysis", "15"),
+    ("    5.5 2D Partial Dependence Analysis", "16"),
+    ("    5.6 Weibull Size-Scaling and Breakage Mode Classification", "16"),
+    ("6. INTERACTIVE VIRTUAL TESTING SUITE & DESIGN APPLICATION", "17"),
+    ("    6.1 System Architecture and Technical Stack", "17"),
+    ("    6.2 Virtual Universal Testing Machine & Sieve Gradation (Tab 1)", "17"),
+    ("    6.3 Multiscale Size-Scaling Simulator (Tab 2)", "17"),
+    ("    6.4 Auxiliary Computer Vision Particle Sizing (Tab 3)", "18"),
+    ("    6.5 Baseline Recycled Concrete Case Study", "18"),
+    ("    6.6 Pavement Gradation Screening under Li et al. (2021) and IRC:37-2018", "19"),
+    ("    6.7 Validation against Published Experimental Benchmark Datasets", "19"),
+    ("7. SUMMARY AND FUTURE PLAN OF WORK", "20"),
+    ("    7.1 Summary of Research Achievements", "20"),
+    ("    7.2 Future Plan of Work", "20"),
+    ("8. REFERENCES", "21"),
 ]
 
 for title, pg in toc_items:
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(1)
-    p.paragraph_format.space_after = Pt(2)
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(1.2)
+    p.paragraph_format.line_spacing = 1.05
     r_title = p.add_run(title)
     r_title.font.name = 'Times New Roman'
-    r_title.font.size = Pt(10.5)
+    r_title.font.size = Pt(9.5)
     if not title.startswith("    "):
         r_title.font.bold = True
     
-    dots_len = max(4, 72 - len(title))
+    dots_len = max(4, 74 - len(title))
     r_dots = p.add_run(" " + "." * dots_len + " " + pg)
     r_dots.font.name = 'Times New Roman'
-    r_dots.font.size = Pt(10.5)
+    r_dots.font.size = Pt(9.5)
 
 doc.add_page_break()
 
@@ -443,14 +455,14 @@ doc.add_page_break()
 add_heading_1("LIST OF FIGURES")
 
 figures_list = [
-    ("Fig. 4.1", "Zingg 3D particle shape classification and aspect ratio domains (Flat, Equant, Blade, Elongated)", "5"),
-    ("Fig. 4.2", "Weibull survival probability distributions across particle size fractions (4.75–9.5 mm, 9.5–19.0 mm, 19.0–37.5 mm)", "6"),
-    ("Fig. 5.1", "Actual vs. predicted parity plots across mechanical targets on test set (R² >= 0.96 across all targets)", "10"),
-    ("Fig. 5.2", "SHAP global feature importance rankings across failure force, crushing strength, and crushing energy", "11"),
-    ("Fig. 5.3", "2D Partial Dependence contour heatmaps for mechanical targets over size d₀ and sphericity Φ", "12"),
-    ("Fig. 6.1", "Program screenshot from Tab 1: Virtual Universal Testing Machine and post-breakage sieve gradation curve", "13"),
-    ("Fig. 6.2", "Program screenshot from Tab 2: Multiscale size-scaling contour heatmaps across d₀ and Φ", "14"),
-    ("Fig. 6.3", "Program screenshot from Tab 2: Model size-scaling predictions benchmarked against published experimental data", "14"),
+    ("Fig. 4.1", "Zingg 3D particle shape classification and aspect ratio domains (N=3,600)", "10"),
+    ("Fig. 4.2", "Weibull survival probability distributions across particle size fractions", "11"),
+    ("Fig. 5.1", "XGBoost actual vs. predicted parity plots across targets on test set", "14"),
+    ("Fig. 5.2", "XGBoost TreeSHAP global feature importance rankings across all four targets", "15"),
+    ("Fig. 5.3", "2D Partial Dependence contour heatmaps over size d0 and sphericity Phi", "16"),
+    ("Fig. 6.1", "Tab 1 screenshot: Virtual UTM and post-breakage sieve gradation curve", "17"),
+    ("Fig. 6.2", "Tab 2 screenshot: Multiscale size-scaling contour heatmaps across d0 & Phi", "18"),
+    ("Fig. 6.3", "Tab 2 screenshot: Model scaling predictions vs. published experimental data", "18"),
 ]
 
 for num, cap, pg in figures_list:
@@ -471,12 +483,12 @@ p_sp.paragraph_format.space_before = Pt(8)
 add_heading_1("LIST OF TABLES")
 
 tables_list = [
-    ("Table 4.1", "Empirical calibration parameters for recycled aggregate materials (RC, RM, RB)", "5"),
-    ("Table 4.2", "Machine learning regressor hyperparameter grids and 5-fold cross-validation configurations", "8"),
-    ("Table 5.1", "Performance comparison of machine learning regression models on hold-out test set", "9"),
-    ("Table 5.2", "Error residual distribution and heteroscedasticity metrics across particle size fractions", "12"),
-    ("Table 6.1", "End-to-end design case study: Virtual characterization of Recycled Concrete aggregate", "15"),
-    ("Table 6.2", "Validation of virtual testing suite against published experimental benchmark datasets", "16"),
+    ("Table 4.1", "Empirical calibration parameters for recycled aggregate materials (RC, RM, RB)", "10"),
+    ("Table 4.2", "Machine learning regressor hyperparameter configurations and optimization schemes", "12"),
+    ("Table 5.1", "Performance comparison of machine learning regression models on hold-out test set", "13"),
+    ("Table 5.2", "CatBoost hold-out test residual statistics and Levene homoscedasticity test", "15"),
+    ("Table 6.1", "End-to-end design case study: Virtual characterization of Recycled Concrete", "19"),
+    ("Table 6.2", "Validation of virtual testing suite against published experimental benchmarks", "19"),
 ]
 
 for num, cap, pg in tables_list:
@@ -604,9 +616,9 @@ add_body_p(
 add_heading_2("3.2 Research Objectives")
 add_body_p("The primary research objectives of this investigation are as follows:")
 add_bullet_p("1. Physics-Coupled Synthetic Dataset Generation: ", "Formulate a rigorous synthetic generation framework coupling Hiramatsu-Oka tensile theory, Bagheri equivalent diameter, Cai et al. 3D sphericity-dependent power laws, and Liang et al. Weibull size-scaling parameters across Recycled Concrete (RC), Recycled Mortar (RM), and Recycled Brick (RB).")
-add_bullet_p("2. Machine Learning Regressor Benchmarking: ", "Train and benchmark six distinct machine learning architectures (Ridge Polynomial, Random Forest, XGBoost, LightGBM, CatBoost, and Physics-Informed MLP) to predict peak force (F_f), crushing strength (sigma_f), crushing energy (E_c), and fractal dimension (D).")
-add_bullet_p("3. Explainable AI (SHAP) Interpretation: ", "Perform global and local SHAP feature attribution to decipher the governing physical mechanics and validate feature importance against empirical rock fracture observations.")
-add_bullet_p("4. Interactive Software Deployment: ", "Develop and deploy an interactive Streamlit engineering platform featuring a Virtual UTM, a Multiscale Size-Scaling Simulator, an auxiliary Computer Vision particle scanner, and design verification under IRC:37-2018 pavement guidelines.")
+add_bullet_p("2. Machine Learning Regressor Benchmarking: ", "Train and benchmark six regression architectures (Ridge Polynomial, Random Forest, XGBoost, LightGBM, CatBoost, and MLP Neural Network) and three breakage-mode classifiers to predict sigma_f, F_f, E_f, and D.")
+add_bullet_p("3. Explainable AI (TreeSHAP) Interpretation: ", "Perform global TreeSHAP feature attribution on XGBoost models to verify that predictions obey empirical fracture physics.")
+add_bullet_p("4. Interactive Software Deployment: ", "Deploy a four-tab Streamlit platform featuring a Virtual UTM, an audited Size & Shape Scaling Simulator, an auxiliary OpenCV particle scanner, and an AI & Benchmarks gallery supporting Li et al. (2021) / IRC:37-2018 aggregate screening.")
 
 add_heading_2("3.3 Scope and Technical Boundaries")
 add_body_p(
@@ -631,81 +643,85 @@ add_body_p(
 add_heading_3("4.1.1 Material Properties and Morphological Characterization")
 add_body_p(
     "For each synthetic particle, triaxial dimensions (Longest L, Intermediate I, Shortest S) were generated using truncated normal distributions "
-    "satisfying the geometric hierarchy L >= I >= S > 0. The aspect ratios define the Zingg shape classification and Cai 3D sphericity Phi. "
-    "Table 4.1 summarizes the empirical calibration parameters extracted from the published experimental literature."
+    "calibrated to Cai et al. (2024) Table 1 means with realistic natural variability (CV = 12% for L, 10% for I, 13% for S) while enforcing "
+    "L >= I >= S > 0. Material-level baseline properties were assigned from Liang et al. (2025) and Cai et al. (2024): apparent density "
+    "(RC: 2.217, RB: 2.140, RM: 2.028 g/cm³), bulk density (RC: 1.296, RB: 1.063, RM: 1.113 g/cm³), and elastic modulus (RC: 15.2, RM: 9.1, RB: 8.6 GPa). "
+    "Table 4.1 summarizes the exact calibration parameters across the 4.75–10 mm, 10–20 mm, and 20–25 mm Weibull brackets."
 )
 
-headers_4_1 = ["Material Type", "Weibull Modulus (m)", "Ref. Size d_ref (mm)", "Ref. Strength (MPa)", "Shape Param p", "Shape Param q", "Ref. Energy E_0 (J)"]
+headers_4_1 = ["Material Type", "Weibull sigma_f0 (MPa) [3 brackets]", "Weibull m [3 brackets]", "Shape (p, q)", "Energy Power (c, d) mJ", "Fractal D_size [3 brackets]"]
 rows_4_1 = [
-    ["Recycled Concrete (RC)", "2.65", "25.0", "7.15", "9.35", "2.13", "14.2"],
-    ["Recycled Mortar (RM)", "2.21", "25.0", "3.42", "4.69", "2.21", "6.8"],
-    ["Recycled Brick (RB)", "1.89", "25.0", "2.10", "3.12", "1.95", "4.1"]
+    ["Recycled Concrete (RC)", "6.51 / 6.28 / 6.07", "1.58 / 1.30 / 1.25", "p = 9.35, q = 2.13", "c = 2061.15, d = 1.28", "1.66 / 1.78 / 1.87"],
+    ["Recycled Mortar (RM)", "3.03 / 2.97 / 2.91", "2.70 / 2.73 / 2.76", "p = 4.69, q = 2.21", "c = 2041.24, d = 2.66", "1.77 / 1.91 / 2.11"],
+    ["Recycled Brick (RB)", "6.35 / 6.21 / 4.92", "2.58 / 2.61 / 3.32", "p = 3.84, q = 1.68", "c = 1511.07, d = 2.16", "1.68 / 1.82 / 2.01"]
 ]
-add_table_data(headers_4_1, rows_4_1, [1.8, 1.0, 1.0, 1.0, 0.8, 0.8, 0.9])
+add_table_data(headers_4_1, rows_4_1, [1.5, 1.35, 1.05, 0.95, 1.10, 1.05], caption="Table 4.1. Empirical calibration parameters for recycled aggregate materials (RC, RM, RB).")
 
-add_figure("fig1_zingg_shape_classification.png", "Fig. 4.1. Zingg 3D particle shape classification and aspect ratio domains (Flat, Equant, Blade, Elongated).")
+add_figure("fig1_zingg_shape_classification.png", "Fig. 4.1. Zingg 3D particle shape classification and aspect ratio domains (Disk, Block, Blade, Bar; dataset counts: Bar=1,584, Disk=745, Blade=698, Block=573).")
 
 add_heading_3("4.1.2 Governing Fracture Formulations (Hiramatsu-Oka & Bagheri)")
 add_body_p(
-    "The equivalent spherical diameter d_0 was computed following Bagheri et al. (2015), relating the triaxial dimensions through the geometric mean:"
+    "The roughness-corrected equivalent diameter d_0 was computed following Bagheri et al. (2015), relating the triaxial dimensions through the geometric mean:"
 )
-add_equation_box("d_0 = 0.887 * cbrt(L * I * S)", "4.1")
+add_equation_box("d_eq = cbrt(L * I * S)", "4.1")
+add_equation_box("d_0 = 0.887 * d_eq = 0.887 * cbrt(L * I * S)", "4.2")
 
 add_body_p(
-    "Following Hiramatsu and Oka (1966), peak compressive failure force F_f was related to tensile crushing strength sigma_f via:"
+    "Following Hiramatsu and Oka (1966), peak compressive failure force F_f (N, reported in kN) was related to tensile crushing strength sigma_f (MPa) via:"
 )
-add_equation_box("F_f = (sigma_f * d_0^2) / 0.9", "4.2")
+add_equation_box("F_f = (sigma_f * d_0^2) / 0.9", "4.3")
 
 add_heading_3("4.1.3 Weibull Size-Scaling and Shape Power Laws")
 add_body_p(
-    "Shape-dependent crushing strength at reference scale (d_ref = 25 mm) was coupled with Weibull size-scaling to determine the characteristic "
-    "crushing strength for any particle size and morphology:"
+    "Shape-dependent crushing strength at the reference coarse size (d_ref = 25 mm, Cai et al., 2024 Eq. 8) was coupled with size-dependent Weibull "
+    "characteristic strength scaling (Liang et al., 2025 Table 2) for any equivalent size d_0 and 3D sphericity Phi = cbrt((I * S) / L^2):"
 )
-add_equation_box("sigma_f(d_0, Phi) = [p * Phi^q] * [d_0 / d_ref]^(-3/m)", "4.3")
+add_equation_box("sigma_f(d_0, Phi) = [p * Phi^q] * [sigma_f0(d_0) / sigma_f0(d_ref)]", "4.4")
 
 add_body_p(
-    "Crushing energy dissipation E_c was formulated following the power-law relation established by Cai et al. (2024):"
+    "Crushing energy dissipation E_f (in mJ) follows the piecewise empirical law of Cai et al. (2024 Eq. 10 & 11) with volumetric size scaling relative to d_ref = 25 mm:"
 )
-add_equation_box("E_c(d_0, Phi) = E_0 * [d_0 / d_ref]^(alpha_E) * Phi^(beta_E)", "4.4")
+add_equation_box("E_f(d_0, Phi) = [c * Phi^d] * (d_0 / 25)^3  (Phi < 0.8);   [E_0 + 2a*(1 - exp(-Phi/t))] * (d_0 / 25)^3  (Phi >= 0.8)", "4.5")
 
 add_figure("fig2_weibull_survival_curves.png", "Fig. 4.2. Weibull survival probability distributions across particle size fractions (4.75–9.5 mm, 9.5–19.0 mm, 19.0–37.5 mm).")
 
 add_heading_3("4.1.4 Scale-Invariant Fractal Gradation")
 add_body_p(
-    "Post-breakage sieve size distribution was modeled using the scale-invariant fractal fragmentation formulation (Turcotte, 1986; Tyler and Wheatcraft, 1992):"
+    "Post-breakage sieve size distribution was modeled using the scale-invariant fractal fragmentation formulation (Turcotte, 1986; Tyler and Wheatcraft, 1992), "
+    "coupling Liang size-dependent D_size(d_0) with a +/-30% fractional sphericity modulation derived from Cai et al. (2024 Fig. 9):"
 )
-add_equation_box("F(d_i) = min[ 100, (d_i / d_0)^(3 - D) * 100 ]", "4.5")
+add_equation_box("F(d_i) = min[ 100, (d_i / d_0)^(3 - D) * 100 ]", "4.6")
 add_body_p(
-    "where F(d_i) is the cumulative percentage passing sieve aperture d_i, and D is the fractal dimension (typically between 2.1 and 2.85)."
+    "where F(d_i) is the cumulative percentage passing sieve aperture d_i, and D spans 1.57 to 2.20 across single-particle crushing tests."
 )
 
 add_heading_2("4.2 Machine Learning Architecture and Training Pipeline")
 add_heading_3("4.2.1 16-Dimensional Feature Space and Stratified Data Partitioning")
 add_body_p(
-    "A 16-dimensional feature vector was defined per particle: 13 continuous geometric features (L, I, S, Elongation Ratio I/L, Flatness Ratio S/I, "
-    "Aspect Ratio S/L, Volume V, Surface Area A, Specific Surface Area SSA, 3D Sphericity Phi, Equivalent Diameter d_eq, Hiramatsu Diameter d_0, "
-    "and Shape Factor SF) alongside 3 one-hot encoded material flags (is_RC, is_RM, is_RB). The dataset was partitioned into an 80% training set "
-    "(N_train = 2,880) and a 20% hold-out test set (N_test = 720) using stratified sampling based on material type and size fraction. Continuous "
-    "features were normalized using robust z-score standardization."
+    "A 16-dimensional feature vector was extracted per particle: 13 continuous morphological and physical features (L, I, S, Elongation Index EI = I/L, "
+    "Flatness Index FI = S/I, 3D Sphericity Phi, Domokos Shape Factor S_f, nominal equivalent diameter d_eq, Bagheri diameter d_0, apparent density, "
+    "bulk density, elastic modulus, and Poisson's ratio) alongside 3 label-encoded categorical features (Material_Enc, Shape_Class_Enc, and "
+    "Sieve_Bracket_Enc). The N = 3,600 dataset was partitioned into an 80% training set (N_train = 2,880) and a 20% hold-out test set (N_test = 720) "
+    "stratified by breakage mode, using StandardScaler z-score normalization fitted strictly on the training fold."
 )
 
-add_heading_3("4.2.2 Machine Learning Regressors & Hyperparameter Optimization")
+add_heading_3("4.2.2 Machine Learning Regressors & Hyperparameter Configuration")
 add_body_p(
-    "Six regression models were implemented and optimized: Ridge Polynomial Regression (degree 2), Random Forest, XGBoost, LightGBM, CatBoost, "
-    "and a Physics-Informed Multilayer Perceptron (MLP). Hyperparameters were tuned using 5-fold stratified cross-validation. Table 4.2 details "
-    "the finalized hyperparameter configurations."
+    "Six multi-target regression architectures were implemented and benchmarked: Ridge Polynomial Regression (degree 2), Random Forest, XGBoost, "
+    "LightGBM, CatBoost, and an MLP Neural Network, alongside three breakage-mode classifiers (Random Forest, XGBoost, MLP). "
+    "Table 4.2 details the exact training hyperparameters used in src/train_models.py."
 )
 
 headers_4_2 = ["Model Architecture", "Key Hyperparameters", "Loss Function", "Regularization", "Optimization"]
 rows_4_2 = [
-    ["CatBoost Regressor", "depth=6, iterations=1000, lr=0.05", "RMSE", "l2_leaf_reg=3.0", "Ordered Boosting"],
-    ["LightGBM Regressor", "num_leaves=31, max_depth=6, lr=0.05", "Huber Loss", "reg_alpha=0.1, reg_lambda=1.0", "Histogram GBDT"],
-    ["XGBoost Regressor", "max_depth=6, n_estimators=800, lr=0.05", "Squared Error", "colsample_bytree=0.8, subsample=0.8", "Exact Greedy"],
-    ["Random Forest", "n_estimators=500, max_depth=12", "Squared Error", "min_samples_split=4, max_features=sqrt", "Bagging"],
-    ["Physics MLP", "hidden=[128, 64, 32], activation=GELU", "MSE + Physics Loss", "weight_decay=1e-4, dropout=0.1", "AdamW (lr=1e-3)"],
-    ["Ridge Polynomial", "degree=2, include_bias=False", "Squared Loss", "alpha=10.0 (L2 Penalty)", "Cholesky Solver"]
+    ["CatBoost Regressor", "depth=8, iterations=300, lr=0.05", "RMSE", "l2_leaf_reg=3.0", "Ordered Boosting"],
+    ["LightGBM Regressor", "max_depth=8, n_estimators=300, lr=0.05", "Squared Error", "reg_alpha=0.1, reg_lambda=1.0", "Histogram GBDT"],
+    ["XGBoost Regressor", "max_depth=8, n_estimators=300, lr=0.05", "Squared Error", "colsample=0.8, subsample=0.8", "Hist / Greedy Tree"],
+    ["Random Forest", "n_estimators=200, max_depth=15", "Squared Error", "min_samples_split=5, leaf=2", "Bagging"],
+    ["MLP Neural Network", "hidden=(128, 64, 32), act=ReLU", "MSE (Early Stop)", "alpha=0.001, batch_size=64", "Adam (lr=1e-3)"],
+    ["Ridge Polynomial", "degree=2, include_bias=False", "Squared Loss", "alpha=1.0 (L2 Penalty)", "Closed-Form Ridge"]
 ]
-add_table_data(headers_4_2, rows_4_2, [1.4, 1.8, 1.1, 1.2, 1.0])
+add_table_data(headers_4_2, rows_4_2, [1.4, 1.8, 1.1, 1.2, 1.0], caption="Table 4.2. Machine learning regressor hyperparameter configurations and optimization schemes.")
 
 add_heading_3("4.2.3 Model Evaluation Metrics")
 add_body_p(
@@ -721,80 +737,85 @@ add_heading_1("5. NUMERICAL & MACHINE LEARNING FINDINGS")
 add_heading_2("5.1 Model Performance Benchmarks across Target Variables")
 add_body_p(
     "The six models were evaluated on the independent hold-out test set (N_test = 720). Table 5.1 presents the comprehensive performance metrics "
-    "across all four engineering target variables: Peak Rupture Force (F_f), Crushing Strength (sigma_f), Crushing Energy (E_c), and Fractal Dimension (D)."
+    "across all four engineering target variables: Peak Rupture Force (F_f), Crushing Strength (sigma_f), Crushing Energy (E_f), and Fractal Dimension (D)."
 )
 
 headers_5_1 = ["Model Architecture", "Target Variable", "R² Score", "RMSE", "MAE", "MAPE (%)"]
 rows_5_1 = [
-    ["CatBoost Regressor", "Peak Force F_f (kN)", "0.9926", "0.412 kN", "0.298 kN", "4.12%"],
-    ["CatBoost Regressor", "Crushing Strength (MPa)", "0.9859", "0.321 MPa", "0.245 MPa", "4.87%"],
-    ["CatBoost Regressor", "Crushing Energy E_c (J)", "0.9784", "0.892 J", "0.651 J", "5.63%"],
-    ["CatBoost Regressor", "Fractal Dimension D", "0.9631", "0.038", "0.029", "1.18%"],
-    ["LightGBM Regressor", "Peak Force F_f (kN)", "0.9904", "0.468 kN", "0.334 kN", "4.61%"],
-    ["LightGBM Regressor", "Crushing Strength (MPa)", "0.9832", "0.352 MPa", "0.268 MPa", "5.29%"],
-    ["XGBoost Regressor", "Peak Force F_f (kN)", "0.9887", "0.509 kN", "0.362 kN", "5.02%"],
-    ["Random Forest", "Peak Force F_f (kN)", "0.9741", "0.765 kN", "0.542 kN", "7.35%"],
-    ["Physics MLP", "Peak Force F_f (kN)", "0.9612", "0.934 kN", "0.687 kN", "8.91%"],
-    ["Ridge Polynomial", "Peak Force F_f (kN)", "0.9125", "1.398 kN", "1.045 kN", "13.40%"]
+    ["CatBoost Regressor", "Peak Force F_f (kN)", "0.9871", "0.081 kN", "0.050 kN", "6.56%"],
+    ["CatBoost Regressor", "Crushing Strength (MPa)", "0.9636", "0.235 MPa", "0.172 MPa", "5.81%"],
+    ["CatBoost Regressor", "Crushing Energy E_f (mJ)", "0.9498", "82.53 mJ", "23.36 mJ", "9.13%"],
+    ["CatBoost Regressor", "Fractal Dimension D", "0.9469", "0.032", "0.025", "1.37%"],
+    ["LightGBM Regressor", "Peak Force F_f (kN)", "0.9852", "0.087 kN", "0.052 kN", "6.48%"],
+    ["LightGBM Regressor", "Crushing Energy E_f (mJ)", "0.9465", "85.19 mJ", "26.60 mJ", "9.48%"],
+    ["XGBoost Regressor", "Peak Force F_f (kN)", "0.9847", "0.089 kN", "0.054 kN", "6.67%"],
+    ["Random Forest", "Peak Force F_f (kN)", "0.9840", "0.091 kN", "0.054 kN", "6.80%"],
+    ["MLP Neural Network", "Peak Force F_f (kN)", "0.9866", "0.083 kN", "0.052 kN", "7.66%"],
+    ["Ridge Polynomial", "Peak Force F_f (kN)", "0.9878", "0.079 kN", "0.049 kN", "6.98%"],
+    ["Ridge Polynomial", "Crushing Energy E_f (mJ)", "0.8647", "135.44 mJ", "54.40 mJ", "65.08%"]
 ]
-add_table_data(headers_5_1, rows_5_1, [1.6, 1.6, 0.8, 0.9, 0.9, 0.8])
+add_table_data(headers_5_1, rows_5_1, [1.6, 1.6, 0.8, 0.9, 0.9, 0.8], caption="Table 5.1. Performance comparison of machine learning regression models on hold-out test set (N_test = 720).")
 
 add_body_p(
-    "CatBoost consistently achieved superior predictive fidelity across all targets, delivering an R² of 0.9926 for failure force and 0.9859 for crushing strength. "
-    "Gradient-boosted decision trees outperformed linear and neural models because their hierarchical orthogonal decision splits naturally capture "
-    "the non-linear geometric coupling between equivalent diameter d_0 and 3D sphericity Phi."
+    "CatBoost achieved the best overall generalization across all four targets (mean R² = 0.9619: R² = 0.9871 for peak force, 0.9636 for crushing "
+    "strength, 0.9498 for crushing energy, and 0.9469 for fractal dimension). Although Ridge Polynomial marginally led smooth peak force F_f (0.9878), "
+    "it degraded severely on crushing energy E_f (R² = 0.8647, MAPE = 65.08%) because linear polynomials cannot resolve the sharp piecewise transition "
+    "at Phi = 0.80, whereas gradient-boosted decision trees capture both continuous and piecewise fracture regimes accurately."
 )
 
 add_heading_2("5.2 Actual vs. Predicted Parity Analysis")
 add_body_p(
-    "Figure 5.1 illustrates the actual versus predicted parity plots on the test set for CatBoost. Across all four mechanical targets, data points cluster "
-    "tightly along the 1:1 ideal agreement line without systematic bias or drift."
+    "Figure 5.1 presents the actual versus predicted parity plots on the test set (N_test = 720) for XGBoost. Across all four targets "
+    "(R² = 0.9567 for sigma_f, 0.9847 for F_f, 0.9219 for E_f, and 0.9410 for D), predictions cluster tightly along the 1:1 line within the +/-10% envelope."
 )
 
-add_figure("fig6_actual_vs_predicted_parity.png", "Fig. 5.1. Actual vs. predicted parity plots across targets on test set (R² >= 0.96 across all targets).")
+add_figure("fig6_actual_vs_predicted_parity.png", "Fig. 5.1. XGBoost actual vs. predicted parity plots across targets on test set (R² = 0.9219–0.9847; +/-10% band shown).")
 
 add_heading_2("5.3 Explainable AI (SHAP) Feature Attribution")
 add_body_p(
-    "To eliminate black-box obscurity, TreeSHAP was computed across the test partition. Figure 5.2 displays the global feature importance rankings. "
-    "Equivalent diameter d_0 emerges as the dominant driver for peak failure force F_f, consistent with Hiramatsu's d_0^2 area-scaling relation. "
-    "Conversely, 3D Sphericity Phi and Flatness Ratio S/I dominate crushing strength sigma_f and crushing energy E_c. Elongated and flat particles produce "
-    "strongly negative SHAP values, confirming that platen-induced bending stresses severely compromise load capacity."
+    "To verify physical interpretability, TreeSHAP was evaluated on the trained XGBoost models across test samples (Figure 5.2). For tensile crushing "
+    "strength sigma_f, apparent density ranks first (distinguishing virgin-core RC at 2.217 g/cm³ from porous RB and RM) followed closely by 3D "
+    "sphericity Phi and bulk density. Conversely, for peak failure force F_f and crushing energy E_f, geometric size attributes—shortest axis S and "
+    "equivalent diameter d_eq—rank highest, matching Hiramatsu's F_f propto d_0^2 area law and cubic (d_0 / d_ref)^3 volume-energy scaling."
 )
 
-add_figure("fig8_shap_feature_importance.png", "Fig. 5.2. SHAP global feature importance rankings across failure force, crushing strength, and crushing energy.")
+add_figure("fig8_shap_feature_importance.png", "Fig. 5.2. XGBoost TreeSHAP global feature importance rankings across all four mechanical and fractal targets.")
 
 add_heading_2("5.4 Residual Error Distribution & Heteroscedasticity Analysis")
 add_body_p(
-    "To verify model robustness and ensure absence of heteroscedastic variance (error inflation at larger grain sizes), residual error distributions "
-    "e = y_actual - y_pred were analyzed across particle size brackets. Table 5.2 displays the residual statistics for CatBoost predicting peak force F_f."
+    "To audit bias and variance stability across aggregate sizes, CatBoost hold-out test residuals (e = y_actual - y_pred) were evaluated across the three "
+    "sieve brackets (Table 5.2). Because peak force scales quadratically with diameter (F_f propto d_0^2), absolute force spread naturally scales with grain "
+    "size (std = 0.018 kN in fine vs. 0.120 kN in coarse brackets), whereas scale-invariant crushing strength sigma_f remains strictly homoscedastic "
+    "(std = 0.228–0.245 MPa, Levene p = 0.924) with near-zero mean bias across all fractions."
 )
 
-headers_5_2 = ["Particle Size Fraction", "Mean Error (kN)", "Std Dev Error (kN)", "Skewness", "Kurtosis", "Heteroscedasticity Test"]
+headers_5_2 = ["Particle Size Fraction", "sigma_f Mean / Std (MPa)", "F_f Mean / Std (kN)", "F_f Skewness", "Variance Behavior (Levene Test)"]
 rows_5_2 = [
-    ["Fine Fraction (4.75–9.5 mm)", "+0.004", "0.082", "0.08", "2.94", "Homoscedastic (p > 0.05)"],
-    ["Medium Fraction (9.5–19.0 mm)", "-0.002", "0.241", "-0.05", "3.02", "Homoscedastic (p > 0.05)"],
-    ["Coarse Fraction (19.0–37.5 mm)", "+0.008", "0.584", "0.12", "3.11", "Homoscedastic (p > 0.05)"]
+    ["Fine (4.75–9.5 mm, n=241)", "-0.013 / 0.230", "-0.001 / 0.018", "0.12", "sigma_f Homoscedastic (p = 0.924)"],
+    ["Medium (9.5–19.0 mm, n=229)", "+0.002 / 0.245", "+0.001 / 0.067", "1.35", "Relative F_f dispersion ~6.6% MAPE"],
+    ["Coarse (19.0–37.5 mm, n=250)", "+0.043 / 0.228", "+0.020 / 0.120", "0.49", "Scale-invariant sigma_f residual variance"]
 ]
-add_table_data(headers_5_2, rows_5_2, [1.8, 1.0, 1.0, 0.8, 0.8, 1.3])
+add_table_data(headers_5_2, rows_5_2, [1.75, 1.3, 1.25, 0.8, 1.6], caption="Table 5.2. CatBoost hold-out residual statistics and Levene homoscedasticity test across size fractions.")
 
 add_body_p(
-    "The residual mean remains virtually zero across all fractions, confirming that the trained model is unbiased across the full particle size spectrum."
+    "The residual mean remains virtually zero across all sieve fractions, confirming unbiased surrogate predictions from 4.75 mm to 37.5 mm."
 )
 
 add_heading_2("5.5 2D Partial Dependence Analysis")
 add_body_p(
-    "Two-dimensional Partial Dependence Plots (Figure 5.3) over the domain d_0 in [4, 35] mm and Phi in [0.4, 0.95] map the non-linear interaction surfaces. "
-    "The failure force contour exhibits parabolic expansion with d_0, modulated by sphericity. Low sphericity (Phi < 0.55) significantly depresses "
-    "both strength and energy absorption across all size brackets."
+    "Two-dimensional Partial Dependence Plots (Figure 5.3) over d_0 in [4, 35] mm and Phi in [0.42, 0.93] visualize the coupled response surfaces. "
+    "Crushing strength sigma_f increases monotonically with sphericity, peak force expands across both d_0 and Phi, the energy map clearly exposes the "
+    "Cai et al. (2024) piecewise jump at Phi = 0.80, and fractal dimension D steps sharply at d_0 = 20 mm due to discrete sieve-bracket training bins."
 )
 
 add_figure("fig9_partial_dependence_contours.png", "Fig. 5.3. 2D Partial Dependence contour heatmaps for mechanical targets over size d₀ and sphericity Φ.")
 
-add_heading_2("5.6 Weibull Size-Scaling and Sphericity Effects on Failure Modes")
+add_heading_2("5.6 Weibull Size-Scaling and Breakage Mode Classification")
 add_body_p(
-    "The numerical results confirm classical Weibull weakest-link scaling: smaller particles exhibit substantially higher tensile strength than larger particles "
-    "due to lower flaw encounter probabilities. Concurrently, 3D sphericity dictates whether breakage is catastrophic single splitting or gradual surface attrition, "
-    "directly shaping the post-breakage fractal dimension D."
+    "The numerical results confirm classical Weibull weakest-link scaling: smaller particles sustain higher nominal crushing stress due to lower flaw "
+    "probabilities, while 3D sphericity separates angular grains (prone to Mode III fragmentation) from compact grains (Mode I splitting). "
+    "Because Mode I/II/III transition boundaries overlap stochastically in laboratory tests, standalone classification accuracy reached 54.17% (MLP) "
+    "and 53.75% (Random Forest, ROC-AUC = 0.648), highlighting why continuous regression targets remain far more reliable for structural screening."
 )
 
 # ==============================================================================
@@ -804,9 +825,9 @@ add_heading_1("6. INTERACTIVE VIRTUAL TESTING SUITE & DESIGN APPLICATION")
 
 add_heading_2("6.1 System Architecture and Technical Stack")
 add_body_p(
-    "To translate these scientific findings into practice, an interactive web-based engineering suite was developed in Python using Streamlit, "
-    "Plotly Graph Objects, and Scikit-learn. The software comprises four functional tabs: Tab 1 Virtual Universal Testing Machine, Tab 2 Multi-Scale "
-    "Scaling Simulator, Tab 3 Auxiliary Computer Vision Particle Sizing, and Tab 4 Explainable AI (SHAP) Engine."
+    "To translate these scientific findings into practice, an interactive web-based engineering suite (app.py) was developed using Streamlit, "
+    "Plotly Graph Objects, OpenCV, and Scikit-learn. The software comprises four functional tabs: Tab 1 Virtual Universal Testing Machine, Tab 2 Audited "
+    "Size & Shape Scaling Simulator, Tab 3 Auxiliary Computer Vision Particle Scanner, and Tab 4 AI & Benchmarks Gallery."
 )
 
 add_heading_2("6.2 Virtual Universal Testing Machine & Sieve Gradation (Tab 1)")
@@ -829,54 +850,55 @@ add_figure("app_tab2_experimental_validation_subplots.png", "Fig. 6.3. Program s
 
 add_heading_2("6.4 Auxiliary Computer Vision Particle Sizing (Tab 3)")
 add_body_p(
-    "To support non-destructive lab testing, Tab 3 incorporates an auxiliary Computer Vision (OpenCV) particle scanner. A photographic image of aggregate "
-    "particles placed against a calibrated background with a reference marker is uploaded. The algorithm applies Otsu thresholding, morphological contour "
-    "closure, and minimum rotated bounding rectangle extraction to automatically extract 2D dimensions (L, I) and estimate sphericity, seamlessly "
-    "populating the mechanical prediction engine without manual calipers."
+    "To support rapid non-destructive laboratory intake, Tab 3 integrates an auxiliary OpenCV particle scanner. Top-down aggregate photographs (or the built-in "
+    "synthetic test generator) undergo Gaussian blur, Otsu adaptive thresholding, external contour extraction, and minimum rotated bounding rectangle fitting "
+    "to measure 2D dimensions (L, I) via a user-calibrated mm/px scale slider. Assuming a standard stereological flat-resting thickness ratio S = 0.65 * I, "
+    "it feeds triaxial dimensions directly into the mechanical prediction engine."
 )
 
 add_heading_2("6.5 Baseline Recycled Concrete Case Study")
 add_body_p(
-    "To illustrate an end-to-end design calculation, a baseline Recycled Concrete particle with dimensions L = 25.0 mm, I = 18.0 mm, S = 12.0 mm "
-    "was evaluated. Table 6.1 details the predicted physical, mechanical, and fractal properties."
+    "To demonstrate an end-to-end calculation matching the live Tab 1 Virtual UTM defaults, a baseline Recycled Concrete particle measuring L = 25.0 mm, "
+    "I = 18.0 mm, S = 12.0 mm was evaluated under continuous Weibull scaling. Table 6.1 lists all computed morphological and crushing outputs."
 )
 
 headers_6_1 = ["Output Parameter", "Value", "Unit", "Physical Interpretation"]
 rows_6_1 = [
-    ["Equivalent Diameter d_eq", "17.54", "mm", "Diameter of equal-volume sphere"],
-    ["Hiramatsu Diameter d_0", "15.56", "mm", "Projected loading diameter"],
-    ["Flatness Ratio (S/I)", "0.667", "—", "Zingg Flatness metric"],
-    ["Elongation Ratio (I/L)", "0.720", "—", "Zingg Elongation metric"],
-    ["3D Sphericity (Phi)", "0.702", "—", "Cai 3D sphericity metric"],
-    ["Peak Failure Force (F_f)", "2.68", "kN", "Catastrophic fracture force"],
-    ["Crushing Strength (sigma_f)", "9.98", "MPa", "Tensile splitting strength"],
-    ["Crushing Energy (E_c)", "3.12", "J", "Energy dissipated during rupture"],
-    ["Fractal Dimension (D)", "2.48", "—", "Fragment size distribution exponent"]
+    ["Equivalent Diameter d_eq", "17.54", "mm", "Equal-volume nominal diameter"],
+    ["Bagheri Diameter d_0", "15.56", "mm", "Roughness-corrected effective diameter"],
+    ["Flatness Index (FI = S/I)", "0.667", "—", "Zingg Flatness metric (Bar/Block boundary)"],
+    ["Elongation Index (EI = I/L)", "0.720", "—", "Zingg Elongation metric"],
+    ["3D Sphericity (Phi)", "0.702", "—", "High sphericity (> 0.65 favorable zone)"],
+    ["Crushing Strength (sigma_f)", "4.50", "MPa", "Hiramatsu-Oka tensile splitting strength"],
+    ["Peak Failure Force (F_f)", "1.210", "kN", "Catastrophic peak compression load"],
+    ["Est. Crushing Energy (E_f)", "315.9", "mJ", "Cai piecewise volumetric energy (0.316 J)"],
+    ["Fractal Dimension (D)", "1.814", "—", "Single-particle post-breakage exponent (Mode II)"]
 ]
-add_table_data(headers_6_1, rows_6_1, [1.8, 1.0, 0.8, 2.8])
+add_table_data(headers_6_1, rows_6_1, [1.8, 1.0, 0.8, 2.8], caption="Table 6.1. End-to-end design case study: Virtual characterization of baseline Recycled Concrete aggregate.")
 
-add_heading_2("6.6 Practical Pavement Base Course Design under IRC:37-2018")
+add_heading_2("6.6 Pavement Gradation Screening under Li et al. (2021) and IRC:37-2018")
 add_body_p(
-    "In road infrastructure, recycled aggregates used in Granular Sub-Base (GSB) and Wet Mix Macadam (WMM) must comply with Indian Roads Congress "
-    "guidelines (IRC:37-2018). Under vibratory roller compaction and heavy cyclic axle loading, aggregates with fractal dimension D > 2.65 undergo excessive "
-    "degradation, generating excess fines (< 0.075 mm) that reduce hydraulic permeability and induce moisture-induced rutting. Conversely, materials with "
-    "D < 2.30 produce insufficient fines, hindering mechanical interlock. The baseline Recycled Concrete aggregate achieves D = 2.48, which falls squarely "
-    "within the optimal stabilization band (2.40 <= D <= 2.60) specified for well-drained, heavy-traffic pavement bases."
+    "In road infrastructure, recycled aggregates used in Granular Sub-Base (GSB) and Wet Mix Macadam (WMM) layers under IRC:37-2018 and IS 383:2016 must "
+    "resist excessive degradation during roller compaction and cyclic axle loads. Li et al. (2021) established an optimal gradation fragmentation band of "
+    "1.887 <= D <= 2.631: values above 2.63 produce excessive < 0.075 mm silt fines that impede drainage and accelerate rutting. Our baseline single-particle "
+    "RC grain (D = 1.814, rising to D = 2.12 for composite grading) fractures into predominantly coarse sub-fragments rather than pulverizing into dust, "
+    "preserving skeletal interlock and permeability relative to weaker brick or pure mortar fractions."
 )
 
 add_heading_2("6.7 Validation against Published Experimental Benchmark Datasets")
 add_body_p(
-    "To verify absolute real-world accuracy, model predictions were benchmarked against published experimental datasets from Liang et al. (2025) and "
-    "Cai et al. (2024). Table 6.2 demonstrates excellent agreement across all three C&D material classes, with MAPE consistently below 6.5%."
+    "To verify fidelity against real laboratory tests, the calibrated scaling engine was evaluated directly against published experimental checkpoints "
+    "from Cai et al. (2024) Fig. 11 and Liang et al. (2025) Table 2 across all three demolition materials. Table 6.2 confirms strong accuracy, with "
+    "MAPE spanning 1.15% (RC) to 5.07% (RB)."
 )
 
-headers_6_2 = ["Material Type", "Published Experimental Source", "MAE", "RMSE", "MAPE (%)", "Agreement Level"]
+headers_6_2 = ["Material Type", "Published Experimental Source", "MAE (MPa)", "RMSE (MPa)", "MAPE (%)", "Agreement Level"]
 rows_6_2 = [
-    ["Recycled Concrete (RC)", "Liang et al. (2025) & Cai et al. (2024)", "0.28 kN", "0.39 kN", "4.15%", "Outstanding"],
-    ["Recycled Mortar (RM)", "Liang et al. (2025)", "0.19 kN", "0.26 kN", "5.42%", "High Fidelity"],
-    ["Recycled Brick (RB)", "Liang et al. (2025)", "0.14 kN", "0.21 kN", "6.28%", "High Fidelity"]
+    ["Recycled Concrete (RC)", "Liang et al. (2025) & Cai et al. (2024)", "0.043", "0.060", "1.15%", "Outstanding"],
+    ["Recycled Mortar (RM)", "Liang et al. (2025) & Cai et al. (2024)", "0.030", "0.047", "2.02%", "Outstanding"],
+    ["Recycled Brick (RB)", "Liang et al. (2025) & Cai et al. (2024)", "0.148", "0.180", "5.07%", "High Fidelity"]
 ]
-add_table_data(headers_6_2, rows_6_2, [1.5, 2.0, 0.7, 0.7, 0.8, 1.0])
+add_table_data(headers_6_2, rows_6_2, [1.5, 2.1, 0.75, 0.75, 0.75, 0.95], caption="Table 6.2. Validation of virtual testing suite against published experimental benchmark datasets.")
 
 # ==============================================================================
 # CHAPTER 7: SUMMARY AND FUTURE PLAN OF WORK
@@ -886,10 +908,10 @@ add_heading_1("7. SUMMARY AND FUTURE PLAN OF WORK")
 add_heading_2("7.1 Summary of Research Achievements")
 add_body_p("The major findings and contributions of this B.Tech project are summarized as follows:")
 add_bullet_p("1. Physics-Informed Machine Learning Paradigm: ", "Successfully established a multi-target machine learning pipeline linking 3D particle morphology to single-particle crushing mechanics and post-breakage fractal gradation.")
-add_bullet_p("2. Outstanding Model Fidelity: ", "CatBoost regressor achieved R² = 0.9926 for peak failure force F_f, R² = 0.9859 for crushing strength sigma_f, and R² = 0.9631 for fractal dimension D, significantly outperforming linear and traditional neural network benchmarks.")
-add_bullet_p("3. Explainable Mechanics via SHAP: ", "Quantified the distinct roles of particle size (governing absolute force via d_0^2) and 3D sphericity (governing tensile stress concentration and energy dissipation), corroborating empirical Griffith fracture physics.")
+add_bullet_p("2. Strong Predictive Fidelity: ", "CatBoost achieved the best overall performance across all four targets (mean R² = 0.9619: R² = 0.9871 for peak force F_f, 0.9636 for strength sigma_f, 0.9498 for crushing energy E_f, and 0.9469 for fractal dimension D), resolving both smooth strength scaling and piecewise energy regimes.")
+add_bullet_p("3. Explainable Mechanics via TreeSHAP: ", "Confirmed physically consistent feature attributions: material density and 3D sphericity govern crushing strength sigma_f, while shortest axis S and equivalent diameter d_eq govern peak force F_f and crushing energy E_f.")
 add_bullet_p("4. Rapid Non-Destructive Virtual Suite: ", "Deployed an interactive Streamlit engineering platform that replaces 24-hour destructive lab sieving and UTM testing with instantaneous, non-destructive characterization.")
-add_bullet_p("5. Infrastructure Application: ", "Demonstrated practical design utility under Indian Roads Congress (IRC:37-2018) guidelines for sustainable highway subgrade compaction.")
+add_bullet_p("5. Literature Validation & Engineering Screening: ", "Validated scaling accuracy within 1.15%–5.07% MAPE against Cai et al. (2024) and Liang et al. (2025), and integrated Li et al. (2021) fractal criteria with IRC:37-2018 / IS 383 aggregate screening.")
 
 add_heading_2("7.2 Future Plan of Work")
 add_body_p("Building upon the outcomes of this study, future research directions include:")
@@ -900,6 +922,7 @@ add_bullet_p("3. 3D Laser / Structured-Light Scanner: ", "Upgrade the auxiliary 
 # ==============================================================================
 # CHAPTER 8: REFERENCES
 # ==============================================================================
+doc.add_page_break()
 add_heading_1("8. REFERENCES")
 
 refs = [

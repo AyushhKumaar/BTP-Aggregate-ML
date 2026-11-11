@@ -1,7 +1,7 @@
 """
 build_iitj_ppt.py
 Generates the official IIT Jodhpur B.Tech Project Evaluation PowerPoint Presentation (.pptx).
-Aligned 1:1 with docs/BTP_IITJ_Final_Report.pdf (23 pages).
+Aligned 1:1 with docs/BTP_IITJ_Final_Report.pdf.
 Candidate: Ayush Kumar | Roll No.: B23CI1009
 Supervisor: Dr. Tekcham Gishan Singh, Assistant Professor
 Department of Civil and Infrastructure Engineering, IIT Jodhpur
@@ -388,9 +388,9 @@ add_styled_table(s3, 0.55, 1.22, 12.2, 2.45, headers_s3, rows_s3, col_widths=[2.
 add_card(s3, 0.55, 3.92, 12.2, 2.95, fill_rgb=WHITE, border_rgb=BORDER, header_text="Four Core Project Objectives (Within 4.75–37.5 mm Quasi-Static Scope)", header_color=TEAL)
 add_bullets(s3, 0.75, 4.46, 11.8, 2.3, [
     ("1. Physics-Coupled Benchmark Dataset", "Synthesize N = 3,600 calibrated particles (RC, RM, RB) uniting Hiramatsu-Oka, Bagheri, Cai et al. (2024), and Liang et al. (2025) fracture laws."),
-    ("2. Multi-Target ML Benchmarking", "Compare 6 regressors (CatBoost, LightGBM, XGBoost, Random Forest, Physics MLP, Ridge) across Force, Strength, Energy & Fractal Dimension."),
-    ("3. Explainable AI (SHAP) Verification", "Quantify physical feature importance using TreeSHAP to confirm models obey brittle fracture physics rather than overfitting noise."),
-    ("4. Interactive Streamlit Engineering Suite", "Deploy a 4-tab tool (Virtual UTM, Scaling Simulator, Auxiliary CV Photo Sizer, SHAP Engine) validated against IRC:37-2018 guidelines.")
+    ("2. Multi-Target ML Benchmarking", "Compare 6 regressors (CatBoost, LightGBM, XGBoost, Random Forest, MLP Neural Network, Ridge) across Force, Strength, Energy & Fractal Dimension."),
+    ("3. Explainable AI (TreeSHAP) Verification", "Quantify physical feature importance on XGBoost models to confirm they obey brittle fracture physics rather than overfitting noise."),
+    ("4. Interactive Streamlit Engineering Suite", "Deploy a 4-tab tool (Virtual UTM, Scaling Simulator, Auxiliary CV Photo Scanner, AI & Benchmarks) for non-destructive aggregate screening.")
 ], font_size=12, space_after=5)
 
 set_notes(s3, "Standard laboratory tests like ACV and LAA (IS 2386 / ASTM C131) crush aggregates in bulk, hiding how individual grain size and 3D shape trigger failure. Single-particle UTM testing solves this scientifically, but takes up to 24 hours per batch and creates silica dust. Our four objectives build a fast, explainable virtual twin.")
@@ -410,14 +410,14 @@ add_bullets(s4, 0.72, 1.72, 5.6, 1.5, [
 
 add_card(s4, 6.8, 1.2, 5.95, 2.1, fill_rgb=CARD_ALT, border_rgb=TEAL, header_text="Weibull Scaling & Fractal Gradation (Liang / Cai / Turcotte)", header_color=TEAL)
 add_bullets(s4, 6.98, 1.72, 5.6, 1.5, [
-    ("Strength Scaling (Eq. 4.4)", "σf(d₀, Φ) = [p · Φ^q] × [d₀ / d_ref]^(-3/m)"),
-    ("Crushing Energy (Eq. 4.5)", "Ec(d₀, Φ) = E₀ · [d₀ / d_ref]^(α_E) · Φ^(β_E)"),
+    ("Strength Scaling (Eq. 4.4)", "σf(d₀, Φ) = [p · Φ^q] × [σf₀(d₀) / σf₀(d_ref)]  (Liang Table 2)"),
+    ("Crushing Energy (Eq. 4.5)", "Ef = c·Φ^d·(d₀/25)³ (Φ<0.8)  |  Sat. Law (Φ≥0.8) [mJ]"),
     ("Fractal Gradation (Eq. 4.6)", "F(d_i) = min[100, (d_i / d₀)^(3 - D) × 100]")
 ], font_size=12, space_after=5)
 
 # Panoramic Zingg Figure across bottom
 add_card(s4, 0.55, 3.45, 12.2, 3.45, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s4, "fig1_zingg_shape_classification.png", 0.7, 3.52, 11.9, 3.3, caption="Fig. 4.1: Zingg 3D particle shape classification across Flat (S/I < 0.67), Equant, Blade, and Elongated (I/L < 0.67) morphological domains.")
+add_image_fit(s4, "fig1_zingg_shape_classification.png", 0.7, 3.52, 11.9, 3.3, caption="Fig. 4.1: Zingg 3D particle shape classification across Disk, Block, Blade, and Bar morphological domains (0.67 cutoffs; N=3,600).")
 
 set_notes(s4, "Here are the exact physics laws driving our model. First, we convert L, I, S into Hiramatsu loading diameter d0 and Cai's 3D sphericity Phi. Larger particles are weaker because they contain more internal flaws—captured by Weibull's exponent (-3/m). Flatter or elongated particles fail early due to bending. After fracture, fragment sizes follow Turcotte's fractal dimension D.")
 
@@ -427,26 +427,26 @@ set_notes(s4, "Here are the exact physics laws driving our model. First, we conv
 s5 = prs.slides.add_slide(blank_layout)
 add_slide_chrome(s5, "Physics-Coupled Calibration Dataset (N = 3,600)", "4.1 Methodology — Dataset", 5)
 
-headers_s5 = ["Material Type", "Weibull m", "d_ref (mm)", "σ_f0 (MPa)", "Param p", "Param q", "E₀ (J)"]
+headers_s5 = ["Material Type", "σf₀ (MPa) [3 brk]", "m [3 brackets]", "p , q", "c (mJ), d", "D_size [3 brk]"]
 rows_s5 = [
-    ["Recycled Concrete (RC)", "2.65", "25.0", "7.15", "9.35", "2.13", "14.2"],
-    ["Recycled Mortar (RM)", "2.21", "25.0", "3.42", "4.69", "2.21", "6.8"],
-    ["Recycled Brick (RB)", "1.89", "25.0", "2.10", "3.12", "1.95", "4.1"]
+    ["Recycled Concrete (RC)", "6.51 / 6.28 / 6.07", "1.58 / 1.30 / 1.25", "9.35, 2.13", "2061, 1.28", "1.66–1.87"],
+    ["Recycled Mortar (RM)", "3.03 / 2.97 / 2.91", "2.70 / 2.73 / 2.76", "4.69, 2.21", "2041, 2.66", "1.77–2.11"],
+    ["Recycled Brick (RB)", "6.35 / 6.21 / 4.92", "2.58 / 2.61 / 3.32", "3.84, 1.68", "1511, 2.16", "1.68–2.01"]
 ]
-add_styled_table(s5, 0.55, 1.25, 6.2, 1.9, headers_s5, rows_s5, col_widths=[1.8, 0.75, 0.75, 0.85, 0.7, 0.7, 0.65], font_size=10.5)
+add_styled_table(s5, 0.55, 1.25, 6.2, 1.9, headers_s5, rows_s5, col_widths=[1.65, 1.15, 1.1, 0.75, 0.80, 0.75], font_size=9.8)
 
 add_card(s5, 0.55, 3.35, 6.2, 3.45, fill_rgb=WHITE, border_rgb=BORDER, header_text="Benchmark Dataset Architecture (Table 4.1)", header_color=NAVY)
 add_bullets(s5, 0.75, 3.92, 5.8, 2.75, [
-    ("Total Samples", "N = 3,600 synthetic particles calibrated strictly to Liang et al. (2025) & Cai et al. (2024) experimental data."),
-    ("Three Sieve Brackets", "400 particles per class across 4.75–9.5 mm, 9.5–19.0 mm, and 19.0–37.5 mm."),
-    ("Material Ranking", "RC exhibits highest tensile strength (7.15 MPa at 25 mm) due to virgin aggregate cores; RB is weakest (2.10 MPa) due to porous clay."),
-    ("Controlled Dispersion", "Realistic Weibull variability injected via survival probability sampling P_s = exp(-(σ/σ₀)^m).")
+    ("Total Samples", "N = 3,600 synthetic particles calibrated strictly to Liang et al. (2025) & Cai et al. (2024) tables."),
+    ("Three Sieve Brackets", "400 particles per bracket × 3 materials across 4.75–9.5 mm, 9.5–19.0 mm, and 19.0–37.5 mm."),
+    ("Material Ranking", "RC has highest shape strength (p = 9.35 MPa, dataset mean 4.30 MPa); porous RB (mean 2.31 MPa) & RM (2.11 MPa) are weaker."),
+    ("Experimental Noise", "Realistic ~7% measurement noise injected across targets matching laboratory UTM dispersion.")
 ], font_size=12, space_after=8)
 
 add_card(s5, 6.95, 1.25, 5.8, 5.55, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s5, "fig2_weibull_survival_curves.png", 7.1, 1.4, 5.5, 5.25, caption="Fig. 4.2: Weibull survival probability distributions showing size weakening across sieve fractions.")
+add_image_fit(s5, "fig2_weibull_survival_curves.png", 7.1, 1.4, 5.5, 5.25, caption="Fig. 4.2: Weibull survival distributions and log-linear plots across 3 materials and sieve brackets.")
 
-set_notes(s5, "Using published parameters from Liang et al. 2025 and Cai et al. 2024 shown in Table 4.1, we generated 3,600 particles spanning 4.75 to 37.5 mm across Concrete, Mortar, and Brick. On the right, Fig 4.2 shows the Weibull survival curves—notice how the curves shift left for coarser 20-37.5 mm particles, proving larger grains fracture at lower stress.")
+set_notes(s5, "Using published parameters from Liang et al. 2025 and Cai et al. 2024 (Table 4.1), we synthesized 3,600 particles across Concrete, Brick, and Mortar. In Fig 4.2, porous Brick shows strong coarse weakening (19-37.5 mm shifts left because sigma_f0 drops from 6.35 to 4.92 MPa), whereas in Concrete and Mortar the larger particles from Cai Table 1 are slightly more spherical, offsetting the gentle size drop.")
 
 # ==============================================================================
 # SLIDE 6: ML ARCHITECTURE & PIPELINE
@@ -456,10 +456,10 @@ add_slide_chrome(s6, "Machine Learning Architecture & Training Pipeline", "4.2 M
 
 # 4-Step Horizontal Flowchart using shapes
 steps = [
-    ("1. 16-D Feature Vector", "13 Geometric Inputs:\nL, I, S, I/L, S/I, S/L, V, A,\nSSA, Φ, d_eq, d₀, SF\n+ 3 Material Flags (RC/RM/RB)", NAVY),
-    ("2. Stratified Split & CV", "80% Training (N = 2,880)\n20% Hold-out Test (N = 720)\nRobust Z-Score Scaling +\n5-Fold Stratified CV", TEAL),
-    ("3. Six Trained Regressors", "CatBoost, LightGBM,\nXGBoost, Random Forest,\nPhysics-Informed MLP,\n& Ridge Polynomial (deg=2)", NAVY),
-    ("4. Four Target Outputs", "Peak Force Ff (kN)\nCrushing Strength σf (MPa)\nCrushing Energy Ec (J)\nFractal Dimension D", AMBER)
+    ("1. 16-D Feature Vector", "13 Continuous Inputs:\nL, I, S, EI, FI, Φ, Sf, d_eq, d₀,\nApp./Bulk Density, E, ν\n+ 3 Label Encoded Classes", NAVY),
+    ("2. Stratified Partitioning", "80% Training (N = 2,880)\n20% Hold-out Test (N = 720)\nStandardScaler Z-Score +\nBreakage-Mode Stratification", TEAL),
+    ("3. Six Trained Regressors", "CatBoost, LightGBM,\nXGBoost, Random Forest,\nMLP Neural Network,\n& Ridge Polynomial (deg=2)", NAVY),
+    ("4. Four Target Outputs", "Crushing Strength σf (MPa)\nPeak Force Ff (kN)\nCrushing Energy Ef (mJ)\nFractal Dimension D", AMBER)
 ]
 for i, (st_title, st_body, col) in enumerate(steps):
     x = 0.55 + i * 3.12
@@ -484,16 +484,16 @@ for i, (st_title, st_body, col) in enumerate(steps):
 # Hyperparameter Table (Table 4.2)
 headers_s6 = ["Model Architecture", "Key Hyperparameters", "Loss Function", "Regularization", "Optimization"]
 rows_s6 = [
-    ["CatBoost Regressor", "depth=6, iterations=1000, lr=0.05", "RMSE", "l2_leaf_reg=3.0", "Ordered Boosting"],
-    ["LightGBM Regressor", "num_leaves=31, max_depth=6, lr=0.05", "Huber Loss", "reg_alpha=0.1, λ=1.0", "Histogram GBDT"],
-    ["XGBoost Regressor", "max_depth=6, n_est=800, lr=0.05", "Squared Error", "colsample=0.8, sub=0.8", "Exact Greedy"],
-    ["Random Forest", "n_estimators=500, max_depth=12", "Squared Error", "min_samples_split=4", "Bagging Ensemble"],
-    ["Physics MLP", "hidden=[128,64,32], GELU", "MSE + Physics", "weight_decay=1e-4, drop=0.1", "AdamW (lr=1e-3)"],
-    ["Ridge Polynomial", "degree=2, include_bias=False", "Squared Loss", "alpha=10.0 (L2 Penalty)", "Cholesky Solver"]
+    ["CatBoost Regressor", "depth=8, iterations=300, lr=0.05", "RMSE", "l2_leaf_reg=3.0", "Ordered Boosting"],
+    ["LightGBM Regressor", "max_depth=8, n_est=300, lr=0.05", "Squared Error", "reg_alpha=0.1, λ=1.0", "Histogram GBDT"],
+    ["XGBoost Regressor", "max_depth=8, n_est=300, lr=0.05", "Squared Error", "colsample=0.8, sub=0.8", "Hist / Greedy Tree"],
+    ["Random Forest", "n_estimators=200, max_depth=15", "Squared Error", "min_split=5, min_leaf=2", "Bagging Ensemble"],
+    ["MLP Neural Network", "hidden=(128,64,32), ReLU", "MSE (Early Stop)", "alpha=0.001, batch=64", "Adam (lr=1e-3)"],
+    ["Ridge Polynomial", "degree=2, include_bias=False", "Squared Loss", "alpha=1.0 (L2 Penalty)", "Closed-Form Ridge"]
 ]
 add_styled_table(s6, 0.55, 3.95, 12.2, 2.85, headers_s6, rows_s6, col_widths=[2.1, 3.1, 2.0, 2.6, 2.4], font_size=10.5)
 
-set_notes(s6, "Our ML pipeline converts 16 particle features into 4 simultaneous mechanical predictions. We split the 3,600 particles 80/20 stratified by material and size so there is zero data leakage, and tuned 6 models using 5-fold cross-validation. CatBoost uses depth-6 symmetric trees with ordered boosting to avoid overfitting.")
+set_notes(s6, "Our ML pipeline converts 16 particle features into 4 simultaneous mechanical predictions. We split the 3,600 particles 80/20 stratified by breakage mode so there is zero data leakage, applied StandardScaler fitted only on the training fold, and benchmarked 6 regressors with fixed hyperparameters. CatBoost uses depth-8 symmetric trees with ordered boosting to prevent overfitting.")
 
 # ==============================================================================
 # SLIDE 7: MODEL PERFORMANCE BENCHMARKS
@@ -503,27 +503,27 @@ add_slide_chrome(s7, "Model Performance Benchmarks on Hold-Out Test Set", "5.1 N
 
 headers_s7 = ["Model Architecture", "Target Variable", "R² Score", "RMSE", "MAE", "MAPE (%)"]
 rows_s7 = [
-    ["CatBoost Regressor", "Peak Force Ff (kN)", "0.9926", "0.412 kN", "0.298 kN", "4.12%"],
-    ["CatBoost Regressor", "Crushing Strength (MPa)", "0.9859", "0.321 MPa", "0.245 MPa", "4.87%"],
-    ["CatBoost Regressor", "Crushing Energy Ec (J)", "0.9784", "0.892 J", "0.651 J", "5.63%"],
-    ["CatBoost Regressor", "Fractal Dimension D", "0.9631", "0.038", "0.029", "1.18%"],
-    ["LightGBM Regressor", "Peak Force Ff (kN)", "0.9904", "0.468 kN", "0.334 kN", "4.61%"],
-    ["XGBoost Regressor", "Peak Force Ff (kN)", "0.9887", "0.509 kN", "0.362 kN", "5.02%"],
-    ["Random Forest", "Peak Force Ff (kN)", "0.9741", "0.765 kN", "0.542 kN", "7.35%"],
-    ["Physics MLP", "Peak Force Ff (kN)", "0.9612", "0.934 kN", "0.687 kN", "8.91%"],
-    ["Ridge Polynomial", "Peak Force Ff (kN)", "0.9125", "1.398 kN", "1.045 kN", "13.40%"]
+    ["CatBoost Regressor", "Peak Force Ff (kN)", "0.9871", "0.081 kN", "0.050 kN", "6.56%"],
+    ["CatBoost Regressor", "Crushing Strength (MPa)", "0.9636", "0.235 MPa", "0.172 MPa", "5.81%"],
+    ["CatBoost Regressor", "Crushing Energy Ef (mJ)", "0.9498", "82.53 mJ", "23.36 mJ", "9.13%"],
+    ["CatBoost Regressor", "Fractal Dimension D", "0.9469", "0.032", "0.025", "1.37%"],
+    ["LightGBM Regressor", "Peak Force Ff (kN)", "0.9852", "0.087 kN", "0.052 kN", "6.48%"],
+    ["XGBoost Regressor", "Peak Force Ff (kN)", "0.9847", "0.089 kN", "0.054 kN", "6.67%"],
+    ["Random Forest", "Peak Force Ff (kN)", "0.9840", "0.091 kN", "0.054 kN", "6.80%"],
+    ["MLP Neural Network", "Peak Force Ff (kN)", "0.9866", "0.083 kN", "0.052 kN", "7.66%"],
+    ["Ridge Polynomial", "Energy Ef (Piecewise Fail)", "0.8647", "135.44 mJ", "54.40 mJ", "65.08%"]
 ]
 add_styled_table(s7, 0.55, 1.25, 6.75, 4.35, headers_s7, rows_s7, col_widths=[1.75, 1.75, 0.85, 0.85, 0.85, 0.70], font_size=10)
 
 add_card(s7, 0.55, 5.75, 6.75, 1.1, fill_rgb=CARD_ALT, border_rgb=NAVY)
 add_bullets(s7, 0.72, 5.86, 6.45, 0.9, [
-    ("Why Tree Ensembles Excel", "CatBoost achieves R² = 0.9926 (Force) and R² = 0.9631 (Fractal D), capturing coupled non-linear thresholds between d₀ and Φ better than polynomial/MLP baselines.")
+    ("Why CatBoost Leads Overall", "CatBoost achieves top mean R² = 0.9619 (0.9871 Force, 0.9636 Strength). Ridge collapses on piecewise energy Ef (MAPE 65.1%), proving GBDT necessity.")
 ], font_size=11.5, space_after=2)
 
 add_card(s7, 7.5, 1.25, 5.25, 5.6, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s7, "fig5_model_comparison_metrics.png", 7.62, 1.35, 5.0, 5.4, caption="Fig. 5.0: Comparative R² and error metrics across the 6 trained architectures.")
+add_image_fit(s7, "fig5_model_comparison_metrics.png", 7.62, 1.35, 5.0, 5.4, caption="Fig. 5.0: Comparative R², RMSE, MAE, and MAPE across the 6 regression architectures.")
 
-set_notes(s7, "On the unseen test set of 720 particles, CatBoost achieved the highest accuracy across every single target: 0.9926 R-squared for peak force, 0.9859 for crushing strength, 0.9784 for energy, and 0.9631 for fractal dimension, keeping MAPE under 5.6%. Tree models outperform linear Ridge regression because strength and diameter follow power-law thresholds.")
+set_notes(s7, "On the unseen hold-out test set of 720 particles, CatBoost achieved the best overall average R-squared of 0.9619: 0.9871 for peak force, 0.9636 for crushing strength, 0.9498 for energy, and 0.9469 for fractal dimension. Notice Ridge fails badly on crushing energy (65% MAPE) because energy switches piecewise at sphericity 0.80.")
 
 # ==============================================================================
 # SLIDE 8: PARITY PLOTS & RESIDUAL HOMOSCEDASTICITY
@@ -532,35 +532,35 @@ s8 = prs.slides.add_slide(blank_layout)
 add_slide_chrome(s8, "Actual vs. Predicted Parity & Residual Error Analysis", "5.2 & 5.4 Numerical Findings", 8)
 
 add_card(s8, 0.55, 1.25, 5.75, 5.55, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s8, "fig6_actual_vs_predicted_parity.png", 0.68, 1.35, 5.5, 5.35, caption="Fig. 5.1: Test-set parity plots across Ff, σf, Ec, and D.")
+add_image_fit(s8, "fig6_actual_vs_predicted_parity.png", 0.68, 1.35, 5.5, 5.35, caption="Fig. 5.1: XGBoost test-set parity plots across σf, Ff, Ef, and D (±10% band).")
 
-add_card(s8, 6.5, 1.25, 6.25, 2.35, fill_rgb=WHITE, border_rgb=BORDER, header_text="Parity Diagnostics (Fig. 5.1)", header_color=NAVY)
+add_card(s8, 6.5, 1.25, 6.25, 2.35, fill_rgb=WHITE, border_rgb=BORDER, header_text="Parity Diagnostics (Fig. 5.1 — XGBoost R² = 0.922–0.985)", header_color=NAVY)
 add_bullets(s8, 6.7, 1.8, 5.85, 1.7, [
-    ("Tight 1:1 Alignment", "Predictions cluster cleanly along the diagonal y = x parity line across all three materials (RC, RM, RB)."),
-    ("Zero Extrapolation Drift", "No systematic over-prediction at high force (>5 kN) or low-strength mortar regimes.")
+    ("Tight ±10% Parity", "Most test points stay within the ±10% error band across all 3 materials (R² = 0.957 σf, 0.985 Ff, 0.922 Ef, 0.941 D)."),
+    ("Clustered Fractal Tiers", "Fractal D plot reflects the 3 calibrated Liang et al. (2025) sieve brackets around 1.66–2.12.")
 ], font_size=12, space_after=8)
 
-add_card(s8, 6.5, 3.8, 6.25, 3.0, fill_rgb=WHITE, border_rgb=BORDER, header_text="Residual Homoscedasticity across Size Brackets (Table 5.2)", header_color=TEAL)
-headers_s8 = ["Size Bracket", "Mean Err", "Std Dev", "Skew", "Status"]
+add_card(s8, 6.5, 3.8, 6.25, 3.0, fill_rgb=WHITE, border_rgb=BORDER, header_text="CatBoost Residual Stability across Sieve Brackets (Table 5.2)", header_color=TEAL)
+headers_s8 = ["Size Bracket", "σf Mean / Std", "Ff Mean / Std", "Variance Check"]
 rows_s8 = [
-    ["Fine (4.75–9.5 mm)", "+0.004 kN", "0.082", "0.08", "Homoscedastic"],
-    ["Medium (9.5–19.0 mm)", "-0.002 kN", "0.241", "-0.05", "Homoscedastic"],
-    ["Coarse (19.0–37.5 mm)", "+0.008 kN", "0.584", "0.12", "Homoscedastic"]
+    ["Fine (4.75–9.5 mm)", "-0.013 / 0.230", "-0.001 / 0.018", "σf Homoscedastic"],
+    ["Medium (9.5–19 mm)", "+0.002 / 0.245", "+0.001 / 0.067", "σf Levene p = 0.924"],
+    ["Coarse (19–37.5 mm)", "+0.043 / 0.228", "+0.020 / 0.120", "Unbiased Mean ~0"]
 ]
-add_styled_table(s8, 6.68, 4.35, 5.88, 1.65, headers_s8, rows_s8, col_widths=[1.75, 1.0, 0.85, 0.7, 1.58], font_size=10)
+add_styled_table(s8, 6.68, 4.35, 5.88, 1.65, headers_s8, rows_s8, col_widths=[1.65, 1.3, 1.3, 1.63], font_size=9.8)
 
 tb_s8 = s8.shapes.add_textbox(Inches(6.7), Inches(6.15), Inches(5.85), Inches(0.5))
 tf_s8 = tb_s8.text_frame
 tf_s8.word_wrap = True
 p_s8 = tf_s8.paragraphs[0]
 r_s8 = p_s8.add_run()
-r_s8.text = "Note: Near-zero mean residuals confirm unbiased predictions from 4.75 mm up to 37.5 mm (p > 0.05)."
+r_s8.text = "Note: Crushing strength σf is strictly homoscedastic (p = 0.924); Ff std scales with d₀² while relative MAPE stays ~6.6%."
 r_s8.font.name = FONT_BODY
 r_s8.font.size = Pt(11)
 r_s8.font.italic = True
 r_s8.font.color.rgb = TEXT_DARK
 
-set_notes(s8, "On the left, Fig 5.1 shows actual vs predicted parity plots—all four outputs lie tightly along the 1:1 diagonal. On the right, Table 5.2 checks residual errors across Fine, Medium, and Coarse fractions: the average error stays essentially zero (+0.004 to +0.008 kN), proving our model has no size-bias.")
+set_notes(s8, "On the left, Fig 5.1 shows XGBoost actual vs predicted parity plots within plus-or-minus 10% bands. On the right, Table 5.2 checks CatBoost residuals across Fine, Medium, and Coarse fractions: crushing strength error variance is completely constant at 0.23 MPa (Levene p=0.924), while Peak Force std naturally scales with d0 squared.")
 
 # ==============================================================================
 # SLIDE 9: EXPLAINABLE AI (SHAP) FEATURE IMPORTANCE
@@ -569,17 +569,17 @@ s9 = prs.slides.add_slide(blank_layout)
 add_slide_chrome(s9, "Explainable AI: Physical Attribution via TreeSHAP", "5.3 Numerical Findings — SHAP", 9)
 
 add_card(s9, 0.55, 1.25, 6.3, 5.55, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s9, "fig8_shap_feature_importance.png", 0.68, 1.35, 6.05, 5.35, caption="Fig. 5.2: SHAP global feature importance across peak force, crushing strength, and energy.")
+add_image_fit(s9, "fig8_shap_feature_importance.png", 0.68, 1.35, 6.05, 5.35, caption="Fig. 5.2: XGBoost TreeSHAP Mean |SHAP| feature importance across all 4 targets.")
 
-add_card(s9, 7.05, 1.25, 5.7, 5.55, fill_rgb=WHITE, border_rgb=BORDER, header_text="Deciphering the Physics Inside the Model", header_color=NAVY)
+add_card(s9, 7.05, 1.25, 5.7, 5.55, fill_rgb=WHITE, border_rgb=BORDER, header_text="Deciphering the Physics Inside XGBoost (TreeSHAP)", header_color=NAVY)
 add_bullets(s9, 7.25, 1.85, 5.3, 4.75, [
-    ("1. Why Size d₀ Drives Peak Force (Ff)", "d₀ contributes >55% of SHAP magnitude for Ff because failure load grows quadratically with cross-sectional area (Ff ∝ σf · d₀²)."),
-    ("2. Why Sphericity Φ Drives Strength (σf)", "3D Sphericity Φ and Flatness (S/I) dominate crushing strength and energy—spherical grains distribute compressive load hydrostatically."),
-    ("3. Flaky Particle Failure Mechanism", "Low sphericity / flat particles generate negative SHAP contributions because platen point-loads induce premature flexural bending rupture."),
-    ("4. Material Type Lithology Separation", "One-hot material flags cleanly separate virgin-core RC strength above porous RB and friable RM matrix.")
+    ("1. Strength σf — Density & Sphericity Φ", "Apparent density (#1) separates strong RC (2.22 g/cm³) from RB/RM, while 3D Sphericity Φ (#2) captures platen stress distribution."),
+    ("2. Force Ff & Energy Ef — Size Axes (S, d_eq)", "Shortest axis S (#1) and d_eq (#2) dominate Ff and Ef directly matching Ff ∝ d₀² area scaling and (d₀/25)³ volume scaling."),
+    ("3. Fractal Dimension D — Size & Material", "d_eq (#1) and Apparent Density (#2) drive post-breakage D because larger fragments generate more secondary debris."),
+    ("4. No Unphysical Shortcut Learning", "TreeSHAP confirms the ML splits strictly follow Hiramatsu-Oka, Cai, and Liang fracture mechanics.")
 ], font_size=12.5, space_after=12)
 
-set_notes(s9, "Professors often ask how we know ML isn't a black box. We used TreeSHAP (Fig 5.2) to inspect what drives predictions. For Peak Force, diameter d0 is #1 because load scales with d0 squared. For Crushing Strength and Energy, 3D sphericity Phi is top because flat/flaky grains snap early under bending. This proves the ML learned real fracture mechanics.")
+set_notes(s9, "Professors often ask how we know ML isn't a black box. We ran TreeSHAP on our XGBoost models (Fig 5.2). For Crushing Strength sigma_f, Apparent Density and Sphericity rank #1 and #2. For Peak Force and Energy, shortest axis S and nominal diameter d_eq rank #1 and #2 because area and volume drive total force and energy.")
 
 # ==============================================================================
 # SLIDE 10: 2D PARTIAL DEPENDENCE CONTOURS
@@ -592,10 +592,10 @@ add_image_fit(s10, "fig9_partial_dependence_contours.png", 0.68, 1.35, 6.2, 5.35
 
 add_card(s10, 7.2, 1.25, 5.55, 5.55, fill_rgb=WHITE, border_rgb=BORDER, header_text="Engineering Design Insights from Contours", header_color=TEAL)
 add_bullets(s10, 7.4, 1.85, 5.15, 4.75, [
-    ("Non-Linear Parabolic Zone (d₀ ∈ [4, 35] mm)", "Peak failure force expands parabolically along d₀, while crushing strength σf systematically drops at larger diameters due to Weibull flaw probability."),
-    ("Critical Shape Threshold (Φ < 0.55)", "Contour gradients reveal severe collapse in crushing strength & energy absorption below Φ = 0.55, regardless of particle size."),
-    ("High-Integrity Operating Window", "Coarse aggregates targeted for heavy-traffic road bases should maintain Φ >= 0.65 to prevent catastrophic fragmentation."),
-    ("Weibull Modulus Verification", "Smooth monotonic slopes verify the ML surrogate honors continuous Weibull weakest-link physics across the entire design domain.")
+    ("Coupled (Φ, d₀) Contours", "Strength σf rises steadily with Sphericity Φ (left to right), while Peak Force Ff peaks at upper-right where both size d₀ and Φ are high."),
+    ("Piecewise Transition at Φ = 0.80", "Crushing energy Ef plot exposes the sharp Cai et al. (2024 Eq. 11) jump at Φ = 0.80 learned directly by the ML trees."),
+    ("Step Boundary at d₀ = 20 mm", "Fractal D heatmap reveals the discrete sieve-bracket step at 20 mm in raw training bins—motivating smooth Tab 2 interpolation."),
+    ("Quality Control Guideline", "Avoiding flaky particles (Φ < 0.55) prevents low strength and premature brittle failure.")
 ], font_size=12.5, space_after=12)
 
 set_notes(s10, "Figure 5.3 maps the combined 2D partial dependence across size d0 (x-axis) and sphericity Phi (y-axis). Notice the critical boundary below sphericity 0.55 where strength and crushing energy plummet. Civil engineers can use these contour zones directly as quality-control acceptance thresholds.")
@@ -612,48 +612,48 @@ add_image_fit(s11, "app_tab1_utm_gradation_curves.png", 0.68, 1.72, 5.84, 2.15, 
 add_card(s11, 6.85, 1.22, 5.9, 2.75, fill_rgb=WHITE, border_rgb=BORDER, header_text="Tab 2: Multi-Scale Scaling Contour Simulator", header_color=TEAL)
 add_image_fit(s11, "app_tab2_scaling_heatmap.png", 6.98, 1.72, 5.64, 2.15, caption="Fig. 6.2: Interactive 2D size-scaling response surfaces.")
 
-add_card(s11, 0.55, 4.15, 6.1, 2.7, fill_rgb=WHITE, border_rgb=BORDER, header_text="Engineering Input Console (Streamlit Sidebar)", header_color=DARK_NAVY)
-add_image_fit(s11, "sidebar_inputs.png", 0.68, 4.62, 5.84, 2.15, caption="Parametric triaxial controls (L, I, S), material selector, and model toggle.")
+add_card(s11, 0.55, 4.15, 6.1, 2.7, fill_rgb=WHITE, border_rgb=BORDER, header_text="Parametric Console & 3D Preview (Tab 1)", header_color=DARK_NAVY)
+add_image_fit(s11, "sidebar_inputs.png", 0.68, 4.62, 5.84, 2.15, caption="Material selector, triaxial sliders (25 × 18 × 12 mm RC), and live 3D ellipsoid.")
 
 add_card(s11, 6.85, 4.15, 5.9, 2.7, fill_rgb=CARD_ALT, border_rgb=NAVY, header_text="Four Integrated Engineering Modules", header_color=NAVY)
 add_bullets(s11, 7.05, 4.70, 5.5, 2.05, [
-    ("Tab 1 — Virtual UTM", "Instant Ff, σf, Ec, Weibull P_s survival curve & post-crushing gradation vs. ASTM C33 / IS 383."),
-    ("Tab 2 — Scaling Simulator", "Explores size & sphericity shifts alongside experimental benchmark curves."),
-    ("Tab 3 — Auxiliary CV Photo Sizer", "Optional OpenCV pre-processor estimating 2D L & I from calibrated smartphone photos (input helper)."),
-    ("Tab 4 — Explainable AI (SHAP)", "Interactive waterfall charts explaining every single prediction live.")
+    ("Tab 1 — Virtual UTM", "Instant σf, Ff, Ef, D, Weibull P_s survival metric, breakage mode, and sieve curve."),
+    ("Tab 2 — Scaling Simulator", "Continuous vs. discrete size-scaling contours benchmarked against lab checkpoints."),
+    ("Tab 3 — Auxiliary CV Scanner", "Optional OpenCV photo sizer estimating 2D L & I (assumes S = 0.65·I) as a convenience helper."),
+    ("Tab 4 — AI & Benchmarks", "Interactive R² bar chart + test metrics tables + all 9 publication plots (SHAP, PDP, Parity).")
 ], font_size=11.5, space_after=5)
 
-set_notes(s11, "We packaged the entire project into a 4-tab Streamlit dashboard. Tab 1 acts as a Virtual UTM outputting failure metrics and sieve gradation curves instantly. Tab 2 lets engineers explore size-scaling contours. Tab 3 is simply an optional photo-measurement helper so users don't always need manual calipers, feeding L and I directly into the ML engine.")
+set_notes(s11, "We packaged the project into a 4-tab Streamlit dashboard. Tab 1 acts as a Virtual UTM showing a 3D grain, 4 metrics, breakage mode, and gradation curves. Tab 2 overlays model scaling against lab data from Liang and Cai. Tab 3 is an optional OpenCV photo helper assuming S equals 0.65 times I. Tab 4 displays all regression/classification metrics and publication SHAP/PDP figures.")
 
 # ==============================================================================
 # SLIDE 12: DESIGN CASE STUDY & IRC:37-2018 APPLICATION
 # ==============================================================================
 s12 = prs.slides.add_slide(blank_layout)
-add_slide_chrome(s12, "End-to-End Case Study & IRC:37-2018 Pavement Design", "6.5–6.6 Design Application", 12)
+add_slide_chrome(s12, "Baseline RC Case Study & Pavement Gradation Screening", "6.5–6.6 Design Application", 12)
 
 headers_s12 = ["Output Parameter", "Value", "Unit", "Physical Interpretation"]
 rows_s12 = [
     ["Input Particle Size", "25 / 18 / 12", "mm", "Recycled Concrete (L / I / S axes)"],
-    ["Equivalent Diameter d_eq", "17.54", "mm", "Equal-volume sphere diameter"],
-    ["Hiramatsu Diameter d₀", "15.56", "mm", "Effective loading diameter"],
-    ["Flatness (S/I) | Elong. (I/L)", "0.667 | 0.720", "—", "Equant Zingg morphology"],
-    ["3D Sphericity (Φ)", "0.702", "—", "High sphericity (> 0.65 safe threshold)"],
-    ["Peak Failure Force (Ff)", "2.68", "kN", "Catastrophic rupture load"],
-    ["Crushing Strength (σf)", "9.98", "MPa", "Tensile splitting strength"],
-    ["Crushing Energy (Ec)", "3.12", "J", "Mechanical energy absorbed"],
-    ["Fractal Dimension (D)", "2.48", "—", "Fragment gradation exponent"]
+    ["Equivalent Diameter d_eq", "17.54", "mm", "Equal-volume nominal diameter"],
+    ["Bagheri Diameter d₀", "15.56", "mm", "Roughness-corrected diameter"],
+    ["FI (S/I)  |  EI (I/L)", "0.667 | 0.720", "—", "Zingg Bar/Block boundary (0.67 cutoff)"],
+    ["3D Sphericity (Φ)", "0.702", "—", "High sphericity (> 0.65 favorable zone)"],
+    ["Crushing Strength (σf)", "4.50", "MPa", "Hiramatsu-Oka tensile splitting strength"],
+    ["Peak Failure Force (Ff)", "1.210", "kN", "Catastrophic rupture load"],
+    ["Est. Crushing Energy (Ef)", "315.9", "mJ", "Cai piecewise volumetric energy (0.316 J)"],
+    ["Fractal Dimension (D)", "1.814", "—", "Single-particle exponent (Mode II rupture)"]
 ]
 add_styled_table(s12, 0.55, 1.25, 6.55, 5.55, headers_s12, rows_s12, col_widths=[2.05, 1.05, 0.65, 2.8], font_size=10)
 
-add_card(s12, 7.3, 1.25, 5.45, 5.55, fill_rgb=WHITE, border_rgb=TEAL, header_text="Highway Base Course Qualification (IRC:37-2018)", header_color=TEAL)
+add_card(s12, 7.3, 1.25, 5.45, 5.55, fill_rgb=WHITE, border_rgb=TEAL, header_text="Gradation & Pavement Screening (Li 2021 & IRC:37-2018)", header_color=TEAL)
 add_bullets(s12, 7.5, 1.85, 5.05, 4.75, [
-    ("Granular Sub-Base (GSB) & WMM", "Indian Roads Congress (IRC:37-2018) requires aggregates to resist excessive crushing during roller compaction & heavy axle loads."),
-    ("Over-Fragmentation Risk (D > 2.65)", "Excessive crushing generates <0.075 mm silt fines, reducing hydraulic permeability and causing moisture-induced rutting."),
-    ("Poor Interlock Risk (D < 2.30)", "Insufficient fragmentation prevents tight skeletal packing."),
-    ("Design Verdict (D = 2.48)", "The baseline RC particle (D = 2.48, Φ = 0.702) sits squarely inside the optimal 2.40 <= D <= 2.60 stability window for heavy-traffic road bases.")
-], font_size=12.5, space_after=11)
+    ("GSB / WMM Screening", "IRC:37-2018 & IS 383:2016 require roadbase aggregates to resist crushing into fine dust under roller compaction."),
+    ("Over-Pulverization Risk (D > 2.63)", "Above Li et al. (2021) upper limit D = 2.631, crushing produces excess <0.075 mm fines, hurting permeability & causing rutting."),
+    ("Baseline RC Verdict (D = 1.814)", "Single-particle D = 1.814 (composite RC = 2.12, inside Li 1.887–2.631) indicates coarse splitting with minimal fine silt generation."),
+    ("Failure & Survival Check", "Mode II Mixed Corner Rupture with Weibull survival probability P_s = 0.516 (m = 1.28, σ_f0 = 6.21 MPa).")
+], font_size=12.5, space_after=10)
 
-set_notes(s12, "To demonstrate practical civil engineering value, Table 6.1 tests a baseline 25x18x12 mm Recycled Concrete stone. Our model predicts 2.68 kN failure force, 9.98 MPa strength, and fractal dimension D = 2.48. Under Indian Roads Congress IRC:37-2018 flexible pavement standards, D between 2.40 and 2.60 confirms good compaction interlock without excessive fine-dust clogging.")
+set_notes(s12, "This table matches the exact default Tab 1 live screen for our baseline 25 by 18 by 12 mm Recycled Concrete particle: 4.50 MPa strength, 1.210 kN peak force, 315.9 mJ energy, and single-particle fractal dimension 1.814 (Mode II corner rupture). Low D confirms coarse splitting without excess <0.075 mm silt dust that blocks pavement drainage.")
 
 # ==============================================================================
 # SLIDE 13: EXPERIMENTAL LITERATURE VALIDATION
@@ -661,18 +661,18 @@ set_notes(s12, "To demonstrate practical civil engineering value, Table 6.1 test
 s13 = prs.slides.add_slide(blank_layout)
 add_slide_chrome(s13, "Validation Against Published Experimental Benchmarks", "6.7 Experimental Verification", 13)
 
-headers_s13 = ["Material Type", "Published Experimental Source", "MAE", "RMSE", "MAPE (%)", "Agreement"]
+headers_s13 = ["Material Type", "Published Experimental Source", "MAE (MPa)", "RMSE (MPa)", "MAPE (%)", "Agreement"]
 rows_s13 = [
-    ["Recycled Concrete (RC)", "Liang et al. (2025) & Cai et al. (2024)", "0.28 kN", "0.39 kN", "4.15%", "Outstanding"],
-    ["Recycled Mortar (RM)", "Liang et al. (2025)", "0.19 kN", "0.26 kN", "5.42%", "High Fidelity"],
-    ["Recycled Brick (RB)", "Liang et al. (2025)", "0.14 kN", "0.21 kN", "6.28%", "High Fidelity"]
+    ["Recycled Concrete (RC)", "Liang et al. (2025) & Cai et al. (2024)", "0.043", "0.060", "1.15%", "Outstanding"],
+    ["Recycled Mortar (RM)", "Liang et al. (2025) & Cai et al. (2024)", "0.030", "0.047", "2.02%", "Outstanding"],
+    ["Recycled Brick (RB)", "Liang et al. (2025) & Cai et al. (2024)", "0.148", "0.180", "5.07%", "High Fidelity"]
 ]
 add_styled_table(s13, 0.55, 1.25, 12.2, 1.6, headers_s13, rows_s13, col_widths=[2.4, 3.6, 1.4, 1.4, 1.5, 1.9], font_size=11)
 
 add_card(s13, 0.55, 3.05, 12.2, 3.85, fill_rgb=WHITE, border_rgb=BORDER)
-add_image_fit(s13, "app_tab2_experimental_validation_subplots.png", 0.75, 3.12, 11.8, 3.7, caption="Fig. 6.3: Model multi-scale size-scaling predictions benchmarked against experimental crushing curves (Liang et al., 2025; Cai et al., 2024).")
+add_image_fit(s13, "app_tab2_experimental_validation_subplots.png", 0.75, 3.12, 11.8, 3.7, caption="Fig. 6.3: Tab 2 size-scaling curves vs. experimental markers (Liang et al., 2025; Cai et al., 2024; Li et al., 2021).")
 
-set_notes(s13, "To validate against real physical laboratory data, Table 6.2 and Fig 6.3 overlay our ML model's predicted size-scaling curves against published experimental UTM tests by Liang et al. (2025) and Cai et al. (2024). Mean Absolute Percentage Error remains 4.15% for Recycled Concrete and under 6.3% across all waste lithologies.")
+set_notes(s13, "To validate against published laboratory data, Table 6.2 reports exact error metrics computed in Tab 2 against Liang et al. (2025) and Cai et al. (2024): MAE is 0.043 MPa (1.15% MAPE) for RC, 0.030 MPa (2.02% MAPE) for RM, and 0.148 MPa (5.07% MAPE) for RB.")
 
 # ==============================================================================
 # SLIDE 14: SUMMARY & FUTURE PLAN OF WORK
@@ -683,17 +683,17 @@ add_slide_chrome(s14, "Summary of Contributions & Future Work", "7. Conclusion",
 add_card(s14, 0.55, 1.25, 5.95, 4.35, fill_rgb=WHITE, border_rgb=NAVY, header_text="Key Project Contributions", header_color=NAVY)
 add_bullets(s14, 0.75, 1.85, 5.55, 3.6, [
     ("Unified PIML Dataset", "Coupled Weibull size scaling, Hiramatsu-Oka tensile laws, Cai 3D sphericity, and Turcotte fractal gradation into N = 3,600 benchmark particles."),
-    ("High-Accuracy CatBoost Surrogate", "Achieved R² = 0.9926 (Force), R² = 0.9859 (Strength), and R² = 0.9631 (Fractal D) with homoscedastic residuals."),
-    ("Transparent Explainable AI", "Verified physical validity via TreeSHAP (d₀ governs load; Φ governs stress & energy)."),
-    ("Deployable Engineering Suite", "Delivered an interactive 4-tab Streamlit tool cutting characterization time from 24 hours to <0.1 s.")
+    ("High-Accuracy CatBoost Surrogate", "Achieved best average R² = 0.9619 (0.9871 Force, 0.9636 Strength, 0.9498 Energy, 0.9469 D) & homoscedastic σf residuals."),
+    ("Transparent Explainable AI", "Verified physics via XGBoost TreeSHAP (Density & Φ govern strength σf; S & d_eq govern Force & Energy)."),
+    ("Deployable Engineering Suite", "Delivered a 4-tab Streamlit app (Tab 1 Virtual UTM: 1.210 kN / 4.50 MPa baseline) cutting test time to <0.1 s.")
 ], font_size=12.5, space_after=10)
 
-add_card(s14, 6.8, 1.25, 5.95, 4.35, fill_rgb=WHITE, border_rgb=TEAL, header_text="Technical Scope & Future Work", header_color=TEAL)
+add_card(s14, 6.8, 1.25, 5.95, 4.35, fill_rgb=WHITE, border_rgb=TEAL, header_text="Known Limitations & Future Work", header_color=TEAL)
 add_bullets(s14, 7.0, 1.85, 5.55, 3.6, [
-    ("Current Boundaries", "Validates single-particle quasi-static compression between flat platens across 4.75–37.5 mm aggregate fractions."),
-    ("Indian C&D Waste Lab Testing", "Perform physical UTM crushing on locally processed demolition samples (Delhi, Ahmedabad, Jodhpur) to refine regional calibration."),
+    ("Current Boundaries", "Quasi-static single-particle compression (4.75–37.5 mm); calibrated on literature data; CV assumes S = 0.65·I; mode clf ~54% acc."),
+    ("Indian C&D Waste Lab Testing", "Perform physical UTM crushing on locally processed demolition samples (Delhi, Ahmedabad, Jodhpur) to validate locally."),
     ("Bulk DEM Simulation Coupling", "Integrate ML breakage criteria into 3D DEM codes (PFC3D / YADE) for full roller compaction & cyclic traffic simulations."),
-    ("3D Depth Photogrammetry", "Upgrade optional vision helper with multi-view depth sensing to measure shortest axis S directly.")
+    ("3D Depth Photogrammetry", "Upgrade optional CV helper with multi-view depth sensing to measure shortest axis S directly without assumptions.")
 ], font_size=12.5, space_after=10)
 
 add_card(s14, 0.55, 5.8, 12.2, 1.0, fill_rgb=NAVY, border_rgb=NAVY)
@@ -709,7 +709,7 @@ r_ty.font.size = Pt(18)
 r_ty.font.bold = True
 r_ty.font.color.rgb = WHITE
 
-set_notes(s14, "In conclusion, we built a physics-informed ML framework achieving R-squared up to 0.9926, verified its mechanics with SHAP, validated against 2024-2025 literature within 6.3% MAPE, and deployed an interactive Streamlit testing app ready for IRC:37 pavement design screening. Thank you, I am happy to take questions or demonstrate the live app.")
+set_notes(s14, "In conclusion, we built a physics-informed ML framework achieving R-squared up to 0.9871 (mean 0.9619 for CatBoost), verified its physics with TreeSHAP, validated within 1.15% to 5.07% MAPE against Cai 2024 and Liang 2025, honestly documented limitations like quasi-static scope and stochastic breakage mode overlap, and deployed a 4-tab Streamlit app. Thank you!")
 
 prs.save(str(PPTX_OUT))
 prs.save(str(PPTX_ARTIFACT))
